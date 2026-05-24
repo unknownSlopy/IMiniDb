@@ -20,8 +20,10 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->MainFormOnTaskBar = true;
 		TStyleManager::TrySetStyle("Obsidian");
 		//Application->CreateForm(__classid(TFormRecenzija), &FormRecenzija);
-		Application->CreateForm(__classid(TFormSviFilmovi), &FormSviFilmovi);
-		//Application->CreateForm(__classid(TFormPrijava), &FormPrijava);
+		//Application->CreateForm(__classid(TFormSviFilmovi), &FormSviFilmovi);
+		Application->CreateForm(__classid(TFormRecenzija), &FormRecenzija);
+		Application->CreateForm(__classid(TFormPrijava), &FormPrijava);
+        Application->CreateForm(__classid(TFormRegistracija), &FormRegistracija);
 		Application->CreateForm(__classid(TFormDobrodosli), &FormDobrodosli);
 		Application->Run();
 	}

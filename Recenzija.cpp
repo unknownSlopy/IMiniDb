@@ -8,6 +8,7 @@
 #include <registry.hpp>
 #include <System.IOUtils.hpp>
 #include <System.JSON.hpp>
+#include <System.NetEncoding.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "frCoreClasses"
@@ -21,6 +22,8 @@
 #pragma link "PReport"
 #pragma link "PdfDoc"
 #pragma link "PReport"
+#pragma link "uTPLb_BaseNonVisualComponent"
+#pragma link "uTPLb_Codec"
 #pragma resource "*.dfm"
 TFormRecenzija *FormRecenzija;
 
@@ -43,14 +46,160 @@ void __fastcall TFormRecenzija::FormCreate(TObject *Sender)
     TIniFile *ini = new TIniFile(path);
     FormRecenzija->StyleName     = ini->ReadString("Stilovi", "stil1", "Obsidian");
     StyleName                    = ini->ReadString("Stilovi", "stil1", "Obsidian");
-    GroupBoxRecenzija->StyleName = ini->ReadString("Stilovi", "stil2", "Obsidian");
-    delete ini;
+	GroupBoxRecenzija->StyleName = ini->ReadString("Stilovi", "stil2", "Obsidian");
+	delete ini;
+
+	/*
+
+    // === ENKRIPCIJA — inicijalizacija ===
+    FLozinka = "TajnaLozinka123";
+    FFileKriptiran = false;
+
+    // Ako je file ostao šifriran od prošlog puta — dešifriraj ga
+    String jsonPath = PutanjaJSON();
+    try {
+        DekriptirajFile(jsonPath);
+    } catch (Exception &e) {
+        ShowMessage("Greška pri dešifriranju recenzija: " + e.Message);
+    }*/
 
     DohvatiRecenzijeIzBazeUJSON();
     UcitajRecenzijeUCombo();
     cmbFilm->ItemIndex = 0;
     editIndex = -1;
 }
+
+/*
+
+//---------------------------------------------------------------------------
+// Šifrira cijeli file na disku — file dobije "ENC:" prefiks + base64 sadržaja
+//---------------------------------------------------------------------------
+void __fastcall TFormRecenzija::KriptirajFile(const String& path)
+{
+    if (!TFile::Exists(path))
+        return;
+
+    // 1. Učitaj sadržaj
+    TStringList *sl = new TStringList();
+    String sadrzaj;
+    try {
+        sl->LoadFromFile(path, TEncoding::UTF8);
+        sadrzaj = sl->Text;
+    } __finally {
+        delete sl;
+    }
+
+    // 2. Preskoči ako je već šifriran ili prazan
+    if (sadrzaj.SubString(1, 4) == "ENC:")
+        return;
+    if (sadrzaj.Trim().IsEmpty())
+        return;
+
+    // 3. Postavi Codec na simetrični AES-256-CBC
+    Codec1->StreamCipherId = "native.StreamToBlock";
+    Codec1->BlockCipherId  = "native.AES-256";
+    Codec1->ChainModeId    = "native.CBC";
+    Codec1->Password       = FLozinka;
+
+    // 4. Šifriraj kroz streamove
+    TMemoryStream *msIn  = new TMemoryStream();
+    TMemoryStream *msOut = new TMemoryStream();
+    String base64;
+    try {
+        UTF8String utf8 = UTF8String(sadrzaj);
+        if (utf8.Length() > 0)
+            msIn->Write(utf8.c_str(), utf8.Length());
+        msIn->Position = 0;
+
+        Codec1->EncryptStream(msIn, msOut);
+
+        msOut->Position = 0;
+        System::Sysutils::TBytes bytes;
+        bytes.Length = msOut->Size;
+        msOut->Read(&bytes[0], msOut->Size);
+        base64 = TNetEncoding::Base64->EncodeBytesToString(bytes);
+    } __finally {
+        delete msIn;
+        delete msOut;
+    }
+
+    // 5. Spremi natrag s ENC: prefiksom
+    TStringList *slOut = new TStringList();
+    try {
+        slOut->Text = "ENC:" + base64;
+        slOut->SaveToFile(path, TEncoding::UTF8);
+    } __finally {
+        delete slOut;
+    }
+
+    FFileKriptiran = true;
+}
+
+//---------------------------------------------------------------------------
+// Dešifrira file natrag u original
+//---------------------------------------------------------------------------
+void __fastcall TFormRecenzija::DekriptirajFile(const String& path)
+{
+    if (!TFile::Exists(path))
+        return;
+
+    // 1. Učitaj
+    TStringList *sl = new TStringList();
+    String sadrzaj;
+    try {
+        sl->LoadFromFile(path, TEncoding::UTF8);
+        sadrzaj = sl->Text.Trim();
+    } __finally {
+        delete sl;
+    }
+
+    // 2. Mora počinjati s "ENC:"
+    if (sadrzaj.SubString(1, 4) != "ENC:")
+        return;
+
+    String base64 = sadrzaj.SubString(5, sadrzaj.Length() - 4);
+
+    // 3. Postavi Codec
+    Codec1->StreamCipherId = "native.StreamToBlock";
+    Codec1->BlockCipherId  = "native.AES-256";
+    Codec1->ChainModeId    = "native.CBC";
+    Codec1->Password       = FLozinka;
+
+    // 4. Dešifriraj
+    TMemoryStream *msIn  = new TMemoryStream();
+    TMemoryStream *msOut = new TMemoryStream();
+    String original;
+    try {
+        System::Sysutils::TBytes bytes = TNetEncoding::Base64->DecodeStringToBytes(base64);
+        if (bytes.Length > 0)
+            msIn->Write(&bytes[0], bytes.Length);
+        msIn->Position = 0;
+
+        Codec1->DecryptStream(msIn, msOut);
+
+        msOut->Position = 0;
+        UTF8String utf8;
+        utf8.SetLength(msOut->Size);
+        if (msOut->Size > 0)
+            msOut->Read((void*)utf8.c_str(), msOut->Size);
+        original = String(utf8);
+    } __finally {
+        delete msIn;
+        delete msOut;
+    }
+
+    // 5. Spremi natrag
+    TStringList *slOut = new TStringList();
+    try {
+        slOut->Text = original;
+        slOut->SaveToFile(path, TEncoding::UTF8);
+    } __finally {
+        delete slOut;
+    }
+
+    FFileKriptiran = false;
+} */
+
 //---------------------------------------------------------------------------
 void __fastcall TFormRecenzija::UcitajRecenzijeUCombo()
 {
@@ -362,15 +511,18 @@ void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
 
 void __fastcall TFormRecenzija::ButtonPDFClick(TObject *Sender)
 {
-	/*
+
 	AnsiString put = ExtractFilePath(Application->ExeName) + "..\\..\\izvjestaj.pdf";
 	frxPDFExport1->FileName = put;
 	frxPDFExport1->ShowProgress = false;
 	frxPDFExport1->ShowDialog   = false;
 	frxReport1->PrepareReport(true);
 	frxReport1->Export(frxPDFExport1);
-     */
+
 }
 //---------------------------------------------------------------------------
 
+
+
+//---------------------------------------------------------------------------
 

@@ -87,7 +87,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;VclSmp.lib;vclx.lib;xmlrtl.lib;dbrtl.lib;FireDAC.lib;FireDACCommonDriver.lib;FireDACCommon.lib;vclFireDAC.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;FireDACMySQLDriver.lib;FireDACSqliteDriver.lib;vclactnband.lib;RESTComponents.lib;bindcomp.lib;CustomIPTransport.lib;dbexpress.lib;DbxCommonDriver.lib;frCoreLibrary37.lib;frx37.lib;frControlsLibrary37.lib;frLocalizationLibrary37.lib;frGraphicsLibrary37.lib;fs37.lib;frxDB37.lib;fsDB37.lib;frxe37.lib;PowerPDFDR.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;VclSmp.lib;vclx.lib;xmlrtl.lib;dbrtl.lib;FireDAC.lib;FireDACCommonDriver.lib;FireDACCommon.lib;vclFireDAC.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;FireDACMySQLDriver.lib;FireDACSqliteDriver.lib;vclactnband.lib;RESTComponents.lib;bindcomp.lib;CustomIPTransport.lib;dbexpress.lib;DbxCommonDriver.lib;frCoreLibrary37.lib;frx37.lib;frControlsLibrary37.lib;frLocalizationLibrary37.lib;frGraphicsLibrary37.lib;fs37.lib;frxDB37.lib;fsDB37.lib;frxe37.lib;PowerPDFDR.lib;LockBox3DR.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
@@ -153,7 +153,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <LinkPackageStatics>rtl.lib;vcl.lib;VclSmp.lib;vclx.lib;xmlrtl.lib;dbrtl.lib;FireDAC.lib;FireDACCommonDriver.lib;FireDACCommon.lib;vclFireDAC.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;FireDACMySQLDriver.lib;FireDACSqliteDriver.lib;vclactnband.lib;RESTComponents.lib;bindcomp.lib;CustomIPTransport.lib;dbexpress.lib;DbxCommonDriver.lib;frCoreLibrary37.lib;frx37.lib;frControlsLibrary37.lib;frLocalizationLibrary37.lib;frGraphicsLibrary37.lib;fs37.lib;frxDB37.lib;fsDB37.lib;frxe37.lib;PowerPDFDR.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;VclSmp.lib;vclx.lib;xmlrtl.lib;dbrtl.lib;FireDAC.lib;FireDACCommonDriver.lib;FireDACCommon.lib;vclFireDAC.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib;FireDACMySQLDriver.lib;FireDACSqliteDriver.lib;vclactnband.lib;RESTComponents.lib;bindcomp.lib;CustomIPTransport.lib;dbexpress.lib;DbxCommonDriver.lib;frCoreLibrary37.lib;frx37.lib;frControlsLibrary37.lib;frLocalizationLibrary37.lib;frGraphicsLibrary37.lib;fs37.lib;frxDB37.lib;fsDB37.lib;frxe37.lib;PowerPDFDR.lib;LockBox3DR.lib</LinkPackageStatics>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>

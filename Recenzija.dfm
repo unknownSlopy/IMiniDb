@@ -309,12 +309,13 @@ object FormRecenzija: TFormRecenzija
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 46131.500789675900000000
-    ReportOptions.LastChange = 46133.747216122680000000
+    ReportOptions.LastChange = 46166.525878275460000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
+    OnBeforePrint = frxReport1BeforePrint
     Left = 1144
     Top = 704
     Datasets = <
@@ -570,6 +571,39 @@ object FormRecenzija: TFormRecenzija
     DataSetOptions = []
     Left = 1072
     Top = 776
+    FieldDefs = <
+      item
+        FieldName = 'Recenzirao'
+        FieldType = fftString
+        Size = 20
+      end
+      item
+        FieldName = 'id'
+      end
+      item
+        FieldName = 'naslov'
+        FieldType = fftString
+        Size = 255
+      end
+      item
+        FieldName = 'StudentIme'
+        FieldType = fftString
+        Size = 20
+      end
+      item
+        FieldName = 'tekst'
+        FieldType = fftString
+      end
+      item
+        FieldName = 'ocjena'
+      end
+      item
+        FieldName = 'datum'
+        FieldType = fftDateTime
+      end
+      item
+        FieldName = 'korisnik_id'
+      end>
   end
   object frxDBDatasetKorisnik: TfrxDBDataset
     UserName = 'frxDBDatasetKorisnik'
@@ -579,5 +613,71 @@ object FormRecenzija: TFormRecenzija
     DataSetOptions = []
     Left = 1232
     Top = 744
+    FieldDefs = <
+      item
+        FieldName = 'id'
+      end
+      item
+        FieldName = 'ime'
+        FieldType = fftString
+        Size = 100
+      end
+      item
+        FieldName = 'prezime'
+        FieldType = fftString
+        Size = 100
+      end
+      item
+        FieldName = 'korisnicko_ime'
+        FieldType = fftString
+        Size = 100
+      end
+      item
+        FieldName = 'email'
+        FieldType = fftString
+        Size = 150
+      end
+      item
+        FieldName = 'lozinka_hash'
+        FieldType = fftString
+        Size = 255
+      end>
+  end
+  object Codec1: TCodec
+    AsymetricKeySizeInBits = 0
+    AdvancedOptions2 = []
+    Left = 136
+    Top = 768
+    StreamCipherId = ''
+    BlockCipherId = ''
+    ChainId = ''
+  end
+  object frxPDFExport1: TfrxPDFExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    InteractiveFormsFontSubset = 'A-Z,a-z,0-9,#43-#47 '
+    OpenAfterExport = False
+    PrintOptimized = False
+    Outline = False
+    Background = False
+    Quality = 95
+    Author = 'FastReport'
+    Subject = 'FastReport PDF export'
+    Creator = 'FastReport'
+    ProtectionFlags = [ePrint, eModify, eCopy, eAnnot]
+    HideToolbar = False
+    HideMenubar = False
+    HideWindowUI = False
+    FitWindow = False
+    CenterWindow = False
+    PrintScaling = False
+    PdfA = False
+    PDFStandard = psNone
+    PDFVersion = pv17
+    PDFColorSpace = csDeviceRGB
+    Left = 1072
+    Top = 848
   end
 end

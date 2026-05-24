@@ -40,6 +40,9 @@
 #include <Vcl.Grids.hpp>
 #include "PdfDoc.hpp"
 #include "PReport.hpp"
+#include "uTPLb_BaseNonVisualComponent.hpp"
+#include "uTPLb_Codec.hpp"
+#include <System.SysUtils.hpp>
 
 //---------------------------------------------------------------------------
 class TFormRecenzija : public TForm
@@ -87,6 +90,8 @@ __published:	// IDE-managed Components
 	TPReport *PReport1;
 	TfrxDBDataset *frxDBDatasetRecenzije;
 	TfrxDBDataset *frxDBDatasetKorisnik;
+	TCodec *Codec1;
+	TfrxPDFExport *frxPDFExport1;
 	void __fastcall ButtonSpremiRecenzijuClick(TObject *Sender);
 	void __fastcall ButtonOdustaniClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -95,9 +100,16 @@ __published:	// IDE-managed Components
 	void __fastcall SinkronizirajJSONuBazu();
     void __fastcall DohvatiRecenzijeIzBazeUJSON();
 	void __fastcall ButtonPDFClick(TObject *Sender);
+	void __fastcall frxReport1BeforePrint(TfrxReportComponent *Sender);
 private:	// User declarations
     int editIndex;
 	void UcitajFilmoveUCombo();
+
+    String FLozinka;
+	bool   FFileKriptiran;
+
+	void __fastcall KriptirajFile(const String& path);
+    void __fastcall DekriptirajFile(const String& path);
 public:		// User declarations
 	__fastcall TFormRecenzija(TComponent* Owner);
 };

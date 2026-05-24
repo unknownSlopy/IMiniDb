@@ -7,6 +7,7 @@
 #include "DataTypes.h"
 #include "Stilovi.h"
 #include "Jezik_INI.h"
+//#include "StaticLib.h"
 
 #include <System.IOUtils.hpp>
 #include <registry.hpp>
@@ -14,6 +15,7 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TFormRegistracija *FormRegistracija;
+
 //---------------------------------------------------------------------------
 __fastcall TFormRegistracija::TFormRegistracija(TComponent* Owner)
 	: TForm(Owner)
@@ -101,6 +103,7 @@ void __fastcall TFormRegistracija::ButtonRegistrirajClick(TObject *Sender)
 
 void __fastcall TFormRegistracija::FormCreate(TObject *Sender)
 {
+    //static lib -> ShowMessage(Radi());
 	//String jsonPath = TPath::Combine(ExtractFilePath(Application->ExeName), "..\\..\\listZaGledanje.json");
 	//String path = TPath::Combine(TPath::GetDocumentsPath(), "postavke.ini");
 	String path = TPath::Combine(ExtractFilePath(Application->ExeName), "..\\..\\postavke.ini");
