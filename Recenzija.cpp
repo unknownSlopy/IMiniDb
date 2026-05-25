@@ -9,6 +9,9 @@
 #include <System.IOUtils.hpp>
 #include <System.JSON.hpp>
 #include <System.NetEncoding.hpp>
+
+#include "IOscars.h"
+#include <Soap.SOAPHTTPClient.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "frCoreClasses"
@@ -524,5 +527,26 @@ void __fastcall TFormRecenzija::ButtonPDFClick(TObject *Sender)
 
 
 
+//---------------------------------------------------------------------------
+
+void __fastcall TFormRecenzija::ButtonOscarClick(TObject *Sender)
+{
+	// soap response
+	try
+    {
+        // Koristi generirani helper - on sam postavi HTTPRIO ispravno
+        _di_IOscars svc = NS_IOscars::GetIOscars(
+			true,
+			"http://localhost:4125/wsdl/IOscars"  // wsdl, ne soap
+		);
+
+        UnicodeString rezultat = svc->GetWinnerByYear(2024);
+        ShowMessage(rezultat);
+    }
+    catch (Exception &e)
+    {
+        ShowMessage("Greška: " + e.Message);
+    }
+}
 //---------------------------------------------------------------------------
 

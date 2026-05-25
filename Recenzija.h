@@ -101,6 +101,7 @@ __published:	// IDE-managed Components
 	void __fastcall SinkronizirajJSONuBazu();
     void __fastcall DohvatiRecenzijeIzBazeUJSON();
 	void __fastcall ButtonPDFClick(TObject *Sender);
+	void __fastcall ButtonOscarClick(TObject *Sender);
 	//nevoid __fastcall frxReport1BeforePrint(TfrxReportComponent *Sender);
 private:	// User declarations
     int editIndex;

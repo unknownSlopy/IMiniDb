@@ -199,6 +199,7 @@ object FormRecenzija: TFormRecenzija
     Height = 49
     Caption = 'OSCAR'
     TabOrder = 3
+    OnClick = ButtonOscarClick
   end
   object FDConnectionIMiniDB: TFDConnection
     Params.Strings = (

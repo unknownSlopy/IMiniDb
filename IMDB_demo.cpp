@@ -9,11 +9,10 @@
 #include "Recenzija.h"
 #include "PregledFilmova.h"
 #include "Dobrodosli.h"
+#include "IOscars.h"
 #include <Vcl.Styles.hpp>
 #include <Vcl.Themes.hpp>
 
-USEFORM("SOAP_Oscar.cpp", OSCARI);
-//---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
 	try
@@ -27,7 +26,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TFormPrijava), &FormPrijava);
 		Application->CreateForm(__classid(TFormRegistracija), &FormRegistracija);
 		Application->CreateForm(__classid(TFormDobrodosli), &FormDobrodosli);
-		Application->CreateForm(__classid(TOSCARI), &OSCARI);
+		//Application->CreateForm(__classid(TOSCARI), &OSCARI);
 		Application->Run();
 	}
 	catch (Exception &exception)
