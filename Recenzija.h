@@ -92,6 +92,7 @@ __published:	// IDE-managed Components
 	TfrxDBDataset *frxDBDatasetKorisnik;
 	TCodec *Codec1;
 	TfrxPDFExport *frxPDFExport1;
+	TButton *ButtonOscar;
 	void __fastcall ButtonSpremiRecenzijuClick(TObject *Sender);
 	void __fastcall ButtonOdustaniClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -100,7 +101,7 @@ __published:	// IDE-managed Components
 	void __fastcall SinkronizirajJSONuBazu();
     void __fastcall DohvatiRecenzijeIzBazeUJSON();
 	void __fastcall ButtonPDFClick(TObject *Sender);
-	void __fastcall frxReport1BeforePrint(TfrxReportComponent *Sender);
+	//nevoid __fastcall frxReport1BeforePrint(TfrxReportComponent *Sender);
 private:	// User declarations
     int editIndex;
 	void UcitajFilmoveUCombo();

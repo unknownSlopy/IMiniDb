@@ -12,8 +12,11 @@ CREATE TABLE korisnik (
     lozinka_hash VARCHAR(255) NOT NULL
 );
 
+
+
 SELECT * FROM korisnik
 SELECT * FROM Filmovi
+WHERE poster IS NULL 
 ALTER TABLE Filmovi ADD COLUMN poster MEDIUMBLOB;
 UPDATE Filmovi SET poster = NULL;
 
@@ -130,4 +133,9 @@ CREATE TABLE watchlista (
     datum_kreiranja DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (korisnik_id) REFERENCES korisnik(id) ON DELETE CASCADE
 );*/
+
+
+-- ============================
+-- OSCAR -> Za primjenu SOAP-a
+-- ============================
 

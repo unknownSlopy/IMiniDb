@@ -192,6 +192,14 @@ object FormRecenzija: TFormRecenzija
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
   end
+  object ButtonOscar: TButton
+    Left = 1184
+    Top = 32
+    Width = 129
+    Height = 49
+    Caption = 'OSCAR'
+    TabOrder = 3
+  end
   object FDConnectionIMiniDB: TFDConnection
     Params.Strings = (
       'Database=iminidb'
@@ -309,13 +317,12 @@ object FormRecenzija: TFormRecenzija
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 46131.500789675900000000
-    ReportOptions.LastChange = 46166.525878275460000000
+    ReportOptions.LastChange = 46166.538039016200000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
-    OnBeforePrint = frxReport1BeforePrint
     Left = 1144
     Top = 704
     Datasets = <
@@ -346,36 +353,50 @@ object FormRecenzija: TFormRecenzija
       MirrorMode = []
       object ReportTitle1: TfrxReportTitle
         FillType = ftBrush
+        Fill.BackColor = clRed
         FillGap.Top = 0
         FillGap.Left = 0
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 22.677180000000000000
+        Height = 45.354345350000000000
         Top = 18.897650000000000000
         Width = 740.409927000000000000
         object Memo1: TfrxMemoView
           AllowVectorExport = True
-          Left = 260.787570100000000000
+          Left = 166.299320100000000000
           Top = 3.779529770000000000
-          Width = 253.228509780000000000
-          Height = 18.897649770000000000
+          Width = 548.031849780000000000
+          Height = 34.015769770000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -21
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
             'IZVJE'#352'TAJ KORISNI'#268'KIH RECENZIJA')
+          ParentFont = False
         end
       end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
+        Fill.BackColor = 2763306
         FillGap.Top = 0
         FillGap.Left = 0
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -15
+        Font.Name = 'Arial'
+        Font.Style = []
         Height = 60.472480000000000000
-        Top = 102.047310000000000000
+        ParentFont = False
+        Top = 124.724490000000000000
         Width = 740.409927000000000000
         DataSet = frxDBDatasetKorisnik
         DataSetName = 'frxDBDatasetKorisnik'
@@ -384,7 +405,7 @@ object FormRecenzija: TFormRecenzija
           AllowVectorExport = True
           Left = 0.000000190000000000
           Top = 11.338592400000000000
-          Width = 128.504018830000000000
+          Width = 154.960728830000000000
           Height = 18.897651670000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -395,9 +416,9 @@ object FormRecenzija: TFormRecenzija
         object MemofrxDBDatasetKorisnikkorisnicko_ime: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 132.283550000000000000
+          Left = 170.078850000000000000
           Top = 11.338590000000000000
-          Width = 400.630180000000000000
+          Width = 362.834880000000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -426,7 +447,7 @@ object FormRecenzija: TFormRecenzija
         FillGap.Right = 0
         Frame.Typ = []
         Height = 200.315090000000000000
-        Top = 185.196970000000000000
+        Top = 207.874150000000000000
         Width = 740.409927000000000000
         DataSet = frxDBDatasetRecenzije
         DataSetName = 'frxDBDatasetRecenzije'
@@ -571,39 +592,6 @@ object FormRecenzija: TFormRecenzija
     DataSetOptions = []
     Left = 1072
     Top = 776
-    FieldDefs = <
-      item
-        FieldName = 'Recenzirao'
-        FieldType = fftString
-        Size = 20
-      end
-      item
-        FieldName = 'id'
-      end
-      item
-        FieldName = 'naslov'
-        FieldType = fftString
-        Size = 255
-      end
-      item
-        FieldName = 'StudentIme'
-        FieldType = fftString
-        Size = 20
-      end
-      item
-        FieldName = 'tekst'
-        FieldType = fftString
-      end
-      item
-        FieldName = 'ocjena'
-      end
-      item
-        FieldName = 'datum'
-        FieldType = fftDateTime
-      end
-      item
-        FieldName = 'korisnik_id'
-      end>
   end
   object frxDBDatasetKorisnik: TfrxDBDataset
     UserName = 'frxDBDatasetKorisnik'
@@ -613,35 +601,6 @@ object FormRecenzija: TFormRecenzija
     DataSetOptions = []
     Left = 1232
     Top = 744
-    FieldDefs = <
-      item
-        FieldName = 'id'
-      end
-      item
-        FieldName = 'ime'
-        FieldType = fftString
-        Size = 100
-      end
-      item
-        FieldName = 'prezime'
-        FieldType = fftString
-        Size = 100
-      end
-      item
-        FieldName = 'korisnicko_ime'
-        FieldType = fftString
-        Size = 100
-      end
-      item
-        FieldName = 'email'
-        FieldType = fftString
-        Size = 150
-      end
-      item
-        FieldName = 'lozinka_hash'
-        FieldType = fftString
-        Size = 255
-      end>
   end
   object Codec1: TCodec
     AsymetricKeySizeInBits = 0

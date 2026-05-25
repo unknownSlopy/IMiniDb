@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2026.05.25 14:06:02.381,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\FormUnit1.cpp</Transaction>
+    <Transaction>2026.05.25 14:06:02.819,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.cpp</Transaction>
+    <Transaction>2026.05.25 14:06:03.001,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2026.05.25 14:06:36.767,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Oscars.cpp</Transaction>
+    <Transaction>2026.05.25 14:07:22.998,C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\Oscars.h=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Oscars.h</Transaction>
+    <Transaction>2026.05.25 14:07:22.998,C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\Oscars.cpp=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Oscars.cpp</Transaction>
+    <Transaction>2026.05.25 14:07:29.555,C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\WebModuleUnit1.h=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.h</Transaction>
+    <Transaction>2026.05.25 14:07:29.555,C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\WebModuleUnit1.dfm=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.dfm</Transaction>
+    <Transaction>2026.05.25 14:07:29.555,C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\WebModuleUnit1.cpp=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.cpp</Transaction>
+    <Transaction>2026.05.25 14:07:34.436,C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\FormUnit1.cpp=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\FormUnit1.cpp</Transaction>
+    <Transaction>2026.05.25 14:07:34.436,C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\FormUnit1.h=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\FormUnit1.h</Transaction>
+    <Transaction>2026.05.25 14:07:34.436,C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\FormUnit1.dfm=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\FormUnit1.dfm</Transaction>
+    <Transaction>2026.05.25 14:11:55.980,C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\Project1PCH1.h=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2026.05.25 14:21:15.427,C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\Project1PCH2.h=C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\Project1PCH1.h</Transaction>
+    <Transaction>2026.05.25 14:21:15.527,C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\Project1.cbproj=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
