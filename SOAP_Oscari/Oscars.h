@@ -52,12 +52,10 @@ __interface INTERFACE_UUID("{72AE6511-13F5-4E6A-B989-C4DEFEF63BBD}") IOscars : p
 {
 public:
     virtual SampleEnum     echoEnum(SampleEnum eValue) = 0;
-    virtual TDoubleArray   echoDoubleArray(const TDoubleArray daValue) = 0;
+	//virtual TDoubleArray   echoDoubleArray(const TDoubleArray daValue) = 0;
     virtual TSampleStruct* echoStruct(const TSampleStruct* pEmployee) = 0;
-	virtual double         echoDouble(double dValue) = 0;
-
-	//moje metode
-	virtual AnsiString __fastcall GetWinnerByYear(int godina) = 0;
+	//virtual double         echoDouble(double dValue) = 0;
+	virtual AnsiString	   GetWinnerByYear(int godina) = 0;
 };
 typedef DelphiInterface<IOscars> _di_IOscars;
 

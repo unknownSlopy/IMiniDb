@@ -3,9 +3,17 @@
 // ************************************************************************ //
 #include <stdio.h>
 #include <vcl.h>
+
+#include <FireDAC.Comp.Client.hpp>
+#include <FireDAC.Phys.MySQL.hpp>
+#include <FireDAC.Stan.Intf.hpp>
+#include <FireDAC.Stan.Option.hpp>
+#include <FireDAC.Stan.Param.hpp>
+#include "FormUnit1.h"
 #pragma hdrstop
 
 #if !defined(__Oscars_h__)
+#include <Soap.SOAPHTTPClient.hpp>
 #include "Oscars.h"
 #endif
 
@@ -17,9 +25,10 @@ class TOscarsImpl : public TInvokableClass, public IOscars
 public:
     /* Sample methods of IOscars */
   SampleEnum     echoEnum(SampleEnum eValue);
-  TDoubleArray   echoDoubleArray(const TDoubleArray daValue);
+  //TDoubleArray   echoDoubleArray(const TDoubleArray daValue);
   TSampleStruct* echoStruct(const TSampleStruct* pStruct);
-  double         echoDouble(double dValue);
+  //double         echoDouble(double dValue);
+  AnsiString     GetWinnerByYear(int godina);
 
   /* IUnknown */
   HRESULT STDMETHODCALLTYPE QueryInterface(const GUID& IID, void **Obj)
@@ -36,30 +45,47 @@ SampleEnum TOscarsImpl::echoEnum(SampleEnum eValue)
 }
 
 
-TDoubleArray TOscarsImpl::echoDoubleArray(TDoubleArray daValue)
+/*TDoubleArray TOscarsImpl::echoDoubleArray(TDoubleArray daValue)
 {
-  /* TODO : Implement method echoDoubleArray  */
+  TODO : Implement method echoDoubleArray
   return daValue;
-}
+}  */
 
 TSampleStruct* TOscarsImpl::echoStruct(const TSampleStruct* pEmployee)
 {
   /* TODO : Implement method echoMyEmployee */
   return new TSampleStruct();
 }
-
+ /*
 double TOscarsImpl::echoDouble(const double dValue)
 {
-  /* TODO : Implement method echoDouble */
+   TODO : Implement method echoDouble
   return dValue;
-}
+}   */
 
 // moje metode (tijela)
-AnsiString __fastcall TOscarsImpl::GetWinnerByYear(int godina)
+AnsiString TOscarsImpl::GetWinnerByYear(int godina)
 {
-    // ovdje ide kod za bazu
-    // dohvati pobjednika za tu godinu
-    return "rezultat";
+    try
+    {
+        if (!Form1->FDConnection1->Connected)
+            Form1->FDConnection1->Connected = true;
+
+        Form1->FDQuery1->Close();
+        Form1->FDQuery1->SQL->Text =
+            "SELECT pobjednik FROM oscar WHERE godina = :god AND kategorija = 'Best Picture'";
+        Form1->FDQuery1->ParamByName("god")->AsInteger = godina;
+        Form1->FDQuery1->Open();
+
+        if (!Form1->FDQuery1->Eof)
+            return Form1->FDQuery1->FieldByName("pobjednik")->AsString;
+
+        return "Nema podataka";
+    }
+    catch (Exception &e)
+    {
+        return "Greška: " + e.Message;
+    }
 }
 
 

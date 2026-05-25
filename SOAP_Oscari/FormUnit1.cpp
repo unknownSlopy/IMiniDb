@@ -1,10 +1,12 @@
- 
+﻿ 
 //---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
 
 #include "FormUnit1.h"
+#include <Soap.SOAPHTTPClient.hpp>
+#include "Oscars.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -62,4 +64,34 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	//test
+    try
+    {
+        THTTPRIO *rio = new THTTPRIO(NULL);
+        try
+        {
+            rio->WSDLLocation = "http://localhost:4125/wsdl/IOscars";
+            rio->Service       = "IOscarsservice";
+            rio->Port          = "IOscarsPort";
+
+            // ispravan način dobivanja interface-a:
+            _di_IOscars oscars = (_di_IOscars)rio;
+
+            AnsiString rezultat = oscars->GetWinnerByYear(2024);
+            ShowMessage("Pobjednik: " + rezultat);
+        }
+        __finally
+        {
+            delete rio;
+        }
+    }
+    catch (Exception &e)
+    {
+        ShowMessage("Greška: " + e.Message);
+    }
+}
+//---------------------------------------------------------------------------
 

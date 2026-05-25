@@ -54,9 +54,52 @@ object Form1: TForm1
     TabOrder = 3
     OnClick = ButtonOpenBrowserClick
   end
+  object Button1: TButton
+    Left = 24
+    Top = 143
+    Width = 99
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 4
+    OnClick = Button1Click
+  end
   object ApplicationEvents1: TApplicationEvents
     OnIdle = ApplicationEvents1Idle
     Left = 288
     Top = 24
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=iminidb'
+      'User_Name=root'
+      'Password=admin'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 288
+    Top = 96
+  end
+  object FDQuery1: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT COUNT(DISTINCT film) FROM oscar')
+    Left = 304
+    Top = 168
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorLib = 'C:\Users\Jan\Desktop\4sem\NTP\libmysql.dll'
+    Left = 192
+    Top = 160
+  end
+  object FDTable1: TFDTable
+    Connection = FDConnection1
+    TableName = 'iminidb.oscar'
+    Left = 184
+    Top = 96
+  end
+  object HTTPRIO1: THTTPRIO
+    Left = 352
+    Top = 88
   end
 end
