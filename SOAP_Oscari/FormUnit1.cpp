@@ -1,4 +1,4 @@
-﻿ 
+﻿
 //---------------------------------------------------------------------------
 
 #include <vcl.h>
@@ -68,7 +68,8 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
 	//test
-    try
+	/*
+	try
     {
         THTTPRIO *rio = new THTTPRIO(NULL);
         try
@@ -91,7 +92,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
     catch (Exception &e)
     {
         ShowMessage("Greška: " + e.Message);
-    }
+    } */
 }
 //---------------------------------------------------------------------------
 

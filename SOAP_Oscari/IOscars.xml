@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="IOscarsservice" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns1="urn:Oscars" xmlns:ns2="urn:@:Oscars">
+  <types>
+    <xs:schema targetNamespace="urn:Oscars" xmlns="urn:Oscars">
+      <xs:simpleType name="SampleEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="etNone"/>
+          <xs:enumeration value="etAFew"/>
+          <xs:enumeration value="etSome"/>
+          <xs:enumeration value="etALot"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="urn:@:Oscars" xmlns="urn:@:Oscars">
+      <xs:complexType name="TSampleStruct">
+        <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:element name="LastName" type="xs:string"/>
+          <xs:element name="FirstName" type="xs:string"/>
+          <xs:element name="Salary" type="xs:double"/>
+        </sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="echoEnum0Request">
+    <part name="eValue" type="ns1:SampleEnum"/>
+  </message>
+  <message name="echoEnum0Response">
+    <part name="return" type="ns1:SampleEnum"/>
+  </message>
+  <message name="echoStruct1Request">
+    <part name="pEmployee" type="ns2:TSampleStruct"/>
+  </message>
+  <message name="echoStruct1Response">
+    <part name="return" type="ns2:TSampleStruct"/>
+  </message>
+  <message name="GetWinnerByYear2Request">
+    <part name="godina" type="xs:int"/>
+  </message>
+  <message name="GetWinnerByYear2Response">
+    <part name="return" type="xs:string"/>
+  </message>
+  <portType name="IOscars">
+    <operation name="echoEnum">
+      <input message="tns:echoEnum0Request"/>
+      <output message="tns:echoEnum0Response"/>
+    </operation>
+    <operation name="echoStruct">
+      <input message="tns:echoStruct1Request"/>
+      <output message="tns:echoStruct1Response"/>
+    </operation>
+    <operation name="GetWinnerByYear">
+      <input message="tns:GetWinnerByYear2Request"/>
+      <output message="tns:GetWinnerByYear2Response"/>
+    </operation>
+  </portType>
+  <binding name="IOscarsbinding" type="tns:IOscars">
+    <binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="echoEnum">
+      <operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:Oscars-IOscars#echoEnum" style="rpc"/>
+      <input>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Oscars-IOscars"/>
+      </input>
+      <output>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Oscars-IOscars"/>
+      </output>
+    </operation>
+    <operation name="echoStruct">
+      <operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:Oscars-IOscars#echoStruct" style="rpc"/>
+      <input>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Oscars-IOscars"/>
+      </input>
+      <output>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Oscars-IOscars"/>
+      </output>
+    </operation>
+    <operation name="GetWinnerByYear">
+      <operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:Oscars-IOscars#GetWinnerByYear" style="rpc"/>
+      <input>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Oscars-IOscars"/>
+      </input>
+      <output>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Oscars-IOscars"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="IOscarsservice">
+    <port name="IOscarsPort" binding="tns:IOscarsbinding">
+      <address xmlns="http://schemas.xmlsoap.org/wsdl/soap/" location="http://localhost:4125/soap/IOscars"/>
+    </port>
+  </service>
+</definitions>
+

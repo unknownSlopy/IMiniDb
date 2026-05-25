@@ -17,9 +17,10 @@
 #pragma comment(lib, "IndyProtocols")
 #endif
 #pragma link "IdHTTPWebBrokerBridge"
+#include "FormUnit1.h"
+USEFORM("FormUnit1.cpp", Form1);
 
 //---------------------------------------------------------------------------
-USEFORM("..\..\..\..\Desktop\4sem\NTP\SOAP_Oscari\FormUnit1.cpp", Form1);
 extern PACKAGE TComponentClass WebModuleClass;
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -30,7 +31,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
       WebRequestHandler()->WebModuleClass = WebModuleClass;
     }
     Application->Initialize();
-    Application->CreateForm(__classid(TForm1), &Form1);
+	Application->CreateForm(__classid(TForm1), &Form1);
 		Application->Run();
   }
   catch (Exception &exception)
