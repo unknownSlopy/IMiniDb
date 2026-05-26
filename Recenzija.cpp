@@ -516,7 +516,7 @@ void __fastcall TFormRecenzija::ButtonPDFClick(TObject *Sender)
 {
 
     frxReport1->LoadFromFile(
-        ExtractFilePath(Application->ExeName) + "..\\..\\Izvjestaj.fr3"
+        ExtractFilePath(Application->ExeName) + "..\\..\\Izvjestaj2.fr3"
     );
 
 	AnsiString put = ExtractFilePath(Application->ExeName) + "..\\..\\izvjestaj.pdf";

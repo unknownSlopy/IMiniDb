@@ -93,6 +93,9 @@ __published:	// IDE-managed Components
 	TCodec *Codec1;
 	TfrxPDFExport *frxPDFExport1;
 	TButton *ButtonOscar;
+	TFDQuery *FDQueryBrojKorisnika;
+	TfrxDBDataset *frxDBDatasetJOIN;
+	TFDQuery *FDQueryJOIN;
 	void __fastcall ButtonSpremiRecenzijuClick(TObject *Sender);
 	void __fastcall ButtonOdustaniClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
