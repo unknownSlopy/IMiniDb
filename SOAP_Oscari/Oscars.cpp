@@ -29,6 +29,7 @@ public:
   TSampleStruct* echoStruct(const TSampleStruct* pStruct);
   //double         echoDouble(double dValue);
   AnsiString     GetWinnerByYear(int godina);
+  int            GetOscarCountByFilm(AnsiString naziv);
 
   /* IUnknown */
   HRESULT STDMETHODCALLTYPE QueryInterface(const GUID& IID, void **Obj)
@@ -85,6 +86,27 @@ AnsiString TOscarsImpl::GetWinnerByYear(int godina)
     catch (Exception &e)
     {
         return "Greška: " + e.Message;
+	}
+}
+
+int TOscarsImpl::GetOscarCountByFilm(AnsiString naziv){
+
+    try
+    {
+        if (!Form1->FDConnection1->Connected)
+            Form1->FDConnection1->Connected = true;
+
+        Form1->FDQuery1->Close();
+        Form1->FDQuery1->SQL->Text =
+            "SELECT COUNT(*) as broj FROM oscar WHERE film = :naziv";
+        Form1->FDQuery1->ParamByName("naziv")->AsString = naziv;
+        Form1->FDQuery1->Open();
+
+        return Form1->FDQuery1->FieldByName("broj")->AsInteger;
+    }
+    catch (Exception &e)
+    {
+        return -1;
     }
 }
 

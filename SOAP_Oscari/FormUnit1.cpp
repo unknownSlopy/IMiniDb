@@ -6,7 +6,8 @@
 
 #include "FormUnit1.h"
 #include <Soap.SOAPHTTPClient.hpp>
-#include "Oscars.h"
+//#include "Oscars.h"
+#include "IOscars.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -68,31 +69,27 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
 	//test
-	/*
-	try
+
+	// Provjeri je li server aktivan
+    if (!FServer->Active)
     {
-        THTTPRIO *rio = new THTTPRIO(NULL);
-        try
-        {
-            rio->WSDLLocation = "http://localhost:4125/wsdl/IOscars";
-            rio->Service       = "IOscarsservice";
-            rio->Port          = "IOscarsPort";
+        ShowMessage("Prvo pokreni server!");
+        return;
+    }
 
-            // ispravan način dobivanja interface-a:
-            _di_IOscars oscars = (_di_IOscars)rio;
-
-            AnsiString rezultat = oscars->GetWinnerByYear(2024);
-            ShowMessage("Pobjednik: " + rezultat);
-        }
-        __finally
-        {
-            delete rio;
-        }
+    try
+    {
+        _di_IOscars oscars = NS_IOscars::GetIOscars(
+			false,
+			"http://localhost:4125/soap/IOscars"
+        );
+        UnicodeString rezultat = oscars->GetWinnerByYear(2024);
+        ShowMessage(rezultat);
     }
     catch (Exception &e)
     {
         ShowMessage("Greška: " + e.Message);
-    } */
+    }
 }
 //---------------------------------------------------------------------------
 

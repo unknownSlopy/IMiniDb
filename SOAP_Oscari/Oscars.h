@@ -56,6 +56,7 @@ public:
     virtual TSampleStruct* echoStruct(const TSampleStruct* pEmployee) = 0;
 	//virtual double         echoDouble(double dValue) = 0;
 	virtual AnsiString	   GetWinnerByYear(int godina) = 0;
+    virtual int 		   GetOscarCountByFilm(AnsiString naziv) = 0;
 };
 typedef DelphiInterface<IOscars> _di_IOscars;
 

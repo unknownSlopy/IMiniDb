@@ -39,6 +39,12 @@
   <message name="GetWinnerByYear2Response">
     <part name="return" type="xs:string"/>
   </message>
+  <message name="GetOscarCountByFilm3Request">
+    <part name="naziv" type="xs:string"/>
+  </message>
+  <message name="GetOscarCountByFilm3Response">
+    <part name="return" type="xs:int"/>
+  </message>
   <portType name="IOscars">
     <operation name="echoEnum">
       <input message="tns:echoEnum0Request"/>
@@ -51,6 +57,10 @@
     <operation name="GetWinnerByYear">
       <input message="tns:GetWinnerByYear2Request"/>
       <output message="tns:GetWinnerByYear2Response"/>
+    </operation>
+    <operation name="GetOscarCountByFilm">
+      <input message="tns:GetOscarCountByFilm3Request"/>
+      <output message="tns:GetOscarCountByFilm3Response"/>
     </operation>
   </portType>
   <binding name="IOscarsbinding" type="tns:IOscars">
@@ -75,6 +85,15 @@
     </operation>
     <operation name="GetWinnerByYear">
       <operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:Oscars-IOscars#GetWinnerByYear" style="rpc"/>
+      <input>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Oscars-IOscars"/>
+      </input>
+      <output>
+        <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Oscars-IOscars"/>
+      </output>
+    </operation>
+    <operation name="GetOscarCountByFilm">
+      <operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:Oscars-IOscars#GetOscarCountByFilm" style="rpc"/>
       <input>
         <body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Oscars-IOscars"/>
       </input>
