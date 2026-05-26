@@ -318,9 +318,17 @@ object FormRecenzija: TFormRecenzija
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 46131.500789675900000000
-    ReportOptions.LastChange = 46166.538039016200000000
+    ReportOptions.LastChange = 46167.785755567100000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
+      'procedure DetailData1OnBeforePrint(Sender: TfrxComponent);'
+      'begin'
+      '  if DetailData1.RecNo mod 2 = 0 then'
+      '    DetailData1.Color := $00FAFAFA'
+      '  else'
+      '    DetailData1.Color := $00FFFFFF;'
+      'end;'
+      ''
       'begin'
       ''
       'end.')
@@ -354,21 +362,59 @@ object FormRecenzija: TFormRecenzija
       MirrorMode = []
       object ReportTitle1: TfrxReportTitle
         FillType = ftBrush
-        Fill.BackColor = clRed
+        Fill.BackColor = 1712832
         FillGap.Top = 0
         FillGap.Left = 0
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 45.354345350000000000
+        Height = 74.000000000000000000
         Top = 18.897650000000000000
         Width = 740.409927000000000000
-        object Memo1: TfrxMemoView
+        object MemoLogoBox: TfrxMemoView
           AllowVectorExport = True
-          Left = 166.299320100000000000
-          Top = 3.779529770000000000
-          Width = 548.031849780000000000
-          Height = 34.015769770000000000
+          Left = 10.000000000000000000
+          Top = 15.000000000000000000
+          Width = 115.000000000000000000
+          Height = 44.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 1054880
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Fill.BackColor = 1054880
+          ParentFont = False
+        end
+        object MemoLogoIMini: TfrxMemoView
+          AllowVectorExport = True
+          Left = 14.000000000000000000
+          Top = 22.000000000000000000
+          Width = 68.000000000000000000
+          Height = 24.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clGold
+          Font.Height = -21
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = 1054880
+          HAlign = haRight
+          Memo.UTF8W = (
+            'IMini')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object MemoLogoDb: TfrxMemoView
+          AllowVectorExport = True
+          Left = 82.000000000000000000
+          Top = 22.000000000000000000
+          Width = 38.000000000000000000
+          Height = 24.000000000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
@@ -377,8 +423,177 @@ object FormRecenzija: TFormRecenzija
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
+          Fill.BackColor = 1054880
           Memo.UTF8W = (
-            'IZVJE'#352'TAJ KORISNI'#268'KIH RECENZIJA')
+            'Db')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo1: TfrxMemoView
+          AllowVectorExport = True
+          Left = 140.000000000000000000
+          Top = 16.000000000000000000
+          Width = 450.000000000000000000
+          Height = 22.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = 1712832
+          Memo.UTF8W = (
+            'Izvje'#353'taj korisni'#269'kih recenzija')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object MemoDatumLabel: TfrxMemoView
+          AllowVectorExport = True
+          Left = 140.000000000000000000
+          Top = 42.000000000000000000
+          Width = 450.000000000000000000
+          Height = 14.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 11711154
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Fill.BackColor = 1712832
+          Memo.UTF8W = (
+            'Generirano: [FormatDateTime('#39'dd.mm.yyyy.'#39', Now)]')
+          ParentFont = False
+        end
+        object MemoPageLabel: TfrxMemoView
+          AllowVectorExport = True
+          Left = 600.000000000000000000
+          Top = 16.000000000000000000
+          Width = 130.000000000000000000
+          Height = 14.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 11711154
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Fill.BackColor = 1712832
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Stranica')
+          ParentFont = False
+        end
+        object MemoPageNum: TfrxMemoView
+          AllowVectorExport = True
+          Left = 600.000000000000000000
+          Top = 32.000000000000000000
+          Width = 130.000000000000000000
+          Height = 28.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -23
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = 1712832
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Page#] / [TotalPages#]')
+          ParentFont = False
+        end
+      end
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        Fill.BackColor = 1712832
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
+        Frame.Typ = []
+        Height = 24.000000000000000000
+        Top = 117.165430000000000000
+        Width = 740.409927000000000000
+        object MemoHNaslov: TfrxMemoView
+          AllowVectorExport = True
+          Left = 10.000000000000000000
+          Top = 4.000000000000000000
+          Width = 250.000000000000000000
+          Height = 16.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 14145494
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = 1712832
+          Memo.UTF8W = (
+            'NASLOV FILMA')
+          ParentFont = False
+        end
+        object MemoHOcjena: TfrxMemoView
+          AllowVectorExport = True
+          Left = 265.000000000000000000
+          Top = 4.000000000000000000
+          Width = 80.000000000000000000
+          Height = 16.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 14145494
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = 1712832
+          Memo.UTF8W = (
+            'OCJENA')
+          ParentFont = False
+        end
+        object MemoHDatum: TfrxMemoView
+          AllowVectorExport = True
+          Left = 350.000000000000000000
+          Top = 4.000000000000000000
+          Width = 145.000000000000000000
+          Height = 16.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 14145494
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = 1712832
+          Memo.UTF8W = (
+            'DATUM')
+          ParentFont = False
+        end
+        object MemoHRecenzija: TfrxMemoView
+          AllowVectorExport = True
+          Left = 500.000000000000000000
+          Top = 4.000000000000000000
+          Width = 230.000000000000000000
+          Height = 16.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 14145494
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = 1712832
+          Memo.UTF8W = (
+            'RECENZIJA')
           ParentFont = False
         end
       end
@@ -392,188 +607,193 @@ object FormRecenzija: TFormRecenzija
         Frame.Typ = []
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
-        Font.Height = -15
+        Font.Height = -13
         Font.Name = 'Arial'
-        Font.Style = []
-        Height = 60.472480000000000000
+        Font.Style = [fsBold]
+        Height = 28.000000000000000000
         ParentFont = False
-        Top = 124.724490000000000000
+        Top = 200.315090000000000000
         Width = 740.409927000000000000
         DataSet = frxDBDatasetKorisnik
         DataSetName = 'frxDBDatasetKorisnik'
         RowCount = 0
         object Memo2: TfrxMemoView
           AllowVectorExport = True
-          Left = 0.000000190000000000
-          Top = 11.338592400000000000
-          Width = 154.960728830000000000
-          Height = 18.897651670000000000
+          Left = 10.000000000000000000
+          Top = 6.000000000000000000
+          Width = 155.000000000000000000
+          Height = 16.000000000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 11711154
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
           Frame.Typ = []
+          Fill.BackColor = 2763306
           Memo.UTF8W = (
-            'Recenzije korisnika: ')
+            'Recenzije korisnika:')
+          ParentFont = False
+          VAlign = vaCenter
         end
-        object MemofrxDBDatasetKorisnikkorisnicko_ime: TfrxMemoView
+        object DetailData1: TfrxDetailData
+          FillType = ftBrush
+          Fill.BackColor = clWhite
+          FillGap.Top = 0
+          FillGap.Left = 0
+          FillGap.Bottom = 0
+          FillGap.Right = 0
+          Frame.Typ = []
+          Height = 28.000000000000000000
+          Top = 249.448980000000000000
+          Width = 740.409927000000000000
+          OnBeforePrint = 'DetailData1OnBeforePrint'
+          DataSet = frxDBDatasetRecenzije
+          DataSetName = 'frxDBDatasetRecenzije'
+          RowCount = 0
+        end
+        object MemoKorisnickoIme: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 170.078850000000000000
-          Top = 11.338590000000000000
-          Width = 362.834880000000000000
-          Height = 18.897650000000000000
+          Left = 166.220470000000000000
+          Top = 6.000000000000000000
+          Width = 360.000000000000000000
+          Height = 16.000000000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'korisnicko_ime'
           DataSet = frxDBDatasetKorisnik
           DataSetName = 'frxDBDatasetKorisnik'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
           Frame.Typ = []
+          Fill.BackColor = 2763306
           Memo.UTF8W = (
             '[frxDBDatasetKorisnik."korisnicko_ime"]')
-        end
-        object Line1: TfrxLineView
-          AllowVectorExport = True
-          Left = 3.779530050000000000
-          Top = 49.133888120000000000
-          Width = 718.110728740000000000
-          Color = clBlack
-          Frame.Typ = []
-          Diagonal = True
+          ParentFont = False
+          VAlign = vaCenter
         end
       end
-      object DetailData1: TfrxDetailData
+      object PageFooter1: TfrxPageFooter
         FillType = ftBrush
+        Fill.BackColor = 1710618
         FillGap.Top = 0
         FillGap.Left = 0
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 200.315090000000000000
-        Top = 207.874150000000000000
+        Height = 28.000000000000000000
+        Top = 336.378170000000000000
         Width = 740.409927000000000000
+        object MemoFooterL: TfrxMemoView
+          AllowVectorExport = True
+          Left = 10.000000000000000000
+          Top = 6.000000000000000000
+          Width = 420.000000000000000000
+          Height = 16.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 6710886
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Fill.BackColor = 1710618
+          Memo.UTF8W = (
+            #169' 2026 IMiniDb '#8212' Sustav za recenziranje filmova')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object MemoFooterR: TfrxMemoView
+          AllowVectorExport = True
+          Left = 500.000000000000000000
+          Top = 6.000000000000000000
+          Width = 230.000000000000000000
+          Height = 16.000000000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 1712832
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Fill.BackColor = 1710618
+          HAlign = haRight
+          Memo.UTF8W = (
+            #9733#9733#9733#9733#9733)
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object MemofrxDBDatasetRecenzijenaslov: TfrxMemoView
+        IndexTag = 1
+        AllowVectorExport = True
+        Left = 3.779530000000000000
+        Top = 253.228510000000000000
+        Width = 260.787570000000000000
+        Height = 18.897650000000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataField = 'naslov'
         DataSet = frxDBDatasetRecenzije
         DataSetName = 'frxDBDatasetRecenzije'
-        RowCount = 0
-        object Memo3: TfrxMemoView
-          AllowVectorExport = True
-          Left = 75.590600100000000000
-          Top = 3.779526410000000000
-          Width = 64.252009780000000000
-          Height = 18.897659300000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'Film: ')
-        end
-        object MemofrxDBDatasetRecenzijenaslov: TfrxMemoView
-          IndexTag = 1
-          AllowVectorExport = True
-          Left = 166.299320000000000000
-          Top = 3.779530000000000000
-          Width = 400.630180000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataField = 'naslov'
-          DataSet = frxDBDatasetRecenzije
-          DataSetName = 'frxDBDatasetRecenzije'
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDBDatasetRecenzije."naslov"]')
-        end
-        object Memo4: TfrxMemoView
-          AllowVectorExport = True
-          Left = 75.590600100000000000
-          Top = 34.015762980000000000
-          Width = 64.252009780000000000
-          Height = 18.897659300000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'Ocjena:')
-        end
-        object MemofrxDBDatasetRecenzijeocjena: TfrxMemoView
-          IndexTag = 1
-          AllowVectorExport = True
-          Left = 166.299320000000000000
-          Top = 34.015770000000000000
-          Width = 79.370130000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataField = 'ocjena'
-          DataSet = frxDBDatasetRecenzije
-          DataSetName = 'frxDBDatasetRecenzije'
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDBDatasetRecenzije."ocjena"]')
-        end
-        object Memo5: TfrxMemoView
-          AllowVectorExport = True
-          Left = 75.590600100000000000
-          Top = 71.811066320000000000
-          Width = 109.606369780000000000
-          Height = 18.897659300000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'Datum recenzije:')
-        end
-        object MemofrxDBDatasetRecenzijedatum: TfrxMemoView
-          IndexTag = 1
-          AllowVectorExport = True
-          Left = 192.756030000000000000
-          Top = 71.811070000000000000
-          Width = 264.567100000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataField = 'datum'
-          DataSet = frxDBDatasetRecenzije
-          DataSetName = 'frxDBDatasetRecenzije'
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDBDatasetRecenzije."datum"]')
-        end
-        object Memo6: TfrxMemoView
-          AllowVectorExport = True
-          Left = 75.590600100000000000
-          Top = 109.606358650000000000
-          Width = 71.811069780000000000
-          Height = 18.897674560000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'Recenzija:')
-        end
-        object MemofrxDBDatasetRecenzijetekst: TfrxMemoView
-          IndexTag = 1
-          AllowVectorExport = True
-          Left = 158.740260000000000000
-          Top = 109.606370000000000000
-          Width = 642.520100000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataField = 'tekst'
-          DataSet = frxDBDatasetRecenzije
-          DataSetName = 'frxDBDatasetRecenzije'
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDBDatasetRecenzije."tekst"]')
-        end
-        object Line2: TfrxLineView
-          AllowVectorExport = True
-          Left = 3.779530050000000000
-          Top = 154.960744840000000000
-          Width = 714.331187730000000000
-          Color = clBlack
-          Frame.Typ = []
-          Diagonal = True
-        end
+        Frame.Typ = []
+        Memo.UTF8W = (
+          '[frxDBDatasetRecenzije."naslov"]')
+      end
+      object MemofrxDBDatasetRecenzijeocjena: TfrxMemoView
+        IndexTag = 1
+        AllowVectorExport = True
+        Left = 268.346630000000000000
+        Top = 253.228510000000000000
+        Width = 79.370130000000000000
+        Height = 18.897650000000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataField = 'ocjena'
+        DataSet = frxDBDatasetRecenzije
+        DataSetName = 'frxDBDatasetRecenzije'
+        Frame.Typ = []
+        Memo.UTF8W = (
+          '[frxDBDatasetRecenzije."ocjena"]')
+      end
+      object MemofrxDBDatasetRecenzijedatum: TfrxMemoView
+        IndexTag = 1
+        AllowVectorExport = True
+        Left = 351.496290000000000000
+        Top = 253.228510000000000000
+        Width = 143.622140000000000000
+        Height = 18.897650000000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataField = 'datum'
+        DataSet = frxDBDatasetRecenzije
+        DataSetName = 'frxDBDatasetRecenzije'
+        Frame.Typ = []
+        Memo.UTF8W = (
+          '[frxDBDatasetRecenzije."datum"]')
+      end
+      object MemofrxDBDatasetRecenzijetekst: TfrxMemoView
+        IndexTag = 1
+        AllowVectorExport = True
+        Left = 498.897960000000000000
+        Top = 253.228510000000000000
+        Width = 241.889920000000000000
+        Height = 18.897650000000000000
+        ContentScaleOptions.Constraints.MaxIterationValue = 0
+        ContentScaleOptions.Constraints.MinIterationValue = 0
+        DataField = 'tekst'
+        DataSet = frxDBDatasetRecenzije
+        DataSetName = 'frxDBDatasetRecenzije'
+        Frame.Typ = []
+        Memo.UTF8W = (
+          '[frxDBDatasetRecenzije."tekst"]')
       end
     end
   end
@@ -639,5 +859,11 @@ object FormRecenzija: TFormRecenzija
     PDFColorSpace = csDeviceRGB
     Left = 1072
     Top = 848
+  end
+  object FDQueryBrojKorisnika: TFDQuery
+    MasterSource = DataSourceKorisnik
+    Connection = FDConnectionIMiniDB
+    Left = 1176
+    Top = 568
   end
 end

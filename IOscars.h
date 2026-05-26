@@ -1,11 +1,11 @@
 // ************************************************************************ //
 // The types declared in this file were generated from data read from the
 // WSDL File described below:
-// WSDL     : C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\IOscars.xml
-//  >Import : C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\IOscars.xml>0
-//  >Import : C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\IOscars.xml>1
+// WSDL     : http://localhost:4125/wsdl/IOscars
+//  >Import : http://localhost:4125/wsdl/IOscars>0
+//  >Import : http://localhost:4125/wsdl/IOscars>1
 // Version  : 1.0
-// (25.5.2026. 17:13:55 - - $Rev: 122014 $)
+// (26.5.2026. 17:15:30 - - $Rev: 122014 $)
 // ************************************************************************ //
 
 #ifndef   IOscarsH
@@ -26,7 +26,7 @@ namespace NS_IOscars {
 // The following types, referred to in the WSDL document are not being represented
 // in this file. They are either aliases[@] of other types represented or were referred
 // to but never[!] declared in the document. The types from the latter category
-// typically map to predefined/known XML or Embarcadero types; however, they could also 
+// typically map to predefined/known XML or Embarcadero types; however, they could also
 // indicate incorrect WSDL documents that failed to declare or import a schema type.
 // ************************************************************************ //
 // !:int             - "http://www.w3.org/2001/XMLSchema"[]
@@ -37,9 +37,9 @@ class SOAP_REMOTABLE_CLASS TSampleStruct;
 
 enum class SampleEnum   /* "urn:Oscars"[GblSmpl] */
 {
-  etNone, 
-  etAFew, 
-  etSome, 
+  etNone,
+  etAFew,
+  etSome,
   etALot
 };
 
@@ -84,9 +84,9 @@ __published:
 __interface INTERFACE_UUID("{842F0662-5CE2-67FD-CB61-D29B9A027DA1}") IOscars : public System::IInvokable
 {
 public:
-  virtual SampleEnum      echoEnum(const SampleEnum eValue) = 0; 
-  virtual TSampleStruct*  echoStruct(const TSampleStruct* pEmployee) = 0; 
-  virtual UnicodeString   GetWinnerByYear(const int godina) = 0; 
+  virtual SampleEnum      echoEnum(const SampleEnum eValue) = 0;
+  virtual TSampleStruct*  echoStruct(const TSampleStruct* pEmployee) = 0;
+  virtual UnicodeString   GetWinnerByYear(const int godina) = 0;
 };
 typedef DelphiInterface<IOscars> _di_IOscars;
 
@@ -102,3 +102,4 @@ using  namespace NS_IOscars;
 
 
 #endif // IOscarsH
+

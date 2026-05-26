@@ -1,11 +1,11 @@
 // ************************************************************************ //
 // The types declared in this file were generated from data read from the
 // WSDL File described below:
-// WSDL     : C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\IOscars.xml
-//  >Import : C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\IOscars.xml>0
-//  >Import : C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscari\IOscars.xml>1
+// WSDL     : http://localhost:4125/wsdl/IOscars
+//  >Import : http://localhost:4125/wsdl/IOscars>0
+//  >Import : http://localhost:4125/wsdl/IOscars>1
 // Version  : 1.0
-// (25.5.2026. 17:13:55 - - $Rev: 122014 $)
+// (26.5.2026. 17:15:30 - - $Rev: 122014 $)
 // ************************************************************************ //
 
 #include <System.hpp>
@@ -19,7 +19,7 @@ namespace NS_IOscars {
 
 _di_IOscars GetIOscars(bool useWSDL, System::String addr, Soaphttpclient::THTTPRIO* HTTPRIO)
 {
-  static const char* defWSDL= "C:\\Users\\Jan\\Desktop\\4sem\\NTP\\SOAP_Oscari\\IOscars.xml";
+  static const char* defWSDL= "http://localhost:4125/wsdl/IOscars";
   static const char* defURL = "http://localhost:4125/soap/IOscars";
   static const char* defSvc = "IOscarsservice";
   static const char* defPrt = "IOscarsPort";
@@ -63,4 +63,5 @@ static void RegTypes()
 #pragma startup RegTypes 32
 
 };     // NS_IOscars
+
 

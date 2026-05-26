@@ -515,6 +515,10 @@ void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
 void __fastcall TFormRecenzija::ButtonPDFClick(TObject *Sender)
 {
 
+    frxReport1->LoadFromFile(
+        ExtractFilePath(Application->ExeName) + "..\\..\\Izvjestaj.fr3"
+    );
+
 	AnsiString put = ExtractFilePath(Application->ExeName) + "..\\..\\izvjestaj.pdf";
 	frxPDFExport1->FileName = put;
 	frxPDFExport1->ShowProgress = false;
@@ -536,8 +540,8 @@ void __fastcall TFormRecenzija::ButtonOscarClick(TObject *Sender)
     {
         // Koristi generirani helper - on sam postavi HTTPRIO ispravno
         _di_IOscars svc = NS_IOscars::GetIOscars(
-			true,
-			"http://localhost:4125/wsdl/IOscars"  // wsdl, ne soap
+			false,
+			"http://localhost:4125/wsdl/IOscars"
 		);
 
         UnicodeString rezultat = svc->GetWinnerByYear(2024);
