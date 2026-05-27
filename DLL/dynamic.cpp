@@ -19,9 +19,29 @@
 //   If you are using the static version of the RTL, add #include<usebormm.h>
 //   to one of the source files for your DLL
 
-#include <vcl.h>
 #pragma hdrstop
 #pragma argsused
+
+#include <string>
+#include <algorithm>
+
+class __declspec(dllexport) TStringUtils
+{
+public:
+    __declspec(dllexport) std::string Skrati(std::string tekst, int maxZnakova)
+    {
+        if ((int)tekst.length() <= maxZnakova)
+            return tekst;
+        return tekst.substr(0, maxZnakova) + "...";
+    }
+
+    __declspec(dllexport) std::string LokalniDecimal(std::string vrijednost)
+    {
+        std::replace(vrijednost.begin(), vrijednost.end(), '.', ',');
+        return vrijednost;
+    }
+};
+
 
 extern "C" double __declspec(dllexport) __stdcall RadiDLL(){
     return 1.0;

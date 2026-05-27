@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2026.05.27 15:11:54.674,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2026.05.27 15:11:54.681,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
-    <Transaction>2026.05.27 15:12:27.283,C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cpp=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
-    <Transaction>2026.05.27 15:12:44.825,C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamicPCH1.h=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2026.05.27 15:12:44.831,C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
-    <Transaction>2026.05.27 15:12:50.559,C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj=C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj</Transaction>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.681,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.283,C:\Users\Jan\Documents\Embarcadero\Studio\Projects\File1.cpp=C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.559,C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj=C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.674,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.825,C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamicPCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.831,C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj</Transaction>
   </Transactions>
 </BorlandProject>
