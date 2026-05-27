@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.291,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.536,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.585,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.302,C:\Users\Jan\Desktop\4sem\NTP\SLib.cbproj=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\SLib.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.799,C:\Users\Jan\Desktop\4sem\NTP\StaticLib\StaticLib.cpp=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.799,C:\Users\Jan\Desktop\4sem\NTP\StaticLib\StaticLib.h=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.180,C:\Users\Jan\Desktop\4sem\NTP\StaticLib\SLib.cpp=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.763,C:\Users\Jan\Documents\Embarcadero\Studio\Projects\SLib.cbproj=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

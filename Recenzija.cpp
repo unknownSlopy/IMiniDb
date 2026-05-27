@@ -554,3 +554,14 @@ void __fastcall TFormRecenzija::ButtonOscarClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+/*
+Testiranje Static Library-ja
+
+double Radi();
+void __fastcall TFormRecenzija::Button_SLibClick(TObject *Sender)
+{
+    //testiranje SLib
+    ShowMessage(Radi());
+}*/
+//---------------------------------------------------------------------------
+

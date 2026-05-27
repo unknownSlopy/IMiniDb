@@ -68,7 +68,7 @@ object FormSviFilmovi: TFormSviFilmovi
     Caption = 'Film:'
   end
   object LabelPoster: TLabel
-    Left = 880
+    Left = 1160
     Top = 521
     Width = 36
     Height = 15
@@ -115,8 +115,8 @@ object FormSviFilmovi: TFormSviFilmovi
   object listViewOFilmovi: TListView
     Left = 0
     Top = 54
-    Width = 774
-    Height = 441
+    Width = 790
+    Height = 433
     Columns = <
       item
         Caption = 'Naziv filma'
@@ -224,7 +224,7 @@ object FormSviFilmovi: TFormSviFilmovi
   object DBGridFilmoviBaza: TDBGrid
     Left = -12
     Top = 559
-    Width = 870
+    Width = 885
     Height = 433
     DataSource = DataSourceFilm
     TabOrder = 15
@@ -272,8 +272,8 @@ object FormSviFilmovi: TFormSviFilmovi
   object DBImage1: TDBImage
     Left = 864
     Top = 559
-    Width = 385
-    Height = 433
+    Width = 382
+    Height = 442
     DataField = 'poster'
     DataSource = DataSourceFilm
     Proportional = True
@@ -282,8 +282,8 @@ object FormSviFilmovi: TFormSviFilmovi
   end
   object XMLDocumentOmiljeniFilmovi: TXMLDocument
     FileName = 'C:\Users\Jan\Desktop\4sem\NTP\omiljeniFilmovi.xml'
-    Left = 304
-    Top = 248
+    Left = 496
+    Top = 120
   end
   object FDConnectionZaFilmove: TFDConnection
     Params.Strings = (
@@ -382,5 +382,14 @@ object FormSviFilmovi: TFormSviFilmovi
       'FROM filmovi')
     Left = 288
     Top = 912
+  end
+  object SymetricCodec: TCodec
+    AsymetricKeySizeInBits = 1024
+    AdvancedOptions2 = []
+    Left = 584
+    Top = 616
+    StreamCipherId = ''
+    BlockCipherId = ''
+    ChainId = ''
   end
 end

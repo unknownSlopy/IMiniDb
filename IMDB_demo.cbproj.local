@@ -6,21 +6,23 @@
     <Transaction>1899.12.30 00:00:00.000.916,=C:\Users\Jan\Desktop\4sem\NTP\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.132,=C:\Users\Jan\Desktop\4sem\NTP\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.347,C:\Users\Jan\Desktop\4sem\NTP\Unit1.cpp=C:\Users\Jan\Desktop\4sem\NTP\AESKriptiranje.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.522,=C:\Users\Jan\Desktop\4sem\NTP\SLib.lib</Transaction>
     <Transaction>1899.12.30 00:00:00.000.275,C:\Users\Jan\Desktop\4sem\NTP\Unit1.dfm=C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscar.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.817,C:\Users\Jan\Desktop\4sem\NTP\PostaviJezikGrida.h=C:\Users\Jan\Desktop\4sem\NTP\Unit1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.454,=C:\Users\Jan\Desktop\4sem\NTP\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.563,=C:\Users\Jan\Desktop\4sem\NTP\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.615,C:\Users\Jan\Desktop\4sem\NTP\File1.cpp=C:\Users\Jan\Desktop\4sem\NTP\PosterDretva.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.274,C:\Users\Jan\Desktop\4sem\NTP\Unit1.cpp=C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscar.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.747,C:\Users\Jan\Desktop\4sem\NTP\PostaviJezikGrida.cpp=C:\Users\Jan\Desktop\4sem\NTP\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.019,C:\Users\Jan\Desktop\4sem\NTP\Unit1.h=C:\Users\Jan\Desktop\4sem\NTP\PosterDretva.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.275,C:\Users\Jan\Desktop\4sem\NTP\Unit1.h=C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscar.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.347,C:\Users\Jan\Desktop\4sem\NTP\Unit1.h=C:\Users\Jan\Desktop\4sem\NTP\AESKriptiranje.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.104,C:\Users\Jan\Desktop\4sem\NTP\AESKriptiranje.cpp=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.272,=C:\Users\Jan\Desktop\4sem\NTP\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.019,C:\Users\Jan\Desktop\4sem\NTP\Unit1.cpp=C:\Users\Jan\Desktop\4sem\NTP\PosterDretva.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.807,=C:\Users\Jan\Desktop\4sem\NTP\IOscars.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.294,C:\Users\Jan\Desktop\4sem\NTP\PostaviJezikGrida.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.817,C:\Users\Jan\Desktop\4sem\NTP\PostaviJezikGrida.cpp=C:\Users\Jan\Desktop\4sem\NTP\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.019,C:\Users\Jan\Desktop\4sem\NTP\Unit1.cpp=C:\Users\Jan\Desktop\4sem\NTP\PosterDretva.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.272,=C:\Users\Jan\Desktop\4sem\NTP\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.274,C:\Users\Jan\Desktop\4sem\NTP\Unit1.cpp=C:\Users\Jan\Desktop\4sem\NTP\SOAP_Oscar.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.294,C:\Users\Jan\Desktop\4sem\NTP\PostaviJezikGrida.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.807,=C:\Users\Jan\Desktop\4sem\NTP\IOscars.cpp</Transaction>
+    <Transaction>2026.05.27 12:18:24.702,=C:\Users\Jan\Desktop\4sem\NTP\Slib.lib</Transaction>
   </Transactions>
 </BorlandProject>

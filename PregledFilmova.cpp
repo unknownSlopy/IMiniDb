@@ -24,8 +24,12 @@
 #include "Funk.h"
 #include "PosterDretva.h"
 #include "PostaviJezikGrida.h"
+#include "Slib/SLib.h"
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+#pragma link "uTPLb_BaseNonVisualComponent"
+#pragma link "uTPLb_Codec"
 #pragma resource "*.dfm"
 TFormSviFilmovi* FormSviFilmovi;
 
@@ -45,6 +49,7 @@ void __fastcall TFormSviFilmovi::OsvjeziListu()
         item->SubItems->Add(OFilmovi->film[i]->opis);
     }
 }
+
 
 void __fastcall TFormSviFilmovi::OcistiPolja()
 {
@@ -151,7 +156,38 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
     OsvjeziBrojFilmova();
 
     FCS = new TCriticalSection();
-    FBrojacPostera = 0;
+	FBrojacPostera = 0;
+
+
+    DBGridFilmoviBaza->Color = (TColor)0x1E1E1E;
+    DBGridFilmoviBaza->Font->Name = "Segoe UI";
+    DBGridFilmoviBaza->Font->Size = 9;
+    DBGridFilmoviBaza->Font->Color = clWhite;
+    DBGridFilmoviBaza->FixedColor = (TColor)0x2D2D2D;
+    DBGridFilmoviBaza->TitleFont->Name = "Segoe UI Semibold";
+    DBGridFilmoviBaza->TitleFont->Size = 9;
+    DBGridFilmoviBaza->TitleFont->Color = (TColor)0xE74C3C;  // crveni headeri
+
+    DBGridFilmoviBaza->Options = DBGridFilmoviBaza->Options
+        << dgRowLines
+		<< dgColLines
+		<< dgEditing
+		<< dgRowSelect;           // selektira cijeli red, ljepše izgleda
+
+	DBGridFilmoviBaza->DrawingStyle = gdsClassic;  // da OnDrawColumnCell radi
+
+
+    listViewOFilmovi->Color = (TColor)0x1E1E1E;
+    listViewOFilmovi->Font->Name = "Segoe UI";
+    listViewOFilmovi->Font->Size = 9;
+    listViewOFilmovi->Font->Color = clWhite;
+	listViewOFilmovi->ViewStyle = vsReport;    // da se vide kolone
+    listViewOFilmovi->GridLines = true;
+    listViewOFilmovi->RowSelect = true;
+    listViewOFilmovi->ReadOnly = true;
+	listViewOFilmovi->OwnerDraw = false;       // koristimo CustomDraw event
+
+
 }
 //---------------------------------------------------------------------------
 
@@ -408,8 +444,11 @@ void __fastcall TFormSviFilmovi::listViewOFilmoviSelectItem(
 }
 //---------------------------------------------------------------------------
 
+
 void __fastcall TFormSviFilmovi::ButtonRESTBazaClick(TObject* Sender)
 {
+
+    TOmdbParser *parser = new TOmdbParser();
     //taSourceFilm->DataSet = FDQuerySelect;
     AnsiString pojam = Trim(editFilmRESTBaza->Text);
     if (pojam.IsEmpty()) {
@@ -506,6 +545,7 @@ void __fastcall TFormSviFilmovi::ButtonRESTBazaClick(TObject* Sender)
 
         // parsiranja
         int godina = StrToIntDef(s_godina, 0);
+        /*
         int trajanje = 0;
         int p = s_runtime.Pos(" ");
         if (p > 0)
@@ -515,7 +555,15 @@ void __fastcall TFormSviFilmovi::ButtonRESTBazaClick(TObject* Sender)
         TryStrToFloat(
             StringReplace(s_iRate, ".", FormatSettings.DecimalSeparator,
                 TReplaceFlags() << rfReplaceAll),
-            imdbRating);
+            imdbRating);*/
+
+        //int trajanje = ParseTrajanje(s_runtime);
+        //double imdbRating = ParseImdbRating(s_iRate);
+
+
+        int trajanje      = parser->ParseTrajanje(s_runtime);
+        double imdbRating = parser->ParseImdbRating(s_iRate);
+
 
         int imdbVotes = StrToIntDef(
             StringReplace(s_iVotes, ",", "", TReplaceFlags() << rfReplaceAll),
@@ -594,8 +642,10 @@ void __fastcall TFormSviFilmovi::ButtonRESTBazaClick(TObject* Sender)
     FDTableFilm->Close();
     FDTableFilm->Open();
     SirinaDBGrida();
-    ShowMessage("Upisano: " + IntToStr(upisano));
+    //ShowMessage("Upisano: " + IntToStr(upisano));
+    ShowUpisano(upisano);
     OsvjeziBrojFilmova();
+    delete parser;
 }
 
 //---------------------------------------------------------------------------
@@ -794,7 +844,7 @@ void __fastcall TFormSviFilmovi::ToolButtonSviPosteriClick(TObject* Sender)
             qBezUrl->SQL->Text =
                 "SELECT imdbID FROM Filmovi "
                 "WHERE (poster IS NULL OR LENGTH(poster) < 1000) "
-                "  AND (posterUrl IS NULL OR posterUrl = 'N/A' OR posterUrl = '')";
+                "  AND (posterUrl IS NULL OR posterUrl = 'N/A' OR posterUrl = '' OR poster IS NULL OR poster = '')";
             qBezUrl->Open();
 
             if (!qBezUrl->IsEmpty()) {
@@ -840,4 +890,5 @@ void __fastcall TFormSviFilmovi::ToolButtonSviPosteriClick(TObject* Sender)
     delete lista;
 }
 //---------------------------------------------------------------------------
+
 
