@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2026.05.27 12:13:36.073,C:\Users\Jan\Desktop\4sem\NTP\SLib\Slib.cbproj=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2026.05.27 12:13:41.063,C:\Users\Jan\Desktop\4sem\NTP\SLib\Slib.cbproj=C:\Users\Jan\Desktop\4sem\NTP\SLib\Slib.cbproj</Transaction>
+    <Transaction>2026.05.27 12:14:14.529,=C:\Users\Jan\Desktop\4sem\NTP\SLib\File1.cpp</Transaction>
+    <Transaction>2026.05.27 12:14:44.941,C:\Users\Jan\Desktop\4sem\NTP\SLib\SLib.cpp=C:\Users\Jan\Desktop\4sem\NTP\SLib\File1.cpp</Transaction>
+    <Transaction>2026.05.27 12:29:12.041,=C:\Users\Jan\Desktop\4sem\NTP\SLib\File1.h</Transaction>
+    <Transaction>2026.05.27 12:29:29.862,C:\Users\Jan\Desktop\4sem\NTP\SLib\SLib.h=C:\Users\Jan\Desktop\4sem\NTP\SLib\File1.h</Transaction>
+  </Transactions>
+</BorlandProject>
