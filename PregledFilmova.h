@@ -46,6 +46,9 @@
 #include <Vcl.ToolWin.hpp>
 #include <Vcl.Dialogs.hpp>
 #include <Vcl.DBCtrls.hpp>
+#include "uTPLb_BaseNonVisualComponent.hpp"
+#include "uTPLb_Codec.hpp"
+#include <System.SysUtils.hpp>
 //---------------------------------------------------------------------------
 class TFormSviFilmovi : public TForm
 {
@@ -94,6 +97,8 @@ __published:	// IDE-managed Components
 	TFDQuery *FDQueryBrojFilmova;
 	TLabel *LabelUkupnoFilmova;
 	TToolButton *ToolButtonSviPosteri;
+	TCodec *SymetricCodec;
+	TButton *Button1;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonOmiljeniFilmoviClick(TObject *Sender);
 	void __fastcall ButtonHRVClick(TObject *Sender);
@@ -118,10 +123,16 @@ __published:	// IDE-managed Components
     void __fastcall OsvjeziBrojFilmova();
 	void __fastcall ToolButtonSviPosteriClick(TObject *Sender);
     void __fastcall PostaviJezikGrida(String jezik);
+	void __fastcall Button1Click(TObject *Sender);
 
-    private:	// User declarations
+	private:	// User declarations
+    bool FIDjeviKriptirani;
+    String FLozinka;
 
-public:		// User declarations
+	void __fastcall PostaviOnGetText(TDataSet* ds);
+    void __fastcall KriptiraniGetText(TField* Sender, String& Text, bool DisplayText);
+
+	public:		// User declarations
 
 	__fastcall TFormSviFilmovi(TComponent* Owner);
     TCriticalSection *FCS;   // inicijaliziraj u FormCreate, delete u FormDestroy

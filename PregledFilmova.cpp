@@ -892,3 +892,11 @@ void __fastcall TFormSviFilmovi::ToolButtonSviPosteriClick(TObject* Sender)
 //---------------------------------------------------------------------------
 
 
+extern "C" double __declspec(dllexport) __stdcall RadiDLL();
+void __fastcall TFormSviFilmovi::Button1Click(TObject *Sender)
+{
+	// testiranje -> dll
+    ShowMessage(FloatToStr(RadiDLL()));
+}
+//---------------------------------------------------------------------------
+

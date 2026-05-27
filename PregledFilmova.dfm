@@ -280,6 +280,15 @@ object FormSviFilmovi: TFormSviFilmovi
     Stretch = True
     TabOrder = 17
   end
+  object Button1: TButton
+    Left = 728
+    Top = 512
+    Width = 75
+    Height = 25
+    Caption = 'TEST DLL'
+    TabOrder = 18
+    OnClick = Button1Click
+  end
   object XMLDocumentOmiljeniFilmovi: TXMLDocument
     FileName = 'C:\Users\Jan\Desktop\4sem\NTP\omiljeniFilmovi.xml'
     Left = 496
