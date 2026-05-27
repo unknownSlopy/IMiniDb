@@ -19,10 +19,11 @@
 //   If you are using the static version of the RTL, add #include<usebormm.h>
 //   to one of the source files for your DLL
 
+#include <vcl.h>
 #pragma hdrstop
 #pragma argsused
 
-extern "C" double __declspec(dllexport) __stdcall Radi(){
+extern "C" double __declspec(dllexport) __stdcall RadiDLL(){
     return 1.0;
 }
 
