@@ -203,6 +203,9 @@ void __fastcall TFormPrijava::FormCreate(TObject *Sender)
 
         if (hBmp != NULL)
         {
+            //Dimenzije bitmap loga su 680 x 300 piksela.
+            ImageLogo->Width = 680;
+    		ImageLogo->Height = 300;
             ImageLogo->Picture->Bitmap->Handle = hBmp;
         }
         FreeLibrary(hDll);

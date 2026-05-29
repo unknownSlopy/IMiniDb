@@ -13,15 +13,15 @@ object FormPrijava: TFormPrijava
   OnCreate = FormCreate
   TextHeight = 15
   object ImageLogo: TImage
-    Left = 368
-    Top = 8
+    Left = 280
+    Top = 16
     Width = 361
     Height = 178
     AutoSize = True
   end
   object GroupBoxPrijava: TGroupBox
     Left = 368
-    Top = 192
+    Top = 272
     Width = 361
     Height = 217
     TabOrder = 0
