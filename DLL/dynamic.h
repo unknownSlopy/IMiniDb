@@ -11,3 +11,5 @@ public:
 };
 
 extern "C" double __declspec(dllimport) __stdcall RadiDLL();
+extern "C" void __declspec(dllimport) __stdcall PrikaziOAplikaciji();
+extern "C" bool __declspec(dllimport) __stdcall PrikaziPotvrduBrisanja(const wchar_t* naslov);

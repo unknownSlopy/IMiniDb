@@ -24,6 +24,13 @@
 
 #include <string>
 #include <algorithm>
+#include <windows.h>
+#include "O_aplikaciji.h"
+#include <vcl.h>
+#include <System.IniFiles.hpp>
+#include <System.IOUtils.hpp>
+
+#define IDB_LOGO 101
 
 class __declspec(dllexport) TStringUtils
 {
@@ -41,6 +48,36 @@ public:
         return vrijednost;
     }
 };
+
+
+extern "C" void __declspec(dllexport) __stdcall PrikaziOAplikaciji()
+{
+
+    String info = "IMiniDb v1.0\n"
+              "Mini Movie Database\n"
+              "© 2026\n\n"
+              "Autor: Jan Šlopar\n"
+              "JMBAG: 0246123378\n"
+              "Kolegij: Napredne Tehnike Programiranja";
+
+    TFormOAplikaciji* form = new TFormOAplikaciji(NULL);
+    try {
+        form->LabelInfo->Caption = info;
+        form->ShowModal();
+    } __finally {
+        delete form;
+    }
+}
+
+extern "C" bool __declspec(dllexport) __stdcall PrikaziPotvrduBrisanja(const wchar_t* naslov)
+{
+    String poruka = "Jeste li sigurni da želite obrisati film:\n" + String(naslov) + "?";
+    int rezultat = MessageBoxW(NULL,
+        poruka.c_str(),
+        L"Potvrda brisanja",
+        MB_YESNO | MB_ICONWARNING);
+    return rezultat == IDYES;
+}
 
 
 extern "C" double __declspec(dllexport) __stdcall RadiDLL(){
