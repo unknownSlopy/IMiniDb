@@ -281,8 +281,8 @@ object FormSviFilmovi: TFormSviFilmovi
     TabOrder = 17
   end
   object Button1: TButton
-    Left = 728
-    Top = 512
+    Left = 688
+    Top = 510
     Width = 75
     Height = 25
     Caption = 'TEST DLL'

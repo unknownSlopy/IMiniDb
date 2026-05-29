@@ -25,6 +25,7 @@
 #include "PosterDretva.h"
 #include "PostaviJezikGrida.h"
 #include "Slib/SLib.h"
+#include "DLL/dynamic.h"
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -447,8 +448,10 @@ void __fastcall TFormSviFilmovi::listViewOFilmoviSelectItem(
 
 void __fastcall TFormSviFilmovi::ButtonRESTBazaClick(TObject* Sender)
 {
-
+    // SLib
     TOmdbParser *parser = new TOmdbParser();
+    // DLL
+    TStringUtils *utils = new TStringUtils();
     //taSourceFilm->DataSet = FDQuerySelect;
     AnsiString pojam = Trim(editFilmRESTBaza->Text);
     if (pojam.IsEmpty()) {
@@ -542,6 +545,9 @@ void __fastcall TFormSviFilmovi::ButtonRESTBazaClick(TObject* Sender)
         AnsiString s_iRate = GET("imdbRating");
         AnsiString s_iVotes = GET("imdbVotes");
         AnsiString s_meta = GET("Metascore");
+
+        std::string kratki_opis = utils->Skrati(s_opis.c_str(), 150);
+		std::string lokalni_rating = utils->LokalniDecimal(s_iRate.c_str());
 
         // parsiranja
         int godina = StrToIntDef(s_godina, 0);
@@ -645,6 +651,8 @@ void __fastcall TFormSviFilmovi::ButtonRESTBazaClick(TObject* Sender)
     //ShowMessage("Upisano: " + IntToStr(upisano));
     ShowUpisano(upisano);
     OsvjeziBrojFilmova();
+
+    delete utils;
     delete parser;
 }
 
