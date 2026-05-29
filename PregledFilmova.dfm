@@ -1,9 +1,10 @@
 object FormSviFilmovi: TFormSviFilmovi
   Left = 0
   Top = 0
+  Align = alCustom
   Caption = 'MySQL'
-  ClientHeight = 1000
-  ClientWidth = 1254
+  ClientHeight = 1005
+  ClientWidth = 1247
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,34 +13,6 @@ object FormSviFilmovi: TFormSviFilmovi
   Font.Style = []
   OnCreate = FormCreate
   TextHeight = 15
-  object Label6: TLabel
-    Left = 796
-    Top = 147
-    Width = 62
-    Height = 15
-    Caption = 'Naziv filma:'
-  end
-  object Label7: TLabel
-    Left = 817
-    Top = 176
-    Width = 41
-    Height = 15
-    Caption = 'Godina:'
-  end
-  object Label8: TLabel
-    Left = 814
-    Top = 213
-    Width = 44
-    Height = 15
-    Caption = 'Trajanje:'
-  end
-  object Label9: TLabel
-    Left = 831
-    Top = 239
-    Width = 27
-    Height = 15
-    Caption = 'Opis:'
-  end
   object Label1: TLabel
     Left = 24
     Top = 480
@@ -80,6 +53,91 @@ object FormSviFilmovi: TFormSviFilmovi
     Width = 3
     Height = 15
   end
+  object GroupBoxOmiljeni: TGroupBox
+    Left = 815
+    Top = 48
+    Width = 283
+    Height = 329
+    Align = alCustom
+    Caption = 'Odaberi Film'
+    TabOrder = 14
+    object Label6: TLabel
+      Left = 3
+      Top = 51
+      Width = 62
+      Height = 15
+      Caption = 'Naziv filma:'
+    end
+    object Label7: TLabel
+      Left = 16
+      Top = 85
+      Width = 41
+      Height = 15
+      Caption = 'Godina:'
+    end
+    object Label8: TLabel
+      Left = 13
+      Top = 116
+      Width = 44
+      Height = 15
+      Caption = 'Trajanje:'
+    end
+    object Label9: TLabel
+      Left = 30
+      Top = 151
+      Width = 27
+      Height = 26
+      Caption = 'Opis:'
+    end
+    object ComboBoxFilmovi: TComboBox
+      Left = 4
+      Top = 19
+      Width = 269
+      Height = 23
+      TabOrder = 0
+      Text = 'FIlm'
+      OnChange = ComboBoxFilmoviChange
+    end
+    object EditNoviNaziv: TEdit
+      Left = 96
+      Top = 48
+      Width = 177
+      Height = 23
+      TabOrder = 1
+    end
+    object EditNovaGodina: TEdit
+      Left = 96
+      Top = 82
+      Width = 177
+      Height = 23
+      TabOrder = 2
+    end
+    object EditNovoTrajanje: TEdit
+      Left = 96
+      Top = 113
+      Width = 177
+      Height = 23
+      TabOrder = 3
+    end
+    object MemoOpisNovogFilma: TMemo
+      Left = 101
+      Top = 148
+      Width = 177
+      Height = 93
+      Lines.Strings = (
+        'MemoOpisNovogFilma')
+      TabOrder = 4
+    end
+    object ButtonDodajNoviOFilm: TButton
+      Left = 3
+      Top = 268
+      Width = 277
+      Height = 58
+      Caption = 'Dodaj novi'
+      TabOrder = 5
+      OnClick = ButtonDodajNoviOFilmClick
+    end
+  end
   object ButtonDodajWatchlistu: TButton
     Left = 1104
     Top = 368
@@ -89,34 +147,20 @@ object FormSviFilmovi: TFormSviFilmovi
     TabOrder = 0
     OnClick = ButtonDodajWatchlistuClick
   end
-  object EditNoviNaziv: TEdit
-    Left = 880
-    Top = 144
-    Width = 177
-    Height = 23
-    TabOrder = 1
-  end
-  object EditNovaGodina: TEdit
-    Left = 880
-    Top = 173
-    Width = 177
-    Height = 23
-    TabOrder = 2
-  end
   object ButtonOmiljeniFilmovi: TButton
-    Left = 1099
-    Top = 144
-    Width = 145
+    Left = 1112
+    Top = 113
+    Width = 134
     Height = 57
     Caption = 'Omiljeni Filmovi'
-    TabOrder = 3
+    TabOrder = 1
     OnClick = ButtonOmiljeniFilmoviClick
   end
   object listViewOFilmovi: TListView
     Left = 0
     Top = 54
-    Width = 790
-    Height = 433
+    Width = 793
+    Height = 323
     Columns = <
       item
         Caption = 'Naziv filma'
@@ -131,7 +175,7 @@ object FormSviFilmovi: TFormSviFilmovi
         Caption = 'Opis'
       end>
     HideSelection = False
-    TabOrder = 4
+    TabOrder = 2
     ViewStyle = vsReport
     OnSelectItem = listViewOFilmoviSelectItem
   end
@@ -141,7 +185,7 @@ object FormSviFilmovi: TFormSviFilmovi
     Width = 134
     Height = 34
     Caption = 'Hrvatski'
-    TabOrder = 5
+    TabOrder = 3
     OnClick = ButtonHRVClick
   end
   object ButtonENG: TButton
@@ -150,42 +194,17 @@ object FormSviFilmovi: TFormSviFilmovi
     Width = 134
     Height = 34
     Caption = 'English'
-    TabOrder = 6
+    TabOrder = 4
     OnClick = ButtonENGClick
   end
-  object ButtonDodajNoviOFilm: TButton
-    Left = 880
-    Top = 343
-    Width = 177
-    Height = 58
-    Caption = 'Dodaj novi'
-    TabOrder = 7
-    OnClick = ButtonDodajNoviOFilmClick
-  end
   object ButtonUkloni: TButton
-    Left = 1099
-    Top = 207
-    Width = 145
+    Left = 1114
+    Top = 176
+    Width = 132
     Height = 58
     Caption = 'Ukloni '
-    TabOrder = 8
+    TabOrder = 5
     OnClick = ButtonUkloniClick
-  end
-  object EditNovoTrajanje: TEdit
-    Left = 880
-    Top = 207
-    Width = 177
-    Height = 23
-    TabOrder = 9
-  end
-  object MemoOpisNovogFilma: TMemo
-    Left = 880
-    Top = 236
-    Width = 177
-    Height = 93
-    Lines.Strings = (
-      'MemoOpisNovogFilma')
-    TabOrder = 10
   end
   object ButtonPregledajListu: TButton
     Left = 1104
@@ -193,16 +212,16 @@ object FormSviFilmovi: TFormSviFilmovi
     Width = 145
     Height = 56
     Caption = 'Pregledaj Listu'
-    TabOrder = 11
+    TabOrder = 6
     OnClick = ButtonPregledajListuClick
   end
   object ButtonRecenzije: TButton
-    Left = 880
-    Top = 436
+    Left = 913
+    Top = 442
     Width = 185
     Height = 45
     Caption = 'Recenzije'
-    TabOrder = 12
+    TabOrder = 7
   end
   object ButtonRESTBaza: TButton
     Left = 248
@@ -210,7 +229,7 @@ object FormSviFilmovi: TFormSviFilmovi
     Width = 78
     Height = 41
     Caption = 'Dodaj u bazu'
-    TabOrder = 13
+    TabOrder = 8
     OnClick = ButtonRESTBazaClick
   end
   object editFilmRESTBaza: TEdit
@@ -218,7 +237,7 @@ object FormSviFilmovi: TFormSviFilmovi
     Top = 518
     Width = 154
     Height = 23
-    TabOrder = 14
+    TabOrder = 9
     Text = 'editFilmRESTBaza'
   end
   object DBGridFilmoviBaza: TDBGrid
@@ -227,7 +246,7 @@ object FormSviFilmovi: TFormSviFilmovi
     Width = 885
     Height = 433
     DataSource = DataSourceFilm
-    TabOrder = 15
+    TabOrder = 10
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -246,7 +265,7 @@ object FormSviFilmovi: TFormSviFilmovi
     Caption = 'ToolBar1'
     Customizable = True
     ShowCaptions = True
-    TabOrder = 16
+    TabOrder = 11
     object ToolButtonSQLSort: TToolButton
       Left = 0
       Top = 0
@@ -278,15 +297,15 @@ object FormSviFilmovi: TFormSviFilmovi
     DataSource = DataSourceFilm
     Proportional = True
     Stretch = True
-    TabOrder = 17
+    TabOrder = 12
   end
   object Button1: TButton
-    Left = 688
+    Left = 663
     Top = 510
     Width = 75
     Height = 25
     Caption = 'TEST DLL'
-    TabOrder = 18
+    TabOrder = 13
     OnClick = Button1Click
   end
   object XMLDocumentOmiljeniFilmovi: TXMLDocument

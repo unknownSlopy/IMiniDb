@@ -189,6 +189,20 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
 	listViewOFilmovi->OwnerDraw = false;       // koristimo CustomDraw event
 
 
+    // prikazi filmove iz baze
+    ComboBoxFilmovi->Items->Clear();
+    FDTableFilm->First();
+    while (!FDTableFilm->Eof)
+    {
+        ComboBoxFilmovi->Items->Add(FDTableFilm->FieldByName("naslov")->AsString);
+        FDTableFilm->Next();
+    }
+
+    GroupBoxOmiljeni->Font->Size = 12;
+    GroupBoxOmiljeni->Font->Style = TFontStyles() << fsBold;
+    GroupBoxOmiljeni->Font->Color = (TColor)0x0000D7FF; // zlatna
+
+
 }
 //---------------------------------------------------------------------------
 
@@ -924,6 +938,28 @@ void __fastcall TFormSviFilmovi::Button1Click(TObject *Sender)
 {
 	// testiranje -> dll
     ShowMessage(FloatToStr(RadiDLL()));
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFormSviFilmovi::ComboBoxFilmoviChange(TObject *Sender)
+{
+    //nakon odabira filma iz comba popuni formu
+    String odabrani = ComboBoxFilmovi->Text;
+
+    FDTableFilm->First();
+    while (!FDTableFilm->Eof)
+    {
+        if (FDTableFilm->FieldByName("naslov")->AsString == odabrani)
+        {
+            EditNoviNaziv->Text = FDTableFilm->FieldByName("naslov")->AsString;
+            EditNovaGodina->Text = FDTableFilm->FieldByName("godina")->AsString;
+            EditNovoTrajanje->Text = FDTableFilm->FieldByName("trajanje")->AsString;
+            MemoOpisNovogFilma->Text = FDTableFilm->FieldByName("opis")->AsString;
+            break;
+        }
+        FDTableFilm->Next();
+    }
 }
 //---------------------------------------------------------------------------
 

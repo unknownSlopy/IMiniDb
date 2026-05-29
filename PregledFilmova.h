@@ -99,6 +99,8 @@ __published:	// IDE-managed Components
 	TToolButton *ToolButtonSviPosteri;
 	TCodec *SymetricCodec;
 	TButton *Button1;
+	TComboBox *ComboBoxFilmovi;
+	TGroupBox *GroupBoxOmiljeni;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonOmiljeniFilmoviClick(TObject *Sender);
 	void __fastcall ButtonHRVClick(TObject *Sender);
@@ -124,6 +126,7 @@ __published:	// IDE-managed Components
 	void __fastcall ToolButtonSviPosteriClick(TObject *Sender);
     void __fastcall PostaviJezikGrida(String jezik);
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall ComboBoxFilmoviChange(TObject *Sender);
 
 	private:	// User declarations
     bool FIDjeviKriptirani;
