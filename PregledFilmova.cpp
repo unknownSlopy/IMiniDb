@@ -271,6 +271,7 @@ void __fastcall TFormSviFilmovi::ButtonDodajNoviOFilmClick(TObject* Sender)
 
 void __fastcall TFormSviFilmovi::ButtonUkloniClick(TObject* Sender)
 {
+    /*  staro - bez potvrde
     String PorukaUpozorenja = "Odaberi film za uklanjanje!";
     if (listViewOFilmovi->Selected == NULL) {
         ShowMessage(PorukaUpozorenja);
@@ -284,7 +285,25 @@ void __fastcall TFormSviFilmovi::ButtonUkloniClick(TObject* Sender)
 
     //listViewOFilmovi->Items->Delete(listViewOFilmovi->ItemIndex);
     OsvjeziListu();
-    OcistiPolja();
+    OcistiPolja();*/
+
+    // novi kod, DLL Dialog za potvrdu
+    if (listViewOFilmovi->Selected == NULL) {
+        ShowMessage("Odaberi film za uklanjanje!");
+        return;
+    }
+
+    String naslov = listViewOFilmovi->Selected->Caption;
+
+    if (PrikaziPotvrduBrisanja(naslov.c_str()))
+    {
+        _di_IXMLfilmoviType OFilm = Getfilmovi(XMLDocumentOmiljeniFilmovi);
+        OFilm->Delete(listViewOFilmovi->ItemIndex);
+        XMLDocumentOmiljeniFilmovi->SaveToFile(
+            XMLDocumentOmiljeniFilmovi->FileName);
+        OsvjeziListu();
+        OcistiPolja();
+    }
 }
 //---------------------------------------------------------------------------
 

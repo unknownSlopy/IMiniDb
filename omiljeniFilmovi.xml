@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <filmovi>
 	<film>
-		<id>1</id>
-		<naslov>Inception</naslov>
-		<godina>2010</godina>
-		<trajanje>148</trajanje>
-		<opis>Dom Cobb je iskusan lopov koji krade vrijedne tajne iz dubina podsvijesti dok su njegovi ciljevi u snu.</opis>
-		<poster></poster>
-	</film>
-	<film>
 		<id>2</id>
 		<naslov>The Dark Knight</naslov>
 		<godina>2008</godina>

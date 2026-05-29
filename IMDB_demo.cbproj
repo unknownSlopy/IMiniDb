@@ -192,6 +192,10 @@
             <DependentOn>Dobrodosli.h</DependentOn>
             <BuildOrder>11</BuildOrder>
         </CppCompile>
+        <LibFiles Include="dynamic.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>18</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
         <CppCompile Include="Funk.cpp">
             <DependentOn>Funk.h</DependentOn>
             <BuildOrder>12</BuildOrder>
@@ -395,6 +399,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="Slib.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="dynamic.lib" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
