@@ -9,6 +9,7 @@
 #include <registry.hpp>
 #include <System.IOUtils.hpp>
 #include <windows.h>
+#include "DLL/dynamic.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "uTPLb_BaseNonVisualComponent"
@@ -218,5 +219,12 @@ void __fastcall TFormPrijava::ButtonHRVClick(TObject *Sender) { PostaviJezik(thi
 //---------------------------------------------------------------------------
 
 void __fastcall TFormPrijava::ButtonENGClick(TObject *Sender){ PostaviJezik(this, "ENG"); }
+//---------------------------------------------------------------------------
+
+void __fastcall TFormPrijava::ButtonApkINFOClick(TObject *Sender)
+{
+    // dll dialog poziv
+    PrikaziOAplikaciji();
+}
 //---------------------------------------------------------------------------
 

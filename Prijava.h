@@ -48,10 +48,12 @@ __published:	// IDE-managed Components
 	TDataSource *DataSourceKorisnikPrijava;
 	TFDQuery *FDQueryPrijava;
 	TImage *ImageLogo;
+	TButton *ButtonApkINFO;
 	void __fastcall ButtonPrijavaClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonHRVClick(TObject *Sender);
 	void __fastcall ButtonENGClick(TObject *Sender);
+	void __fastcall ButtonApkINFOClick(TObject *Sender);
 private:	// User declarations
     bool FEmailoviKriptirani;
     String FLozinka;

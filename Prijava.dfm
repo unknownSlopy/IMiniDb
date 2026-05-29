@@ -82,6 +82,15 @@ object FormPrijava: TFormPrijava
     TabOrder = 2
     OnClick = ButtonENGClick
   end
+  object ButtonApkINFO: TButton
+    Left = 1016
+    Top = 95
+    Width = 99
+    Height = 33
+    Caption = 'ButtonApkINFO'
+    TabOrder = 3
+    OnClick = ButtonApkINFOClick
+  end
   object FDConnectionIMiniDB: TFDConnection
     Params.Strings = (
       'Database=iminidb'
