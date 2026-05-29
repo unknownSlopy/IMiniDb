@@ -140,10 +140,10 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
     delete ini;
 
     int w = listViewOFilmovi->Width;
-    listViewOFilmovi->Columns->Items[0]->Width = w * 2 / 16; // naslov
-    listViewOFilmovi->Columns->Items[1]->Width = w * 1.5 / 16; // godina
-    listViewOFilmovi->Columns->Items[2]->Width = w * 1.5 / 16; // trajanje
-    listViewOFilmovi->Columns->Items[3]->Width = w * 11 / 16; // opis
+    listViewOFilmovi->Columns->Items[0]->Width = w / 3;  // Naslov
+	listViewOFilmovi->Columns->Items[1]->Width = w / 5;  // Godina
+	listViewOFilmovi->Columns->Items[2]->Width = w / 5;  // Trajanje
+	listViewOFilmovi->Columns->Items[3]->Width = 600;    // Opis - širok, treba scroll
 
     StilizirajLabele(LabelOmiljeniFilmoviNaslov);
     StilizirajLabele(LabelListaZaGledanje);
@@ -198,9 +198,9 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
         FDTableFilm->Next();
     }
 
-    GroupBoxOmiljeni->Font->Size = 12;
+    GroupBoxOmiljeni->Font->Size = 10;
     GroupBoxOmiljeni->Font->Style = TFontStyles() << fsBold;
-    GroupBoxOmiljeni->Font->Color = (TColor)0x0000D7FF; // zlatna
+    GroupBoxOmiljeni->Font->Color = (TColor)0x0000D7FF;
 
 
 }
@@ -962,4 +962,5 @@ void __fastcall TFormSviFilmovi::ComboBoxFilmoviChange(TObject *Sender)
     }
 }
 //---------------------------------------------------------------------------
+
 
