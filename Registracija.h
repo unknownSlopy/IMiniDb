@@ -52,11 +52,13 @@ __published:	// IDE-managed Components
 	TFDPhysMySQLDriverLink *FDPhysMySQLDriverLink1;
 	TDataSource *DataSource1;
 	TFDTable *FDTable1;
+	TButton *ButtonApkInfo;
 	void __fastcall ButtonRegistrirajClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonKonfClick(TObject *Sender);
 	void __fastcall ButtonHRVClick(TObject *Sender);
 	void __fastcall ButtonENGClick(TObject *Sender);
+	void __fastcall ButtonApkInfoClick(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

@@ -7,16 +7,17 @@
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
+#include <Vcl.ExtCtrls.hpp>
 //---------------------------------------------------------------------------
 class TFormDobrodosli : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *LabelDobrodosli;
 	TButton *ButtonRegistracijaForm;
 	TButton *ButtonPrijavaForm;
 	TButton *ButtonHRV;
 	TButton *ButtonENG;
 	TLabel *Label1;
+	TImage *ImageLogo;
 	void __fastcall ButtonHRVClick(TObject *Sender);
 	void __fastcall ButtonENGClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);

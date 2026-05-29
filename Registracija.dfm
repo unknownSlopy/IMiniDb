@@ -135,6 +135,15 @@ object FormRegistracija: TFormRegistracija
     TabOrder = 3
     OnClick = ButtonENGClick
   end
+  object ButtonApkInfo: TButton
+    Left = 1352
+    Top = 136
+    Width = 134
+    Height = 33
+    Caption = 'Informacije Aplikacija'
+    TabOrder = 4
+    OnClick = ButtonApkInfoClick
+  end
   object FDConnectionIMiniDB: TFDConnection
     Params.Strings = (
       'Database=iminidb'

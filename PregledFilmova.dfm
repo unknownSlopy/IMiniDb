@@ -40,13 +40,6 @@ object FormSviFilmovi: TFormSviFilmovi
     Height = 15
     Caption = 'Film:'
   end
-  object LabelPoster: TLabel
-    Left = 1160
-    Top = 521
-    Width = 36
-    Height = 15
-    Caption = 'Poster:'
-  end
   object LabelUkupnoFilmova: TLabel
     Left = 740
     Top = 521
@@ -60,7 +53,7 @@ object FormSviFilmovi: TFormSviFilmovi
     Height = 257
     Align = alCustom
     Caption = 'Odaberi Film'
-    TabOrder = 10
+    TabOrder = 9
     object Label6: TLabel
       Left = 3
       Top = 51
@@ -244,24 +237,14 @@ object FormSviFilmovi: TFormSviFilmovi
       OnClick = ToolButtonSviPosteriClick
     end
   end
-  object DBImage1: TDBImage
-    Left = 864
-    Top = 559
-    Width = 382
-    Height = 442
-    DataField = 'poster'
-    DataSource = DataSourceFilm
-    Proportional = True
-    Stretch = True
-    TabOrder = 8
-  end
   object Button1: TButton
     Left = 663
     Top = 510
     Width = 75
     Height = 25
     Caption = 'TEST DLL'
-    TabOrder = 9
+    TabOrder = 8
+    Visible = False
     OnClick = Button1Click
   end
   object GroupBoxOmiljeniKontrole: TGroupBox
@@ -270,7 +253,7 @@ object FormSviFilmovi: TFormSviFilmovi
     Width = 135
     Height = 217
     Caption = 'Omiljeni Filmovi'
-    TabOrder = 11
+    TabOrder = 10
     object ButtonDodajNoviOFilm: TButton
       Left = 0
       Top = 89
@@ -305,7 +288,7 @@ object FormSviFilmovi: TFormSviFilmovi
     Width = 135
     Height = 217
     Caption = 'Watchlista'
-    TabOrder = 12
+    TabOrder = 11
     object ButtonPregledajListu: TButton
       Left = 3
       Top = 26
@@ -323,6 +306,40 @@ object FormSviFilmovi: TFormSviFilmovi
       Caption = 'Dodaj u Listu'
       TabOrder = 1
       OnClick = ButtonDodajWatchlistuClick
+    end
+  end
+  object GroupBoxPoster: TGroupBox
+    Left = 875
+    Top = 510
+    Width = 364
+    Height = 487
+    TabOrder = 12
+    object LabelPoster: TLabel
+      Left = 2
+      Top = 17
+      Width = 360
+      Height = 15
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Poster'
+      Color = clDarkorange
+      ParentColor = False
+      ExplicitLeft = 3
+      ExplicitTop = 11
+    end
+    object DBImage1: TDBImage
+      Left = 2
+      Top = 32
+      Width = 360
+      Height = 453
+      Align = alClient
+      DataField = 'poster'
+      DataSource = DataSourceFilm
+      Proportional = True
+      Stretch = True
+      TabOrder = 0
+      ExplicitTop = 17
+      ExplicitHeight = 112
     end
   end
   object XMLDocumentOmiljeniFilmovi: TXMLDocument

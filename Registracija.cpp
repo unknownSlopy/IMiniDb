@@ -8,6 +8,7 @@
 #include "Stilovi.h"
 #include "Jezik_INI.h"
 //#include "StaticLib.h"
+#include "DLL/dynamic.h"
 
 #include <System.IOUtils.hpp>
 #include <registry.hpp>
@@ -229,4 +230,11 @@ void __fastcall TFormRegistracija::ButtonENGClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+
+void __fastcall TFormRegistracija::ButtonApkInfoClick(TObject *Sender)
+{
+	//DLL Dialog
+    PrikaziOAplikaciji();
+}
+//---------------------------------------------------------------------------
 

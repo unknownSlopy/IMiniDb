@@ -147,7 +147,7 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
 
     StilizirajLabele(LabelOmiljeniFilmoviNaslov);
     StilizirajLabele(LabelListaZaGledanje);
-    StilizirajLabele(LabelPoster);
+	StilizirajLabele(LabelPoster);
     StilizirajLabele(LabelUkupnoFilmova);
     StilizirajLabele(LabelFilm);
 
@@ -200,7 +200,16 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
 
     GroupBoxOmiljeni->Font->Size = 10;
     GroupBoxOmiljeni->Font->Style = TFontStyles() << fsBold;
-    GroupBoxOmiljeni->Font->Color = (TColor)0x0000D7FF;
+	GroupBoxOmiljeni->Font->Color = (TColor)0x0000D7FF;
+
+
+	LabelPoster->Font->Size = 22;
+	LabelPoster->Font->Style = TFontStyles() << fsBold;
+	LabelPoster->Font->Color = (TColor)0x0000D7FF;
+	LabelPoster->Font->Name = "Impact";
+	LabelPoster->Alignment = taCenter;
+	LabelPoster->Transparent = true;
+	LabelPoster->Caption = L"\U0001F3AC POSTER \U0001F3AC";
 
 
 }

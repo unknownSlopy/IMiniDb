@@ -87,7 +87,7 @@ object FormPrijava: TFormPrijava
     Top = 95
     Width = 99
     Height = 33
-    Caption = 'ButtonApkINFO'
+    Caption = 'Informacije '
     TabOrder = 3
     OnClick = ButtonApkINFOClick
   end
