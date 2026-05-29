@@ -12,11 +12,18 @@ object FormPrijava: TFormPrijava
   Font.Style = []
   OnCreate = FormCreate
   TextHeight = 15
-  object GroupBoxPrijava: TGroupBox
-    Left = 360
-    Top = 160
+  object ImageLogo: TImage
+    Left = 368
+    Top = 8
     Width = 361
-    Height = 225
+    Height = 178
+    AutoSize = True
+  end
+  object GroupBoxPrijava: TGroupBox
+    Left = 368
+    Top = 192
+    Width = 361
+    Height = 217
     TabOrder = 0
     object LabelKorImePrijava: TLabel
       Left = 64
@@ -34,7 +41,7 @@ object FormPrijava: TFormPrijava
     end
     object ButtonPrijava: TButton
       Left = 64
-      Top = 160
+      Top = 152
       Width = 225
       Height = 25
       Caption = 'Prijavi se!'
@@ -83,13 +90,13 @@ object FormPrijava: TFormPrijava
       'DriverID=MySQL')
     Connected = True
     LoginPrompt = False
-    Left = 536
-    Top = 16
+    Left = 960
+    Top = 264
   end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
     VendorLib = 'C:\Users\Jan\Desktop\4sem\NTP\libmysql.dll'
-    Left = 560
-    Top = 72
+    Left = 960
+    Top = 168
   end
   object FDTableKorisnik: TFDTable
     Connection = FDConnectionIMiniDB

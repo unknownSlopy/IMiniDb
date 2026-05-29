@@ -8,8 +8,11 @@
 #include "Jezik_INI.h"
 #include <registry.hpp>
 #include <System.IOUtils.hpp>
+#include <windows.h>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+#pragma link "uTPLb_BaseNonVisualComponent"
+#pragma link "uTPLb_Codec"
 #pragma resource "*.dfm"
 TFormPrijava *FormPrijava;
 //---------------------------------------------------------------------------
@@ -18,6 +21,119 @@ __fastcall TFormPrijava::TFormPrijava(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+ /*
+bool __fastcall TFormPrijava::JeKriptirano(const String& tekst)
+{
+    return tekst.SubString(1, 4) == "ENC:";
+}
+
+
+void __fastcall TFormPrijava::KriptirajEmailove()
+{
+    Codec1->StreamCipherId = "native.StreamToBlock";
+	Codec1->BlockCipherId  = "native.AES-256";
+	Codec1->ChainModeId    = "native.CBC";
+	Codec1->Password = FLozinka;
+
+    TFDQuery* qSelect = new TFDQuery(NULL);
+    TFDQuery* qUpdate = new TFDQuery(NULL);
+    int brojac = 0;
+
+    try {
+        qSelect->Connection = FDQueryPrijava->Connection;
+        qSelect->SQL->Text = "SELECT korisnicko_ime, email FROM korisnik";
+        qSelect->Open();
+
+        qUpdate->Connection = FDQueryPrijava->Connection;
+        qUpdate->SQL->Text = "UPDATE korisnik SET email = :enc WHERE korisnicko_ime = :kim";
+
+        qSelect->Connection->StartTransaction();
+        try {
+            while (!qSelect->Eof) {
+                String origEmail = qSelect->FieldByName("email")->AsString;
+                String korIme = qSelect->FieldByName("korisnicko_ime")->AsString;
+
+                if (!JeKriptirano(origEmail) && !origEmail.IsEmpty()) {
+                    String encResult;
+					Codec1->EncryptString(origEmail, encResult, TEncoding::UTF8);
+					String enc = "ENC:" + encResult;
+
+                    qUpdate->ParamByName("enc")->AsString = enc;
+                    qUpdate->ParamByName("kim")->AsString = korIme;
+                    qUpdate->ExecSQL();
+                    brojac++;
+                }
+                qSelect->Next();
+            }
+            qSelect->Connection->Commit();
+            FEmailoviKriptirani = true;
+        } catch (...) {
+            qSelect->Connection->Rollback();
+            throw;
+        }
+    } __finally {
+        delete qSelect;
+        delete qUpdate;
+    }
+
+    // Demo poruka za profesora — možeš obrisati u finalnoj verziji
+    // ShowMessage("Šifrirano emailova: " + IntToStr(brojac));
+}
+
+//---------------------------------------------------------------------------
+// Vraća sve email-ove u originalni oblik
+//---------------------------------------------------------------------------
+
+/*
+void __fastcall TFormPrijava::DekriptirajEmailove()
+{
+
+    Codec1->StreamCipherId = "native.StreamToBlock";
+	Codec1->BlockCipherId  = "native.AES-256";
+	Codec1->ChainModeId    = "native.CBC";
+	Codec1->Password = FLozinka;
+
+
+    TFDQuery* qSelect = new TFDQuery(NULL);
+    TFDQuery* qUpdate = new TFDQuery(NULL);
+
+    try {
+        qSelect->Connection = FDQueryPrijava->Connection;
+        qSelect->SQL->Text = "SELECT korisnicko_ime, email FROM korisnik";
+        qSelect->Open();
+
+        qUpdate->Connection = FDQueryPrijava->Connection;
+        qUpdate->SQL->Text = "UPDATE korisnik SET email = :dec WHERE korisnicko_ime = :kim";
+
+        qSelect->Connection->StartTransaction();
+        try {
+            while (!qSelect->Eof) {
+                String encEmail = qSelect->FieldByName("email")->AsString;
+                String korIme = qSelect->FieldByName("korisnicko_ime")->AsString;
+
+                if (JeKriptirano(encEmail)) {
+                    // Skini "ENC:" prefiks (5 znakova) i dešifriraj
+                    String tekstZaDekript = encEmail.SubString(5, encEmail.Length() - 4);
+                    String dec;
+					Codec1->DecryptString(tekstZaDekript, dec, TEncoding::UTF8);
+
+                    qUpdate->ParamByName("dec")->AsString = dec;
+                    qUpdate->ParamByName("kim")->AsString = korIme;
+                    qUpdate->ExecSQL();
+                }
+                qSelect->Next();
+            }
+            qSelect->Connection->Commit();
+            FEmailoviKriptirani = false;
+        } catch (...) {
+            qSelect->Connection->Rollback();
+            throw;
+        }
+    } __finally {
+        delete qSelect;
+        delete qUpdate;
+    }
+} */
 
 void __fastcall TFormPrijava::ButtonPrijavaClick(TObject *Sender)
 {
@@ -63,14 +179,34 @@ void __fastcall TFormPrijava::FormCreate(TObject *Sender)
 {
 
 	String path = TPath::Combine(TPath::GetDocumentsPath(), "postavke.ini");
-	TIniFile* ini = new TIniFile(path);
+    TIniFile* ini = new TIniFile(path);
+    FormPrijava->StyleName = ini->ReadString("Stilovi", "stil1", "Obsidian");
+    GroupBoxPrijava->StyleName = ini->ReadString("Stilovi", "stil2", "Obsidian");
+    delete ini;
 
-	FormPrijava->StyleName = ini->ReadString("Stilovi", "stil1", "Obsidian");
-	GroupBoxPrijava->StyleName = ini->ReadString("Stilovi", "stil2", "Obsidian");
+    // Učitaj logo iz DLL-a
+    String dllPath = TPath::Combine(
+    ExtractFilePath(Application->ExeName), "dynamic.dll");
 
+    HMODULE hDll = LoadLibrary(dllPath.c_str());
+    if (hDll != NULL)
+    {
+        HBITMAP hBmp = (HBITMAP)LoadImage(
+            hDll,
+            MAKEINTRESOURCE(101),
+            IMAGE_BITMAP,
+            0, 0,
+            LR_DEFAULTCOLOR
+        );
 
+        //test: ShowMessage("hBmp: " + IntToStr((int)hBmp));
 
-	delete ini;
+        if (hBmp != NULL)
+        {
+            ImageLogo->Picture->Bitmap->Handle = hBmp;
+        }
+        FreeLibrary(hDll);
+    }
 
 }
 //---------------------------------------------------------------------------

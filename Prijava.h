@@ -26,6 +26,10 @@
 #include <FireDAC.DApt.Intf.hpp>
 #include <FireDAC.DatS.hpp>
 #include <FireDAC.Stan.Param.hpp>
+#include "uTPLb_BaseNonVisualComponent.hpp"
+#include "uTPLb_Codec.hpp"
+#include <System.SysUtils.hpp>
+#include <Vcl.ExtCtrls.hpp>
 //---------------------------------------------------------------------------
 class TFormPrijava : public TForm
 {
@@ -43,11 +47,18 @@ __published:	// IDE-managed Components
 	TFDTable *FDTableKorisnik;
 	TDataSource *DataSourceKorisnikPrijava;
 	TFDQuery *FDQueryPrijava;
+	TImage *ImageLogo;
 	void __fastcall ButtonPrijavaClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonHRVClick(TObject *Sender);
 	void __fastcall ButtonENGClick(TObject *Sender);
 private:	// User declarations
+    bool FEmailoviKriptirani;
+    String FLozinka;
+
+    void __fastcall KriptirajEmailove();
+	void __fastcall DekriptirajEmailove();
+    bool __fastcall JeKriptirano(const String& tekst);
 public:		// User declarations
 	__fastcall TFormPrijava(TComponent* Owner);
 };
