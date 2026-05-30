@@ -12,6 +12,7 @@
 
 #include <System.IOUtils.hpp>
 #include <registry.hpp>
+#include <System.Hash.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -40,6 +41,7 @@ void __fastcall TFormRegistracija::ButtonRegistrirajClick(TObject *Sender)
     K_test.setPrezime(EditPrezime->Text);
 	K_test.setKorisnickoIme(EditKorIme->Text);
 	K_test.setEmail(EditEmail->Text);
+
 	K_test.setLozinka(EditLozinka->Text);
 
 
@@ -171,6 +173,7 @@ void __fastcall TFormRegistracija::FormCreate(TObject *Sender)
 	__finally
 	{
 		reg->Free();
+
 	}
 
 

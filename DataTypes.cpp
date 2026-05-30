@@ -1,4 +1,5 @@
 ﻿#include <vcl.h>
+#include <System.Hash.hpp>
 #pragma hdrstop
 #include "DataTypes.h"
 
@@ -25,10 +26,20 @@ void Korisnik::setEmail(AnsiString _email){
 		throw Exception("E-mail ne smije biti prazan!");
 	email = _email;
 }
-void Korisnik::setLozinka(AnsiString _lozinka){
-	if(_lozinka.IsEmpty())
-		throw Exception("Lozinka ne smije biti prazna!");
-    lozinkaHash = _lozinka;
+void Korisnik::setLozinka(AnsiString _lozinka)
+{
+    if(_lozinka.IsEmpty())
+        throw Exception("Lozinka ne smije biti prazna!");
+
+    // Sol = korisničko ime (promjenjiva sol)
+	String sol = korIme;
+
+    // Papar
+    String papri[] = {"P0", "P1", "P2", "P3", "P4"};
+    String papar = papri[0];
+
+    // Hash = SHA-256(lozinka + sol + papar)
+    lozinkaHash = THashSHA2::GetHashString(_lozinka + sol + papar);
 }
 
 AnsiString Korisnik::getIme() const {

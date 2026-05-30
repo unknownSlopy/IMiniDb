@@ -2,6 +2,7 @@
 #define DataTypesH
 
 #include <System.hpp>
+#include <System.Hash.hpp>
 
 class Film;
 

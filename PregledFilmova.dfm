@@ -324,8 +324,7 @@ object FormSviFilmovi: TFormSviFilmovi
       Caption = 'Poster'
       Color = clDarkorange
       ParentColor = False
-      ExplicitLeft = 3
-      ExplicitTop = 11
+      ExplicitWidth = 33
     end
     object DBImage1: TDBImage
       Left = 2
@@ -338,8 +337,6 @@ object FormSviFilmovi: TFormSviFilmovi
       Proportional = True
       Stretch = True
       TabOrder = 0
-      ExplicitTop = 17
-      ExplicitHeight = 112
     end
   end
   object XMLDocumentOmiljeniFilmovi: TXMLDocument
