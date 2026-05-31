@@ -9,7 +9,7 @@ Detaljan pregled svih implementiranih funkcionalnosti projekta.
 Lozinke se nikad ne spremaju kao čisti tekst. Pri registraciji izračunava se **SHA-256 hash** kombinacije lozinke, promjenjive soli i papra:
 
 - **Sol (promjenjiva):** sol = korisničko ime korisnika — za svakog korisnika drugačija, ne sprema se u bazu već se rekonstruira pri svakoj prijavi
-- **Papar:** skup tajnih vrijednosti `{"P0", "P1", "P2", "P3", "P4"}` koji se ne sprema nigdje. Pri registraciji se random odabire jedan papar. Pri prijavi aplikacija iterira kroz sve moguće papre i traži podudaranje s hashom iz baze
+- **Papar:** skup tajnih vrijednosti koji se ne sprema nigdje. Pri registraciji se random odabire jedan papar. Pri prijavi aplikacija iterira kroz sve moguće papre i traži podudaranje s hashom iz baze
 
 ```
 Hash = SHA-256(lozinka + korisničko_ime + papar)
