@@ -64,6 +64,8 @@ Za detaljan pregled svih funkcionalnosti pogledaj [FUNKCIONALNOSTI.md](FUNKCIONA
 - Oscar podaci putem lokalnog SOAP web servisa
 - Višejezičnost (Hrvatski i Engleski)
 - Postavke kroz INI datoteku i Windows registar
+- Simetrično kriptiranje email adrese (AES-256)
+- Asimetrično kriptiranje ocjene recenzije (RSA)
 
 ---
 
