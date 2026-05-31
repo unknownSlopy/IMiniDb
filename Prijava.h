@@ -49,6 +49,8 @@ __published:	// IDE-managed Components
 	TFDQuery *FDQueryPrijava;
 	TImage *ImageLogo;
 	TButton *ButtonApkINFO;
+	TGroupBox *GroupBoxPrijavaLogo;
+	TCodec *Codec1;
 	void __fastcall ButtonPrijavaClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonHRVClick(TObject *Sender);

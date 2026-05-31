@@ -12,13 +12,6 @@ object FormPrijava: TFormPrijava
   Font.Style = []
   OnCreate = FormCreate
   TextHeight = 15
-  object ImageLogo: TImage
-    Left = 280
-    Top = 16
-    Width = 361
-    Height = 178
-    AutoSize = True
-  end
   object GroupBoxPrijava: TGroupBox
     Left = 368
     Top = 272
@@ -91,6 +84,25 @@ object FormPrijava: TFormPrijava
     TabOrder = 3
     OnClick = ButtonApkINFOClick
   end
+  object GroupBoxPrijavaLogo: TGroupBox
+    Left = 200
+    Top = 32
+    Width = 529
+    Height = 209
+    TabOrder = 4
+    object ImageLogo: TImage
+      Left = 2
+      Top = 17
+      Width = 525
+      Height = 190
+      Align = alClient
+      AutoSize = True
+      ExplicitLeft = 202
+      ExplicitTop = 39
+      ExplicitWidth = 901
+      ExplicitHeight = 178
+    end
+  end
   object FDConnectionIMiniDB: TFDConnection
     Params.Strings = (
       'Database=iminidb'
@@ -122,5 +134,14 @@ object FormPrijava: TFormPrijava
     Connection = FDConnectionIMiniDB
     Left = 808
     Top = 240
+  end
+  object Codec1: TCodec
+    AsymetricKeySizeInBits = 1024
+    AdvancedOptions2 = []
+    Left = 928
+    Top = 432
+    StreamCipherId = ''
+    BlockCipherId = ''
+    ChainId = ''
   end
 end

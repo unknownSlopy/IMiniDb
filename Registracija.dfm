@@ -174,4 +174,18 @@ object FormRegistracija: TFormRegistracija
     Left = 1184
     Top = 384
   end
+  object Codec1: TCodec
+    AsymetricKeySizeInBits = 1024
+    AdvancedOptions2 = []
+    CryptoLibrary = CryptographicLibrary1
+    Left = 1104
+    Top = 552
+    StreamCipherId = 'native.StreamToBlock'
+    BlockCipherId = 'native.AES-256'
+    ChainId = 'native.CBC'
+  end
+  object CryptographicLibrary1: TCryptographicLibrary
+    Left = 1128
+    Top = 672
+  end
 end

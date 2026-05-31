@@ -15,6 +15,9 @@
 #include <System.Hash.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+#pragma link "uTPLb_BaseNonVisualComponent"
+#pragma link "uTPLb_Codec"
+#pragma link "uTPLb_CryptographicLibrary"
 #pragma resource "*.dfm"
 TFormRegistracija *FormRegistracija;
 
@@ -26,23 +29,51 @@ __fastcall TFormRegistracija::TFormRegistracija(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TFormRegistracija::ButtonRegistrirajClick(TObject *Sender)
 {
-    EditLozinka->PasswordChar = '*';
+	EditLozinka->PasswordChar = '*';
 	Korisnik K_test;
-    // validacija
-    if (EditIme->Text.IsEmpty() || EditPrezime->Text.IsEmpty() ||
-        EditKorIme->Text.IsEmpty() || EditEmail->Text.IsEmpty() ||
-        EditLozinka->Text.IsEmpty())
-    {
-        ShowMessage("Molim popuni sva polja.");
-        return;
+	// validacija
+	if (EditIme->Text.IsEmpty() || EditPrezime->Text.IsEmpty() ||
+		EditKorIme->Text.IsEmpty() || EditEmail->Text.IsEmpty() ||
+		EditLozinka->Text.IsEmpty())
+	{
+		ShowMessage("Molim popuni sva polja.");
+		return;
 	}
 
-	K_test.setIme(EditIme->Text);
-    K_test.setPrezime(EditPrezime->Text);
-	K_test.setKorisnickoIme(EditKorIme->Text);
-	K_test.setEmail(EditEmail->Text);
 
-	K_test.setLozinka(EditLozinka->Text);
+
+	 try
+	{
+		K_test.setIme(EditIme->Text);
+		K_test.setPrezime(EditPrezime->Text);
+		K_test.setKorisnickoIme(EditKorIme->Text); // mora biti prije setLozinka!
+		K_test.setEmail(EditEmail->Text);
+		K_test.setLozinka(EditLozinka->Text);       // sol = korIme, mora biti zadnje
+	}
+	catch(Exception &e)
+	{
+		ShowMessage("Greška validacije: " + e.Message);
+		return;
+	}
+
+	 // Kriptiraj email prije pohrane u bazu
+	String enkriptiraniEmail;
+	try
+	{
+		Codec1->StreamCipherId = "native.StreamToBlock";
+		Codec1->BlockCipherId  = "native.AES-256";
+		Codec1->ChainModeId    = "native.CBC";
+		Codec1->Password       = EditLozinka->Text;
+
+		String encResult;
+		Codec1->EncryptString(K_test.getEmail(), encResult, TEncoding::UTF8);
+		enkriptiraniEmail = "ENC:" + encResult;
+	}
+	catch(Exception &e)
+	{
+		ShowMessage("Greška kriptiranja: " + e.Message);
+		return;
+	}
 
 
      TFDQuery *Query = new TFDQuery(NULL);
@@ -51,16 +82,16 @@ void __fastcall TFormRegistracija::ButtonRegistrirajClick(TObject *Sender)
 		Query->Connection = FDConnectionIMiniDB;
         Query->SQL->Text =
             "INSERT INTO korisnik (ime, prezime, korisnicko_ime, email, lozinka_hash) "
-            "VALUES (:ime, :prezime, :kor_ime, :email, :lozinka_hash)";
+			"VALUES (:ime, :prezime, :kor_ime, :email, :lozinka_hash)";
 
         Query->ParamByName("ime")->AsString          = K_test.getIme();
         Query->ParamByName("prezime")->AsString      = K_test.getPrezime();
         Query->ParamByName("kor_ime")->AsString      = K_test.getKorIme();
-        Query->ParamByName("email")->AsString        = K_test.getEmail();
+        Query->ParamByName("email")->AsString        = enkriptiraniEmail;
         Query->ParamByName("lozinka_hash")->AsString = K_test.getLozinkaHash();
 
         try
-        {
+		{
 			if (!FDConnectionIMiniDB->Connected)
                 FDConnectionIMiniDB->Connected = true;
 
@@ -69,7 +100,7 @@ void __fastcall TFormRegistracija::ButtonRegistrirajClick(TObject *Sender)
 
             // Očisti polja nakon uspjeha
             EditIme->Clear();
-            EditPrezime->Clear();
+			EditPrezime->Clear();
             EditKorIme->Clear();
             EditEmail->Clear();
 			EditLozinka->Clear();
@@ -87,7 +118,7 @@ void __fastcall TFormRegistracija::ButtonRegistrirajClick(TObject *Sender)
             else
                 ShowMessage("Greška baze: " + e.Message);
         }
-        catch (Exception &e)
+		catch (Exception &e)
         {
             ShowMessage("Greška: " + e.Message);
         }
@@ -114,7 +145,8 @@ void __fastcall TFormRegistracija::FormCreate(TObject *Sender)
 
 	ButtonKonf->StyleName = ini->ReadString("Stilovi", "stil2", "0");
 	ButtonHRV->StyleName = ini->ReadString("Stilovi", "stil2", "0");
-    ButtonENG->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+	ButtonENG->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+	ButtonApkInfo->StyleName = ini->ReadString("Stilovi", "stil2", "0");
 
 	ini->WriteString("HR", "label1", Label1->Caption);
 	ini->WriteString("HR", "label2", Label2->Caption);

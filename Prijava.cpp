@@ -22,13 +22,12 @@ __fastcall TFormPrijava::TFormPrijava(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
- /*
 bool __fastcall TFormPrijava::JeKriptirano(const String& tekst)
 {
     return tekst.SubString(1, 4) == "ENC:";
 }
 
-
+/*
 void __fastcall TFormPrijava::KriptirajEmailove()
 {
     Codec1->StreamCipherId = "native.StreamToBlock";
@@ -79,13 +78,13 @@ void __fastcall TFormPrijava::KriptirajEmailove()
 
     // Demo poruka za profesora — možeš obrisati u finalnoj verziji
     // ShowMessage("Šifrirano emailova: " + IntToStr(brojac));
-}
+} */
 
 //---------------------------------------------------------------------------
 // Vraća sve email-ove u originalni oblik
 //---------------------------------------------------------------------------
 
-/*
+
 void __fastcall TFormPrijava::DekriptirajEmailove()
 {
 
@@ -134,7 +133,7 @@ void __fastcall TFormPrijava::DekriptirajEmailove()
         delete qSelect;
         delete qUpdate;
     }
-} */
+}
 
 void __fastcall TFormPrijava::ButtonPrijavaClick(TObject *Sender)
 {
@@ -149,24 +148,33 @@ void __fastcall TFormPrijava::ButtonPrijavaClick(TObject *Sender)
         return;
     }
 
-    try {
-		FDQueryPrijava->Close();
-		FDQueryPrijava->SQL->Clear();
-		FDQueryPrijava->SQL->Add("SELECT COUNT(*) AS Broj FROM korisnik "
-                          "WHERE korisnicko_ime = :korIme AND lozinka_hash = :loz");
-		FDQueryPrijava->ParamByName("korIme")->AsString = korisnickoIme;
-		FDQueryPrijava->ParamByName("loz")->AsString    = lozinka;
-		FDQueryPrijava->Open();
+     try {
+        // Dohvati hash iz baze prema kor imenu
+        FDQueryPrijava->Close();
+        FDQueryPrijava->SQL->Clear();
+        FDQueryPrijava->SQL->Add("SELECT lozinka_hash FROM korisnik "
+                                 "WHERE korisnicko_ime = :korIme");
+        FDQueryPrijava->ParamByName("korIme")->AsString = korisnickoIme;
+        FDQueryPrijava->Open();
 
-		if (FDQueryPrijava->FieldByName("Broj")->AsInteger == 1) {
-            ShowMessage("Uspješna prijava!\nPozdrav, " + korisnickoIme + "!");
+        if (FDQueryPrijava->RecordCount == 1) {
+            AnsiString hashIzBaze = FDQueryPrijava->FieldByName("lozinka_hash")->AsString;
 
-            // ovdje otvori glavnu formu, sakrij prijavu itd.
+            Korisnik K_prijava;
+            K_prijava.setKorisnickoIme(korisnickoIme);
+
+			if (K_prijava.prijava(lozinka, hashIzBaze)) {
+				//FLozinka = lozinka; // lozinka postaje AES ključ
+				//KriptirajEmailove();
+                ShowMessage("Uspješna prijava!\nPozdrav, " + korisnickoIme + "!");
+            } else {
+                ShowMessage("Neispravno korisničko ime ili lozinka.");
+            }
         } else {
             ShowMessage("Neispravno korisničko ime ili lozinka.");
         }
 
-		FDQueryPrijava->Close();
+        FDQueryPrijava->Close();
     }
     catch (Exception &e) {
         ShowMessage("Greška pri spajanju na bazu: " + e.Message);

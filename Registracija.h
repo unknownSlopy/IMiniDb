@@ -29,6 +29,10 @@
 #include <FireDAC.DApt.Intf.hpp>
 #include <FireDAC.DatS.hpp>
 #include <FireDAC.Stan.Param.hpp>
+#include "uTPLb_BaseNonVisualComponent.hpp"
+#include "uTPLb_Codec.hpp"
+#include <System.SysUtils.hpp>
+#include "uTPLb_CryptographicLibrary.hpp"
 //---------------------------------------------------------------------------
 class TFormRegistracija : public TForm
 {
@@ -53,6 +57,8 @@ __published:	// IDE-managed Components
 	TDataSource *DataSource1;
 	TFDTable *FDTable1;
 	TButton *ButtonApkInfo;
+	TCodec *Codec1;
+	TCryptographicLibrary *CryptographicLibrary1;
 	void __fastcall ButtonRegistrirajClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonKonfClick(TObject *Sender);
