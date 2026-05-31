@@ -163,4 +163,28 @@ DLL resursi:
 
 ---
 
+## Kriptiranje i dekriptiranje
+
+### Simetrično kriptiranje (AES-256)
+
+Email adresa korisnika šifrira se **AES-256** algoritmom (CBC mod) pri registraciji, prije pohrane u bazu podataka. U bazi se sprema kao `ENC:...` string. Ključ za šifriranje je lozinka korisnika.
+
+Dekriptiranje se vrši pri prikazu korisničkih podataka u formi recenzija i pri generiranju PDF izvještaja.
+
+Bez ispravne lozinke (ključa) dekriptiranje nije moguće.
+
+### Asimetrično kriptiranje (RSA)
+
+Ocjena recenzije (broj 1-10) šifrira se **RSA** algoritmom pri spremanju recenzije u JSON datoteku. U JSON-u se sprema kao `RSA:...` string.
+
+Dekriptiranje se vrši:
+- Pri učitavanju recenzije u formu — ocjena se prikazuje u `TrackBar`-u kao originalni broj
+- Pri sinkronizaciji JSON-a u bazu — u bazu se upisuje dekriptirana vrijednost kako bi izvještaji i upiti radili ispravno
+
+### Napomena
+
+Lozinke se **ne šifriraju** — koristi se jednosmjerno **hashiranje (SHA-256)** s promjenjivom soli i paprom.
+
+---
+
 [Natrag na README](README.md)
