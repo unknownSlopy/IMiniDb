@@ -55,17 +55,6 @@ Za Oscar funkcionalnost potrebno je pokrenuti zasebnu aplikaciju **Oscari_soap**
 
 ---
 
-## Struktura projekta
-
-```
-IMiniDb/
-├── DLL/                  # Dinamička biblioteka (dynamic.dll)
-├── SLib/                 # Statička biblioteka (SLib.lib)
-├── Oscari_soap/          # Lokalni SOAP web servis
-├── postavke.ini          # Konfiguracija stilova i prijevoda
-├── IMDB_demo.cpp         # Glavna aplikacija
-└── DataTypes.h/.cpp      # Definicije klasa (Film, Korisnik, Recenzija, Watchlista)
-```
 
 > ⚠️ Napomena: repozitoriju nedostaju mape `_history` i `_recovery`.
 
