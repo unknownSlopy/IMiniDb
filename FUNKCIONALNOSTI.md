@@ -1,6 +1,6 @@
 # Funkcionalnosti — IMiniDb
 
-![Opis slike](DLL/resursi/IMiniDb_logo.png)
+![Logo](DLL/resursi/IMiniDb_logo.png)
 
 Detaljan pregled svih implementiranih funkcionalnosti projekta.
 
