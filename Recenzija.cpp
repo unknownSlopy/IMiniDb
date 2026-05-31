@@ -27,6 +27,7 @@
 #pragma link "PReport"
 #pragma link "uTPLb_BaseNonVisualComponent"
 #pragma link "uTPLb_Codec"
+#pragma link "uTPLb_CryptographicLibrary"
 #pragma resource "*.dfm"
 TFormRecenzija *FormRecenzija;
 
@@ -271,8 +272,21 @@ void __fastcall TFormRecenzija::cmbFilmChange(TObject *Sender)
                                        ? obj->GetValue("naslov")->Value() : String("");
             memTekst->Lines->Text    = obj->GetValue("tekst")
                                        ? obj->GetValue("tekst")->Value() : String("");
-            TrackBarOcjena->Position = StrToIntDef(
-                obj->GetValue("ocjena") ? obj->GetValue("ocjena")->Value() : String("5"), 5);
+			String ocjenaRaw = obj->GetValue("ocjena") ? obj->GetValue("ocjena")->Value() : String("5");
+			int ocjena = 5;
+			if (ocjenaRaw.SubString(1, 4) == "RSA:") {
+				try {
+					String tekstZaDekript = ocjenaRaw.SubString(5, ocjenaRaw.Length() - 4);
+					String dec;
+					Codec1->DecryptString(tekstZaDekript, dec, TEncoding::UTF8);
+					ocjena = StrToIntDef(dec, 5);
+				} catch (Exception &e) {
+					ShowMessage("Greška RSA dekriptiranja: " + e.Message);
+				}
+			} else {
+				ocjena = StrToIntDef(ocjenaRaw, 5);
+			}
+			TrackBarOcjena->Position = ocjena;
             dtpDatum->Date           = StrToDateDef(
                 obj->GetValue("datum") ? obj->GetValue("datum")->Value() : String(""), Now());
             ButtonSpremiRecenziju->Caption = "Izmijeni recenziju";
@@ -380,7 +394,7 @@ void __fastcall TFormRecenzija::SinkronizirajJSONuBazu()
         FDQueryUnosRecenzije->ParamByName("tekst")->AsString        = tekst;
         FDQueryUnosRecenzije->ParamByName("ocjena")->AsInteger      = ocjena;
         FDQueryUnosRecenzije->ParamByName("datum")->AsDateTime      = datum;
-        FDQueryUnosRecenzije->ParamByName("korisnik_id")->AsInteger = TRENUTNI_KORISNIK_ID;
+		FDQueryUnosRecenzije->ParamByName("korisnik_id")->AsInteger = TRENUTNI_KORISNIK_ID;
         FDQueryUnosRecenzije->ExecSQL();
     }
 
@@ -411,7 +425,21 @@ void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
     if (memTekst->Lines->Text.Trim().IsEmpty()) {
         ShowMessage("Tekst recenzije ne smije biti prazan!");
         return;
-    }
+	}
+
+    // Kriptiraj ocjenu RSA-om
+	String kriptiranaOcjena;
+	try
+	{
+		String ocjenaStr = IntToStr(TrackBarOcjena->Position);
+		Codec1->EncryptString(ocjenaStr, kriptiranaOcjena, TEncoding::UTF8);
+		kriptiranaOcjena = "RSA:" + kriptiranaOcjena;
+	}
+	catch(Exception &e)
+	{
+		ShowMessage("Greška RSA kriptiranja: " + e.Message);
+		return;
+	}
 
     String putanja = PutanjaJSON();
 
@@ -432,7 +460,7 @@ void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
 
             // id ostaje isti, mijenjamo samo ostala polja
             obj->RemovePair("naslov"); obj->AddPair("naslov", edtFilm->Text.Trim());
-            obj->RemovePair("ocjena"); obj->AddPair("ocjena", new TJSONNumber(TrackBarOcjena->Position));
+            obj->RemovePair("ocjena"); obj->AddPair("ocjena", kriptiranaOcjena);   //new TJSONNumber(TrackBarOcjena->Position)
             obj->RemovePair("tekst");  obj->AddPair("tekst",  memTekst->Lines->Text.Trim());
             obj->RemovePair("datum");  obj->AddPair("datum",  FormatDateTime("yyyy-mm-dd", dtpDatum->Date));
 

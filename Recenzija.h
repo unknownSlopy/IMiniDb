@@ -43,6 +43,7 @@
 #include "uTPLb_BaseNonVisualComponent.hpp"
 #include "uTPLb_Codec.hpp"
 #include <System.SysUtils.hpp>
+#include "uTPLb_CryptographicLibrary.hpp"
 
 //---------------------------------------------------------------------------
 class TFormRecenzija : public TForm
@@ -96,6 +97,7 @@ __published:	// IDE-managed Components
 	TFDQuery *FDQueryBrojKorisnika;
 	TfrxDBDataset *frxDBDatasetJOIN;
 	TFDQuery *FDQueryJOIN;
+	TCryptographicLibrary *CryptographicLibrary1;
 	void __fastcall ButtonSpremiRecenzijuClick(TObject *Sender);
 	void __fastcall ButtonOdustaniClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);

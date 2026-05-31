@@ -110,7 +110,7 @@ object FormRecenzija: TFormRecenzija
       Caption = '10'
     end
     object ButtonSpremiRecenziju: TButton
-      Left = 143
+      Left = 157
       Top = 528
       Width = 225
       Height = 94
@@ -816,11 +816,12 @@ object FormRecenzija: TFormRecenzija
     Top = 744
   end
   object Codec1: TCodec
-    AsymetricKeySizeInBits = 0
+    AsymetricKeySizeInBits = 2048
     AdvancedOptions2 = []
+    CryptoLibrary = CryptographicLibrary1
     Left = 136
     Top = 768
-    StreamCipherId = ''
+    StreamCipherId = 'native.RSA'
     BlockCipherId = ''
     ChainId = ''
   end
@@ -875,5 +876,9 @@ object FormRecenzija: TFormRecenzija
       'inner join korisnik on korisnik.id = recenzija.korisnik_id')
     Left = 1224
     Top = 696
+  end
+  object CryptographicLibrary1: TCryptographicLibrary
+    Left = 56
+    Top = 720
   end
 end
