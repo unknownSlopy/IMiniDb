@@ -67,12 +67,9 @@ Za detaljan pregled svih funkcionalnosti pogledaj [FUNKCIONALNOSTI.md](FUNKCIONA
 
 ---
 
-## Biblioteke
+## Detaljne Funkcionalnosti
 
-Za detaljan pregled svih biblioteka pogledaj [FUNKCIONALNOSTI.md](FUNKCIONALNOSTI.md).
-
-- **SLib.lib** — statička biblioteka (parsiranje OMDb podataka)
-- **dynamic.dll** — dinamička biblioteka (obrada teksta, DLL dijalozi, logo resurs)
+Za detaljan pregled svih funkcionalnosti i biblioteka pogledaj [FUNKCIONALNOSTI.md](FUNKCIONALNOSTI.md).
 
 ---
 
