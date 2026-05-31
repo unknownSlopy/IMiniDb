@@ -1,5 +1,7 @@
 # IMiniDb
 
+![Logo](DLL/resursi/IMiniDb_logo.png)
+
 > Desktop aplikacija po uzoru na IMDb, razvijena u sklopu predmeta **Napredne Tehnike Programiranja (NTP)**.
 
 Aplikacija je namijenjena ljubiteljima filma i recenzentima. Omogućuje pretraživanje filmova putem OMDb REST API-ja, upravljanje osobnim listama filmova, pisanje recenzija te pregled Oscar nagrada kroz lokalni SOAP web servis. Napisana je u C++ Builderu u kombinaciji s MySQL bazom podataka.
