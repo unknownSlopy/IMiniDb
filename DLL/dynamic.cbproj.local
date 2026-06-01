@@ -1,11 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.683,=C:\Users\Jan\Desktop\4sem\NTP\DLL\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,C:\Users\Jan\Desktop\4sem\NTP\DLL\Unit1.dfm=C:\Users\Jan\Desktop\4sem\NTP\DLL\O_aplikaciji.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.767,C:\Users\Jan\Desktop\4sem\NTP\DLL\File1.h=C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.681,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.283,C:\Users\Jan\Documents\Embarcadero\Studio\Projects\File1.cpp=C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.559,C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj=C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.466,=C:\Users\Jan\Desktop\4sem\NTP\DLL\resursi\resources.rc</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,C:\Users\Jan\Desktop\4sem\NTP\DLL\Unit1.cpp=C:\Users\Jan\Desktop\4sem\NTP\DLL\O_aplikaciji.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.869,=C:\Users\Jan\Desktop\4sem\NTP\DLL\File1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.674,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.825,C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamicPCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.831,C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.825,C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamicPCH1.h=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.283,C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cpp=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,C:\Users\Jan\Desktop\4sem\NTP\DLL\Unit1.h=C:\Users\Jan\Desktop\4sem\NTP\DLL\O_aplikaciji.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.559,C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj=C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.831,C:\Users\Jan\Desktop\4sem\NTP\DLL\dynamic.cbproj=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
   </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="resursi"/>
+    <File Path="resursi\resources.rc"/>
+    <File Path="dynamic.cpp"/>
+    <File Path="dynamic.h"/>
+    <File Path="dynamicPCH1.h"/>
+    <File Path="O_aplikaciji.cpp"/>
+    <File Path="O_aplikaciji.cpp"/>
+    <File Path="O_aplikaciji.dfm"/>
+    <File Path="O_aplikaciji.h"/>
+  </ProjectSortOrder>
 </BorlandProject>
