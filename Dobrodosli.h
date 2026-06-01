@@ -18,6 +18,8 @@ __published:	// IDE-managed Components
 	TButton *ButtonENG;
 	TLabel *Label1;
 	TImage *ImageLogo;
+	TGroupBox *GroupBoxGore;
+	TButton *ButtonAPKInfo;
 	void __fastcall ButtonHRVClick(TObject *Sender);
 	void __fastcall ButtonENGClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
