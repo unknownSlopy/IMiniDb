@@ -704,16 +704,18 @@ void __fastcall TFormSviFilmovi::ButtonRESTBazaClick(TObject* Sender)
         AnsiString s_iVotes = GET("imdbVotes");
         AnsiString s_meta = GET("Metascore");
 
-		// std::string kratki_opis = utils->Skrati(s_opis.c_str(), 150);
-		// std::string lokalni_rating = utils->LokalniDecimal(s_iRate.c_str());
+		TFilmUtils *fu = new TFilmUtils();
 
-		// Direktno u kodu
-		AnsiString kratki_opis = s_opis;
-		if (kratki_opis.Length() > 150)
-			kratki_opis = kratki_opis.SubString(1, 150) + "...";
+        char kratki[200];
+        fu->Skrati(s_opis.c_str(), kratki, 150);
+        AnsiString kratki_opis = kratki;
 
-		AnsiString lokalni_rating = StringReplace(s_iRate, ".", ",",
-			TReplaceFlags() << rfReplaceAll);
+        bool prazan = fu->JePrazan(s_opis.c_str());
+
+        delete fu;
+
+        AnsiString lokalni_rating = StringReplace(s_iRate, ".", ",",
+            TReplaceFlags() << rfReplaceAll);
 
         // parsiranja
         int godina = StrToIntDef(s_godina, 0);

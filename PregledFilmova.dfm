@@ -59,6 +59,7 @@ object FormSviFilmovi: TFormSviFilmovi
     Height = 457
     Align = alTop
     TabOrder = 3
+    ExplicitWidth = 1245
     object LabelListaZaGledanje: TLabel
       Left = 9
       Top = 20
@@ -241,6 +242,8 @@ object FormSviFilmovi: TFormSviFilmovi
     Height = 550
     Align = alBottom
     TabOrder = 4
+    ExplicitTop = 447
+    ExplicitWidth = 1245
     object DBGridFilmoviBaza: TDBGrid
       Left = 0
       Top = 197
@@ -284,10 +287,6 @@ object FormSviFilmovi: TFormSviFilmovi
         Proportional = True
         Stretch = True
         TabOrder = 0
-        ExplicitLeft = 82
-        ExplicitTop = 38
-        ExplicitWidth = 840
-        ExplicitHeight = 366
       end
     end
     object GroupBoxDoljeKontrole: TGroupBox
