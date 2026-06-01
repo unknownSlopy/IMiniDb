@@ -318,7 +318,7 @@ object FormRecenzija: TFormRecenzija
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 46131.500789675900000000
-    ReportOptions.LastChange = 46168.985206759260000000
+    ReportOptions.LastChange = 46174.444337673600000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'procedure MasterData1OnBeforePrint(Sender: TfrxComponent);'
@@ -336,8 +336,12 @@ object FormRecenzija: TFormRecenzija
     Top = 704
     Datasets = <
       item
-        DataSet = frxDBDatasetJOIN
-        DataSetName = 'frxDBDatasetJOIN'
+        DataSet = frxDBDatasetRecenzije
+        DataSetName = 'frxDBDatasetRecenzije'
+      end
+      item
+        DataSet = frxDBDatasetKorisnik
+        DataSetName = 'frxDBDatasetKorisnik'
       end>
     Variables = <>
     Style = <>
@@ -586,8 +590,8 @@ object FormRecenzija: TFormRecenzija
         Top = 200.315090000000000000
         Width = 740.409927000000000000
         OnBeforePrint = 'MasterData1OnBeforePrint'
-        DataSet = frxDBDatasetJOIN
-        DataSetName = 'frxDBDatasetJOIN'
+        DataSet = frxDBDatasetKorisnik
+        DataSetName = 'frxDBDatasetKorisnik'
         RowCount = 0
         object MemoRecenziraoLabel: TfrxMemoView
           AllowVectorExport = True
@@ -613,13 +617,13 @@ object FormRecenzija: TFormRecenzija
           AllowVectorExport = True
           Left = 109.606370000000000000
           Top = 26.456710000000000000
-          Width = 393.071120000000000000
+          Width = 317.480520000000000000
           Height = 26.456710000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'korisnicko_ime'
-          DataSet = frxDBDatasetJOIN
-          DataSetName = 'frxDBDatasetJOIN'
+          DataSet = frxDBDatasetKorisnik
+          DataSetName = 'frxDBDatasetKorisnik'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -19
@@ -627,7 +631,7 @@ object FormRecenzija: TFormRecenzija
           Font.Style = []
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDatasetJOIN."korisnicko_ime"]')
+            '[frxDBDatasetKorisnik."korisnicko_ime"]')
           ParentFont = False
         end
       end
@@ -690,8 +694,8 @@ object FormRecenzija: TFormRecenzija
         Height = 49.133890000000000000
         Top = 298.582870000000000000
         Width = 740.409927000000000000
-        DataSet = frxDBDatasetJOIN
-        DataSetName = 'frxDBDatasetJOIN'
+        DataSet = frxDBDatasetRecenzije
+        DataSetName = 'frxDBDatasetRecenzije'
         RowCount = 0
         object MemoNaslov: TfrxMemoView
           IndexTag = 1
@@ -703,8 +707,8 @@ object FormRecenzija: TFormRecenzija
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'naslov'
-          DataSet = frxDBDatasetJOIN
-          DataSetName = 'frxDBDatasetJOIN'
+          DataSet = frxDBDatasetRecenzije
+          DataSetName = 'frxDBDatasetRecenzije'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 2236962
           Font.Height = -14
@@ -712,7 +716,7 @@ object FormRecenzija: TFormRecenzija
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDatasetJOIN."naslov"]')
+            '[frxDBDatasetRecenzije."naslov"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -726,8 +730,8 @@ object FormRecenzija: TFormRecenzija
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'ocjena'
-          DataSet = frxDBDatasetJOIN
-          DataSetName = 'frxDBDatasetJOIN'
+          DataSet = frxDBDatasetRecenzije
+          DataSetName = 'frxDBDatasetRecenzije'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 1712832
           Font.Height = -14
@@ -735,7 +739,7 @@ object FormRecenzija: TFormRecenzija
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDatasetJOIN."ocjena"]')
+            '[frxDBDatasetRecenzije."ocjena"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -749,8 +753,8 @@ object FormRecenzija: TFormRecenzija
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'datum'
-          DataSet = frxDBDatasetJOIN
-          DataSetName = 'frxDBDatasetJOIN'
+          DataSet = frxDBDatasetRecenzije
+          DataSetName = 'frxDBDatasetRecenzije'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 5592405
           Font.Height = -11
@@ -758,7 +762,7 @@ object FormRecenzija: TFormRecenzija
           Font.Style = []
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDatasetJOIN."datum"]')
+            '[frxDBDatasetRecenzije."datum"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -772,8 +776,8 @@ object FormRecenzija: TFormRecenzija
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'tekst'
-          DataSet = frxDBDatasetJOIN
-          DataSetName = 'frxDBDatasetJOIN'
+          DataSet = frxDBDatasetRecenzije
+          DataSetName = 'frxDBDatasetRecenzije'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 5592405
           Font.Height = -15
@@ -782,7 +786,7 @@ object FormRecenzija: TFormRecenzija
           Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
-            '[frxDBDatasetJOIN."tekst"]')
+            '[frxDBDatasetRecenzije."tekst"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -805,6 +809,39 @@ object FormRecenzija: TFormRecenzija
     DataSetOptions = []
     Left = 1072
     Top = 776
+    FieldDefs = <
+      item
+        FieldName = 'Recenzirao'
+        FieldType = fftString
+        Size = 20
+      end
+      item
+        FieldName = 'id'
+      end
+      item
+        FieldName = 'naslov'
+        FieldType = fftString
+        Size = 255
+      end
+      item
+        FieldName = 'StudentIme'
+        FieldType = fftString
+        Size = 20
+      end
+      item
+        FieldName = 'tekst'
+        FieldType = fftString
+      end
+      item
+        FieldName = 'ocjena'
+      end
+      item
+        FieldName = 'datum'
+        FieldType = fftDateTime
+      end
+      item
+        FieldName = 'korisnik_id'
+      end>
   end
   object frxDBDatasetKorisnik: TfrxDBDataset
     UserName = 'frxDBDatasetKorisnik'
@@ -814,13 +851,42 @@ object FormRecenzija: TFormRecenzija
     DataSetOptions = []
     Left = 1232
     Top = 744
+    FieldDefs = <
+      item
+        FieldName = 'id'
+      end
+      item
+        FieldName = 'ime'
+        FieldType = fftString
+        Size = 100
+      end
+      item
+        FieldName = 'prezime'
+        FieldType = fftString
+        Size = 100
+      end
+      item
+        FieldName = 'korisnicko_ime'
+        FieldType = fftString
+        Size = 100
+      end
+      item
+        FieldName = 'email'
+        FieldType = fftString
+        Size = 150
+      end
+      item
+        FieldName = 'lozinka_hash'
+        FieldType = fftString
+        Size = 255
+      end>
   end
   object Codec1: TCodec
     AsymetricKeySizeInBits = 2048
     AdvancedOptions2 = []
     CryptoLibrary = CryptographicLibrary1
-    Left = 136
-    Top = 768
+    Left = 152
+    Top = 720
     StreamCipherId = 'native.RSA'
     BlockCipherId = ''
     ChainId = ''
@@ -869,16 +935,30 @@ object FormRecenzija: TFormRecenzija
     Top = 840
   end
   object FDQueryJOIN: TFDQuery
-    Active = True
     Connection = FDConnectionIMiniDB
     SQL.Strings = (
       'SELECT * FROM recenzija'
-      'inner join korisnik on korisnik.id = recenzija.korisnik_id')
+      'INNER JOIN korisnik ON korisnik.id = recenzija.korisnik_id'
+      'WHERE recenzija.korisnik_id = <KorisnikID>')
     Left = 1224
     Top = 696
   end
   object CryptographicLibrary1: TCryptographicLibrary
     Left = 56
     Top = 720
+  end
+  object Codec2: TCodec
+    AsymetricKeySizeInBits = 1024
+    AdvancedOptions2 = []
+    CryptoLibrary = CryptographicLibrary2
+    Left = 144
+    Top = 808
+    StreamCipherId = 'native.StreamToBlock'
+    BlockCipherId = 'native.AES-256'
+    ChainId = 'native.CBC'
+  end
+  object CryptographicLibrary2: TCryptographicLibrary
+    Left = 48
+    Top = 800
   end
 end

@@ -98,6 +98,8 @@ __published:	// IDE-managed Components
 	TfrxDBDataset *frxDBDatasetJOIN;
 	TFDQuery *FDQueryJOIN;
 	TCryptographicLibrary *CryptographicLibrary1;
+	TCodec *Codec2;
+	TCryptographicLibrary *CryptographicLibrary2;
 	void __fastcall ButtonSpremiRecenzijuClick(TObject *Sender);
 	void __fastcall ButtonOdustaniClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -107,10 +109,12 @@ __published:	// IDE-managed Components
     void __fastcall DohvatiRecenzijeIzBazeUJSON();
 	void __fastcall ButtonPDFClick(TObject *Sender);
 	void __fastcall ButtonOscarClick(TObject *Sender);
+
 	//void __fastcall Button_SLibClick(TObject *Sender);
 	//nevoid __fastcall frxReport1BeforePrint(TfrxReportComponent *Sender);
 private:	// User declarations
-    int editIndex;
+	int editIndex;
+	int MaxIdIzBaze();
 	void UcitajFilmoveUCombo();
 
     String FLozinka;

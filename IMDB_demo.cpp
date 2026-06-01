@@ -15,6 +15,7 @@
 
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
+
 	try
 	{
 		Application->Initialize();
@@ -36,6 +37,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		try
 		{
 			throw Exception("");
+
 		}
 		catch (Exception &exception)
 		{

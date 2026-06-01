@@ -63,7 +63,7 @@ void __fastcall TFormRegistracija::ButtonRegistrirajClick(TObject *Sender)
 		Codec1->StreamCipherId = "native.StreamToBlock";
 		Codec1->BlockCipherId  = "native.AES-256";
 		Codec1->ChainModeId    = "native.CBC";
-		Codec1->Password       = EditLozinka->Text;
+		Codec1->Password       = EditKorIme->Text;
 
 		String encResult;
 		Codec1->EncryptString(K_test.getEmail(), encResult, TEncoding::UTF8);

@@ -31,7 +31,7 @@
 #pragma resource "*.dfm"
 TFormRecenzija *FormRecenzija;
 
-static const int TRENUTNI_KORISNIK_ID = 1;
+static const int TRENUTNI_KORISNIK_ID = 8; // admin
 //---------------------------------------------------------------------------
 __fastcall TFormRecenzija::TFormRecenzija(TComponent* Owner)
     : TForm(Owner), editIndex(-1)
@@ -53,156 +53,11 @@ void __fastcall TFormRecenzija::FormCreate(TObject *Sender)
 	GroupBoxRecenzija->StyleName = ini->ReadString("Stilovi", "stil2", "Obsidian");
 	delete ini;
 
-	/*
-
-    // === ENKRIPCIJA — inicijalizacija ===
-    FLozinka = "TajnaLozinka123";
-    FFileKriptiran = false;
-
-    // Ako je file ostao šifriran od prošlog puta — dešifriraj ga
-    String jsonPath = PutanjaJSON();
-    try {
-        DekriptirajFile(jsonPath);
-    } catch (Exception &e) {
-        ShowMessage("Greška pri dešifriranju recenzija: " + e.Message);
-    }*/
-
     DohvatiRecenzijeIzBazeUJSON();
     UcitajRecenzijeUCombo();
     cmbFilm->ItemIndex = 0;
     editIndex = -1;
 }
-
-/*
-
-//---------------------------------------------------------------------------
-// Šifrira cijeli file na disku — file dobije "ENC:" prefiks + base64 sadržaja
-//---------------------------------------------------------------------------
-void __fastcall TFormRecenzija::KriptirajFile(const String& path)
-{
-    if (!TFile::Exists(path))
-        return;
-
-    // 1. Učitaj sadržaj
-    TStringList *sl = new TStringList();
-    String sadrzaj;
-    try {
-        sl->LoadFromFile(path, TEncoding::UTF8);
-        sadrzaj = sl->Text;
-    } __finally {
-        delete sl;
-    }
-
-    // 2. Preskoči ako je već šifriran ili prazan
-    if (sadrzaj.SubString(1, 4) == "ENC:")
-        return;
-    if (sadrzaj.Trim().IsEmpty())
-        return;
-
-    // 3. Postavi Codec na simetrični AES-256-CBC
-    Codec1->StreamCipherId = "native.StreamToBlock";
-    Codec1->BlockCipherId  = "native.AES-256";
-    Codec1->ChainModeId    = "native.CBC";
-    Codec1->Password       = FLozinka;
-
-    // 4. Šifriraj kroz streamove
-    TMemoryStream *msIn  = new TMemoryStream();
-    TMemoryStream *msOut = new TMemoryStream();
-    String base64;
-    try {
-        UTF8String utf8 = UTF8String(sadrzaj);
-        if (utf8.Length() > 0)
-            msIn->Write(utf8.c_str(), utf8.Length());
-        msIn->Position = 0;
-
-        Codec1->EncryptStream(msIn, msOut);
-
-        msOut->Position = 0;
-        System::Sysutils::TBytes bytes;
-        bytes.Length = msOut->Size;
-        msOut->Read(&bytes[0], msOut->Size);
-        base64 = TNetEncoding::Base64->EncodeBytesToString(bytes);
-    } __finally {
-        delete msIn;
-        delete msOut;
-    }
-
-    // 5. Spremi natrag s ENC: prefiksom
-    TStringList *slOut = new TStringList();
-    try {
-        slOut->Text = "ENC:" + base64;
-        slOut->SaveToFile(path, TEncoding::UTF8);
-    } __finally {
-        delete slOut;
-    }
-
-    FFileKriptiran = true;
-}
-
-//---------------------------------------------------------------------------
-// Dešifrira file natrag u original
-//---------------------------------------------------------------------------
-void __fastcall TFormRecenzija::DekriptirajFile(const String& path)
-{
-    if (!TFile::Exists(path))
-        return;
-
-    // 1. Učitaj
-    TStringList *sl = new TStringList();
-    String sadrzaj;
-    try {
-        sl->LoadFromFile(path, TEncoding::UTF8);
-        sadrzaj = sl->Text.Trim();
-    } __finally {
-        delete sl;
-    }
-
-    // 2. Mora počinjati s "ENC:"
-    if (sadrzaj.SubString(1, 4) != "ENC:")
-        return;
-
-    String base64 = sadrzaj.SubString(5, sadrzaj.Length() - 4);
-
-    // 3. Postavi Codec
-    Codec1->StreamCipherId = "native.StreamToBlock";
-    Codec1->BlockCipherId  = "native.AES-256";
-    Codec1->ChainModeId    = "native.CBC";
-    Codec1->Password       = FLozinka;
-
-    // 4. Dešifriraj
-    TMemoryStream *msIn  = new TMemoryStream();
-    TMemoryStream *msOut = new TMemoryStream();
-    String original;
-    try {
-        System::Sysutils::TBytes bytes = TNetEncoding::Base64->DecodeStringToBytes(base64);
-        if (bytes.Length > 0)
-            msIn->Write(&bytes[0], bytes.Length);
-        msIn->Position = 0;
-
-        Codec1->DecryptStream(msIn, msOut);
-
-        msOut->Position = 0;
-        UTF8String utf8;
-        utf8.SetLength(msOut->Size);
-        if (msOut->Size > 0)
-            msOut->Read((void*)utf8.c_str(), msOut->Size);
-        original = String(utf8);
-    } __finally {
-        delete msIn;
-        delete msOut;
-    }
-
-    // 5. Spremi natrag
-    TStringList *slOut = new TStringList();
-    try {
-        slOut->Text = original;
-        slOut->SaveToFile(path, TEncoding::UTF8);
-    } __finally {
-        delete slOut;
-    }
-
-    FFileKriptiran = false;
-} */
 
 //---------------------------------------------------------------------------
 void __fastcall TFormRecenzija::UcitajRecenzijeUCombo()
@@ -221,7 +76,7 @@ void __fastcall TFormRecenzija::UcitajRecenzijeUCombo()
         delete sl;
         if (sadrzaj.IsEmpty()) return;
 
-        TJSONValue *root = TJSONObject::ParseJSONValue(sadrzaj);
+		TJSONValue *root = TJSONObject::ParseJSONValue(sadrzaj);
         if (root && root->ClassNameIs("TJSONArray")) {
             TJSONArray *arr = static_cast<TJSONArray*>(root);
             for (int i = 0; i < arr->Count; i++) {
@@ -234,16 +89,16 @@ void __fastcall TFormRecenzija::UcitajRecenzijeUCombo()
                 cmbFilm->Items->AddObject(stavka, (TObject*)(NativeInt)i);
             }
         }
-        if (root) delete root;
+		if (root) delete root;
 
-    } __finally {
-        cmbFilm->Items->EndUpdate();
-    }
+	} __finally {
+		cmbFilm->Items->EndUpdate();
+	}
 }
 //---------------------------------------------------------------------------
 void __fastcall TFormRecenzija::cmbFilmChange(TObject *Sender)
 {
-    if (cmbFilm->ItemIndex <= 0) {
+	if (cmbFilm->ItemIndex <= 0) {
         editIndex = -1;
         edtFilm->Clear();
         memTekst->Clear();
@@ -252,42 +107,24 @@ void __fastcall TFormRecenzija::cmbFilmChange(TObject *Sender)
         ButtonSpremiRecenziju->Caption = "Spremi recenziju";
         return;
     }
-
     editIndex = (int)(NativeInt)cmbFilm->Items->Objects[cmbFilm->ItemIndex];
-
     String putanja = PutanjaJSON();
     if (!TFile::Exists(putanja)) return;
-
     TStringList *sl = new TStringList();
     sl->LoadFromFile(putanja, TEncoding::UTF8);
     TJSONValue *root = TJSONObject::ParseJSONValue(sl->Text.Trim());
     delete sl;
-
     if (root && root->ClassNameIs("TJSONArray")) {
         TJSONArray  *arr = static_cast<TJSONArray*>(root);
         if (editIndex >= 0 && editIndex < arr->Count) {
             TJSONObject *obj = static_cast<TJSONObject*>(arr->Items[editIndex]);
-
-            edtFilm->Text            = obj->GetValue("naslov")
-                                       ? obj->GetValue("naslov")->Value() : String("");
-            memTekst->Lines->Text    = obj->GetValue("tekst")
-                                       ? obj->GetValue("tekst")->Value() : String("");
-			String ocjenaRaw = obj->GetValue("ocjena") ? obj->GetValue("ocjena")->Value() : String("5");
-			int ocjena = 5;
-			if (ocjenaRaw.SubString(1, 4) == "RSA:") {
-				try {
-					String tekstZaDekript = ocjenaRaw.SubString(5, ocjenaRaw.Length() - 4);
-					String dec;
-					Codec1->DecryptString(tekstZaDekript, dec, TEncoding::UTF8);
-					ocjena = StrToIntDef(dec, 5);
-				} catch (Exception &e) {
-					ShowMessage("Greška RSA dekriptiranja: " + e.Message);
-				}
-			} else {
-				ocjena = StrToIntDef(ocjenaRaw, 5);
-			}
-			TrackBarOcjena->Position = ocjena;
-            dtpDatum->Date           = StrToDateDef(
+            edtFilm->Text         = obj->GetValue("naslov")
+                                    ? obj->GetValue("naslov")->Value() : String("");
+            memTekst->Lines->Text = obj->GetValue("tekst")
+                                    ? obj->GetValue("tekst")->Value() : String("");
+            TrackBarOcjena->Position = StrToIntDef(
+                obj->GetValue("ocjena") ? obj->GetValue("ocjena")->Value() : String("5"), 5);
+            dtpDatum->Date        = StrToDateDef(
                 obj->GetValue("datum") ? obj->GetValue("datum")->Value() : String(""), Now());
             ButtonSpremiRecenziju->Caption = "Izmijeni recenziju";
         }
@@ -297,7 +134,7 @@ void __fastcall TFormRecenzija::cmbFilmChange(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TFormRecenzija::DohvatiRecenzijeIzBazeUJSON()
 {
-    try {
+	try {
         FDQueryUnosRecenzije->Close();
         FDQueryUnosRecenzije->SQL->Text =
             "SELECT id, naslov, tekst, ocjena, datum "
@@ -348,8 +185,8 @@ void __fastcall TFormRecenzija::DohvatiRecenzijeIzBazeUJSON()
 //---------------------------------------------------------------------------
 void __fastcall TFormRecenzija::ButtonOdustaniClick(TObject *Sender)
 {
-    cmbFilm->ItemIndex = 0;
-    cmbFilmChange(NULL);
+	cmbFilm->ItemIndex = 0;
+	cmbFilmChange(NULL);
 }
 //---------------------------------------------------------------------------
 // Prolazi kroz JSON i za svaku stavku radi UPSERT u bazu
@@ -357,14 +194,14 @@ void __fastcall TFormRecenzija::ButtonOdustaniClick(TObject *Sender)
 void __fastcall TFormRecenzija::SinkronizirajJSONuBazu()
 {
     String putanja = PutanjaJSON();
-    if (!TFile::Exists(putanja)) return;
+	if (!TFile::Exists(putanja)) return;
 
-    TStringList *sl = new TStringList();
-    sl->LoadFromFile(putanja, TEncoding::UTF8);
-    TJSONValue *root = TJSONObject::ParseJSONValue(sl->Text.Trim());
-    delete sl;
+	TStringList *sl = new TStringList();
+	sl->LoadFromFile(putanja, TEncoding::UTF8);
+	TJSONValue *root = TJSONObject::ParseJSONValue(sl->Text.Trim());
+	delete sl;
 
-    if (!root || !root->ClassNameIs("TJSONArray")) {
+	if (!root || !root->ClassNameIs("TJSONArray")) {
         if (root) delete root;
         return;
     }
@@ -372,33 +209,34 @@ void __fastcall TFormRecenzija::SinkronizirajJSONuBazu()
     TJSONArray *arr = static_cast<TJSONArray*>(root);
 
     for (int i = 0; i < arr->Count; i++) {
-        TJSONObject *obj = static_cast<TJSONObject*>(arr->Items[i]);
+		TJSONObject *obj = static_cast<TJSONObject*>(arr->Items[i]);
 
         int    id     = StrToIntDef(obj->GetValue("id")->Value(), 0);
-        String naslov = obj->GetValue("naslov") ? obj->GetValue("naslov")->Value() : String("");
-        String tekst  = obj->GetValue("tekst")  ? obj->GetValue("tekst")->Value()  : String("");
-        int    ocjena = StrToIntDef(
-            obj->GetValue("ocjena") ? obj->GetValue("ocjena")->Value() : String("5"), 5);
-        TDateTime datum = StrToDateDef(
-            obj->GetValue("datum") ? obj->GetValue("datum")->Value() : String(""), Now());
+		String naslov = obj->GetValue("naslov") ? obj->GetValue("naslov")->Value() : String("");
+		String tekst  = obj->GetValue("tekst")  ? obj->GetValue("tekst")->Value()  : String("");
+		int    ocjena = StrToIntDef(
+			obj->GetValue("ocjena") ? obj->GetValue("ocjena")->Value() : String("5"), 5);
+		TDateTime datum = StrToDateDef(
+			obj->GetValue("datum") ? obj->GetValue("datum")->Value() : String(""), Now());
 
-        FDQueryUnosRecenzije->Close();
-        FDQueryUnosRecenzije->SQL->Text =
-            "INSERT INTO recenzija (id, naslov, tekst, ocjena, datum, korisnik_id) "
-            "VALUES (:id, :naslov, :tekst, :ocjena, :datum, :korisnik_id) "
-            "ON DUPLICATE KEY UPDATE "
-            "naslov = VALUES(naslov), tekst = VALUES(tekst), "
-            "ocjena = VALUES(ocjena), datum = VALUES(datum)";
-        FDQueryUnosRecenzije->ParamByName("id")->AsInteger          = id;
-        FDQueryUnosRecenzije->ParamByName("naslov")->AsString       = naslov;
-        FDQueryUnosRecenzije->ParamByName("tekst")->AsString        = tekst;
-        FDQueryUnosRecenzije->ParamByName("ocjena")->AsInteger      = ocjena;
-        FDQueryUnosRecenzije->ParamByName("datum")->AsDateTime      = datum;
+		FDQueryUnosRecenzije->Close();
+		FDQueryUnosRecenzije->Close();
+		FDQueryUnosRecenzije->SQL->Text =
+			"INSERT INTO recenzija (id, naslov, tekst, ocjena, datum, korisnik_id) "
+			"VALUES (:id, :naslov, :tekst, :ocjena, :datum, :korisnik_id) "
+			"ON DUPLICATE KEY UPDATE "
+			"naslov = VALUES(naslov), tekst = VALUES(tekst), "
+			"ocjena = VALUES(ocjena), datum = VALUES(datum)";
+		FDQueryUnosRecenzije->ParamByName("id")->AsInteger          = id;
+		FDQueryUnosRecenzije->ParamByName("naslov")->AsString       = naslov;
+		FDQueryUnosRecenzije->ParamByName("tekst")->AsString        = tekst;
+		FDQueryUnosRecenzije->ParamByName("ocjena")->AsInteger      = ocjena;
+		FDQueryUnosRecenzije->ParamByName("datum")->AsDateTime      = datum;
 		FDQueryUnosRecenzije->ParamByName("korisnik_id")->AsInteger = TRENUTNI_KORISNIK_ID;
-        FDQueryUnosRecenzije->ExecSQL();
-    }
+		FDQueryUnosRecenzije->ExecSQL();
+		}
 
-    delete root;
+	delete root;
 }
 //---------------------------------------------------------------------------
 // Vraca najveci id iz JSON-a (0 ako je prazan)
@@ -415,6 +253,22 @@ static int MaxIdIzJSON(TJSONArray *arr)
     }
     return maxId;
 }
+
+int TFormRecenzija::MaxIdIzBaze()
+{
+    int maxId = 1;
+    TFDQuery *q = new TFDQuery(NULL);
+    try {
+        q->Connection = FDQueryUnosRecenzije->Connection;
+        q->SQL->Text = "SELECT COALESCE(MAX(id), 0) + 1 AS novi_id FROM recenzija";
+        q->Open();
+        maxId = q->FieldByName("novi_id")->AsInteger;
+        q->Close();
+    } __finally {
+        delete q;
+    }
+    return maxId;
+}
 //---------------------------------------------------------------------------
 void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
 {
@@ -426,22 +280,8 @@ void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
         ShowMessage("Tekst recenzije ne smije biti prazan!");
         return;
 	}
-
-    // Kriptiraj ocjenu RSA-om
-	String kriptiranaOcjena;
-	try
-	{
-		String ocjenaStr = IntToStr(TrackBarOcjena->Position);
-		Codec1->EncryptString(ocjenaStr, kriptiranaOcjena, TEncoding::UTF8);
-		kriptiranaOcjena = "RSA:" + kriptiranaOcjena;
-	}
-	catch(Exception &e)
-	{
-		ShowMessage("Greška RSA kriptiranja: " + e.Message);
-		return;
-	}
-
     String putanja = PutanjaJSON();
+
 
     // ── MOD EDITIRANJA ────────────────────────────────────────────────────────
     if (editIndex >= 0) {
@@ -460,7 +300,7 @@ void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
 
             // id ostaje isti, mijenjamo samo ostala polja
             obj->RemovePair("naslov"); obj->AddPair("naslov", edtFilm->Text.Trim());
-            obj->RemovePair("ocjena"); obj->AddPair("ocjena", kriptiranaOcjena);   //new TJSONNumber(TrackBarOcjena->Position)
+            obj->RemovePair("ocjena"); obj->AddPair("ocjena", new TJSONNumber(TrackBarOcjena->Position));
             obj->RemovePair("tekst");  obj->AddPair("tekst",  memTekst->Lines->Text.Trim());
             obj->RemovePair("datum");  obj->AddPair("datum",  FormatDateTime("yyyy-mm-dd", dtpDatum->Date));
 
@@ -507,7 +347,7 @@ void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
         }
 
         // Generiraj novi id = max(id) + 1
-        int noviId = MaxIdIzJSON(jsonArray) + 1;
+        int noviId = MaxIdIzBaze();
 
         TJSONObject *rec = new TJSONObject();
         rec->AddPair("id",     new TJSONNumber(noviId));
@@ -519,7 +359,7 @@ void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
         jsonArray->AddElement(rec);
 
         String jsonString = jsonArray->ToString();
-        TFileStream *fs = new TFileStream(putanja, fmCreate);
+		TFileStream *fs = new TFileStream(putanja, fmCreate);
         System::Sysutils::TBytes bytes = TEncoding::UTF8->GetBytes(jsonString);
         fs->WriteBuffer(&bytes[0], bytes.Length);
         delete fs;
@@ -531,7 +371,7 @@ void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
         ShowMessage("Recenzija spremljena u JSON i upisana u bazu!");
         UcitajRecenzijeUCombo();
         cmbFilm->ItemIndex = 0;
-        cmbFilmChange(NULL);
+		cmbFilmChange(NULL);
         ModalResult = mrOk;
 
     } catch (Exception &e) {
@@ -542,17 +382,98 @@ void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
 
 void __fastcall TFormRecenzija::ButtonPDFClick(TObject *Sender)
 {
+    String originalniEmail = "";
+	bool biljeKriptiran = false;
+	try {
+		TFDQuery *qEmail = new TFDQuery(NULL);
+		try {
+			qEmail->Connection = FDQueryUnosRecenzije->Connection;
+			qEmail->SQL->Text = "SELECT korisnicko_ime, email FROM korisnik WHERE id = :id";
+			qEmail->ParamByName("id")->AsInteger = TRENUTNI_KORISNIK_ID;
+			qEmail->Open();
+			if (!qEmail->Eof) {
+				String korIme = qEmail->FieldByName("korisnicko_ime")->AsString;
+				String email = qEmail->FieldByName("email")->AsString;
+				if (email.SubString(1, 4) == "ENC:") {
+					biljeKriptiran = true;
+					originalniEmail = email;
+					String tekstZaDekript = email.SubString(5, email.Length() - 4);
+					String dec;
+					Codec2->StreamCipherId = "native.StreamToBlock";
+					Codec2->BlockCipherId  = "native.AES-256";
+					Codec2->ChainModeId    = "native.CBC";
+					Codec2->Password       = korIme; // korisničko ime kao ključ
+					Codec2->DecryptString(tekstZaDekript, dec, TEncoding::UTF8);
+					TFDQuery *qUpdate = new TFDQuery(NULL);
+					try {
+						qUpdate->Connection = FDQueryUnosRecenzije->Connection;
+						qUpdate->SQL->Text = "UPDATE korisnik SET email = :email WHERE id = :id";
+						qUpdate->ParamByName("email")->AsString = dec;
+						qUpdate->ParamByName("id")->AsInteger = TRENUTNI_KORISNIK_ID;
+						qUpdate->ExecSQL();
+					} __finally {
+						delete qUpdate;
+					}
+				}
+			}
+			qEmail->Close();
+		} __finally {
+			delete qEmail;
+		}
+	}
+	catch (Exception &e) {
+		ShowMessage("Greška dekriptiranja emaila: " + e.Message);
+		return;
+	}
 
-    frxReport1->LoadFromFile(
-        ExtractFilePath(Application->ExeName) + "..\\..\\Izvjestaj2.fr3"
-    );
+    FDQueryUnosRecenzije->Close();
+	FDQueryUnosRecenzije->SQL->Text =
+		"SELECT * FROM recenzija "
+		"INNER JOIN korisnik ON korisnik.id = recenzija.korisnik_id "
+		"WHERE recenzija.korisnik_id = :kid";
+	FDQueryUnosRecenzije->ParamByName("kid")->AsInteger = TRENUTNI_KORISNIK_ID;
+	FDQueryUnosRecenzije->Open();
 
+    // Filter za korisnika
+	FDTableKorisnik->Close();
+	FDTableKorisnik->Filter = "id = " + IntToStr(TRENUTNI_KORISNIK_ID);
+	FDTableKorisnik->Filtered = true;
+	FDTableKorisnik->Open();
+
+	// Filter za recenzije
+	FDTableRecenzije->Close();
+	FDTableRecenzije->Filter = "korisnik_id = " + IntToStr(TRENUTNI_KORISNIK_ID);
+	FDTableRecenzije->Filtered = true;
+	FDTableRecenzije->Open();
+
+	frxReport1->LoadFromFile(
+		ExtractFilePath(Application->ExeName) + "..\\..\\Izvjestaj2.fr3"
+	);
 	AnsiString put = ExtractFilePath(Application->ExeName) + "..\\..\\izvjestaj.pdf";
 	frxPDFExport1->FileName = put;
 	frxPDFExport1->ShowProgress = false;
 	frxPDFExport1->ShowDialog   = false;
+
+
 	frxReport1->PrepareReport(true);
 	frxReport1->Export(frxPDFExport1);
+	if (biljeKriptiran) {
+		try {
+			TFDQuery *qRestore = new TFDQuery(NULL);
+			try {
+				qRestore->Connection = FDQueryUnosRecenzije->Connection;
+				qRestore->SQL->Text = "UPDATE korisnik SET email = :email WHERE id = :id";
+				qRestore->ParamByName("email")->AsString = originalniEmail;
+				qRestore->ParamByName("id")->AsInteger = TRENUTNI_KORISNIK_ID;
+				qRestore->ExecSQL();
+			} __finally {
+				delete qRestore;
+			}
+		}
+		catch (Exception &e) {
+			ShowMessage("Greška ponovnog kriptiranja emaila: " + e.Message);
+		}
+	}
 
 }
 //---------------------------------------------------------------------------
