@@ -918,9 +918,13 @@ void __fastcall TFormSviFilmovi::SpremiPosterUBazu()
 				Application->ProcessMessages();
 			}
 		} else {
-			ProgressBar1->Position = 100;
-			LabelProgres->Caption = "100%";
-		}
+            // Bez ograničenja — prikaži tijek bez Sleepa
+            for (int i = 1; i <= 10; i++) {
+                ProgressBar1->Position = i * 10;
+                LabelProgres->Caption = IntToStr(i * 10) + "%";
+                Application->ProcessMessages();
+            }
+        }
 
 		ms->Position = 0;
 		TFDQuery* q = new TFDQuery(NULL);
