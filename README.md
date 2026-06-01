@@ -66,6 +66,8 @@ Za detaljan pregled svih funkcionalnosti pogledaj [FUNKCIONALNOSTI.md](FUNKCIONA
 - Postavke kroz INI datoteku i Windows registar
 - Simetrično kriptiranje email adrese (AES-256)
 - Asimetrično kriptiranje ocjene recenzije (RSA)
+- Preuzimanje postera s prikazom tijeka i postotka (progress bar)
+- Ograničenje brzine preuzimanja (Bez ograničenja, 256 KB/s, 512 KB/s, 1 MB/s)
 
 ---
 
