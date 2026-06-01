@@ -192,18 +192,19 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
     listViewOFilmovi->ReadOnly = true;
 	listViewOFilmovi->OwnerDraw = false;       // koristimo CustomDraw event
 
+	editFilmRESTBaza->Text = "Pretraži film...";
 
     // prikazi filmove iz baze
-    ComboBoxFilmovi->Items->Clear();
+	ComboBoxFilmovi->Items->Clear();
     FDTableFilm->First();
-    while (!FDTableFilm->Eof)
-    {
+	while (!FDTableFilm->Eof)
+	{
         ComboBoxFilmovi->Items->Add(FDTableFilm->FieldByName("naslov")->AsString);
-        FDTableFilm->Next();
-    }
+		FDTableFilm->Next();
+	}
 
     GroupBoxOmiljeni->Font->Size = 10;
-    GroupBoxOmiljeni->Font->Style = TFontStyles() << fsBold;
+	GroupBoxOmiljeni->Font->Style = TFontStyles() << fsBold;
 	GroupBoxOmiljeni->Font->Color = (TColor)0x0000D7FF;
 
 
@@ -215,6 +216,119 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
 	LabelPoster->Transparent = true;
 	LabelPoster->Caption = L"\U0001F3AC POSTER \U0001F3AC";
 
+	// ── GORNJI GROUPBOX ──────────────────────────────────────────────
+	GroupBoxGore->Left   = 0;
+	GroupBoxGore->Top    = 0;
+	GroupBoxGore->Width  = ClientWidth;
+	GroupBoxGore->Height = ClientHeight / 2;
+
+	// ListView - lijeva strana (50%)
+	listViewOFilmovi->Left   = 5;
+	listViewOFilmovi->Top    = 20;
+	listViewOFilmovi->Width  = GroupBoxGore->Width / 2 - 10;
+	listViewOFilmovi->Height = GroupBoxGore->Height - 40;
+
+	// GroupBoxOmiljeni - sredina (25%)
+	GroupBoxOmiljeni->Left   = GroupBoxGore->Width / 2 + 5;
+	GroupBoxOmiljeni->Top    = 20;
+	GroupBoxOmiljeni->Width  = GroupBoxGore->Width / 4 - 5;
+	GroupBoxOmiljeni->Height = GroupBoxGore->Height - 40;
+
+	// GroupBoxOmiljeniKontrole i Watchlista - desna strana (25%)
+	int visina = GroupBoxGore->Height - 40;
+
+	GroupBoxOmiljeniKontrole->Left   = GroupBoxGore->Width * 3 / 4 + 5;
+	GroupBoxOmiljeniKontrole->Top    = 20;
+	GroupBoxOmiljeniKontrole->Width  = GroupBoxGore->Width / 4 - 10;
+	GroupBoxOmiljeniKontrole->Height = visina * 6 / 10;
+
+	GroupBoxWatchlista->Left   = GroupBoxGore->Width * 3 / 4 + 5;
+	GroupBoxWatchlista->Top    = 20 + visina * 6 / 10;
+	GroupBoxWatchlista->Width  = GroupBoxGore->Width / 4 - 10;
+	GroupBoxWatchlista->Height = visina * 4 / 10;
+
+	// ── DONJI GROUPBOX ───────────────────────────────────────────────
+	GroupBoxDolje->Left   = 0;
+	GroupBoxDolje->Top    = ClientHeight / 2;
+	GroupBoxDolje->Width  = ClientWidth;
+	GroupBoxDolje->Height = ClientHeight / 2;
+
+	// GroupBoxDoljeKontrole - iznad DBGrida (lijeva strana)
+	GroupBoxDoljeKontrole->Left   = 5;
+	GroupBoxDoljeKontrole->Top    = 20;
+	GroupBoxDoljeKontrole->Width  = GroupBoxDolje->Width / 2 - 10;
+	GroupBoxDoljeKontrole->Height = 120;
+
+	// DBGrid - ispod GroupBoxDoljeKontrole
+	DBGridFilmoviBaza->Left   = 5;
+	DBGridFilmoviBaza->Top    = GroupBoxDoljeKontrole->Top + GroupBoxDoljeKontrole->Height + 5;
+	DBGridFilmoviBaza->Width  = GroupBoxDolje->Width / 2 - 10;
+	DBGridFilmoviBaza->Height = GroupBoxDolje->Height - GroupBoxDoljeKontrole->Height - 50;
+
+	// GroupBoxPoster - desna strana
+	GroupBoxPoster->Left   = GroupBoxDolje->Width / 2 + 5;
+	GroupBoxPoster->Top    = 20;
+	GroupBoxPoster->Width  = GroupBoxDolje->Width / 2 - 10;
+	GroupBoxPoster->Height = GroupBoxDolje->Height - 40;
+
+	// ── KOMPONENTE UNUTAR GroupBoxDoljeKontrole ──────────────────────
+	// Prvi red - pretraga
+	editFilmRESTBaza->Left  = 5;
+	editFilmRESTBaza->Top   = 25;
+	editFilmRESTBaza->Width = 180;
+
+	ButtonRESTBaza->Left = editFilmRESTBaza->Left + editFilmRESTBaza->Width + 5;
+	ButtonRESTBaza->Top  = 23;
+
+	ToolBar1->Left = ButtonRESTBaza->Left + ButtonRESTBaza->Width + 5;
+	ToolBar1->Top  = 20;
+
+	// Drugi red - brzina i progress
+	Label2->Left = 5;
+	Label2->Top  = 61;
+
+	ComboBoxBrzina->Left  = 5;
+	ComboBoxBrzina->Top   = 83;
+	ComboBoxBrzina->Width = 130;
+
+	ProgressBar1->Left  = ComboBoxBrzina->Left + ComboBoxBrzina->Width + 5;
+	ProgressBar1->Top   = 85;
+	ProgressBar1->Width = 180;
+
+	LabelProgres->Left = ProgressBar1->Left + ProgressBar1->Width + 5;
+	LabelProgres->Top  = 85;
+
+    // Gumbi unutar GroupBoxOmiljeniKontrole
+	int gW = GroupBoxOmiljeniKontrole->Width / 2 - 10;
+	int gH = 40;
+
+	ButtonOmiljeniFilmovi->Left   = 5;
+	ButtonOmiljeniFilmovi->Top    = 20;
+	ButtonOmiljeniFilmovi->Width  = gW;
+	ButtonOmiljeniFilmovi->Height = gH;
+
+	ButtonDodajNoviOFilm->Left   = gW + 10;
+	ButtonDodajNoviOFilm->Top    = 20;
+	ButtonDodajNoviOFilm->Width  = gW;
+	ButtonDodajNoviOFilm->Height = gH;
+
+	ButtonUkloni->Left   = 5;
+	ButtonUkloni->Top    = 70;
+	ButtonUkloni->Width  = gW;
+	ButtonUkloni->Height = gH;
+
+	// Gumbi unutar GroupBoxWatchlista
+	int wW = GroupBoxWatchlista->Width / 2 - 10;
+
+	ButtonPregledajListu->Left   = 5;
+	ButtonPregledajListu->Top    = 20;
+	ButtonPregledajListu->Width  = wW;
+	ButtonPregledajListu->Height = gH;
+
+	ButtonDodajWatchlistu->Left   = wW + 10;
+	ButtonDodajWatchlistu->Top    = 20;
+	ButtonDodajWatchlistu->Width  = wW;
+	ButtonDodajWatchlistu->Height = gH;
 
 }
 //---------------------------------------------------------------------------

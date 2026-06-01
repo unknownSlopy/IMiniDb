@@ -104,6 +104,13 @@ __published:	// IDE-managed Components
 	TGroupBox *GroupBoxOmiljeniKontrole;
 	TGroupBox *GroupBoxWatchlista;
 	TGroupBox *GroupBoxPoster;
+	TProgressBar *ProgressBar1;
+	TLabel *LabelProgres;
+	TComboBox *ComboBoxBrzina;
+	TLabel *Label2;
+	TGroupBox *GroupBoxGore;
+	TGroupBox *GroupBoxDolje;
+	TGroupBox *GroupBoxDoljeKontrole;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonOmiljeniFilmoviClick(TObject *Sender);
 	void __fastcall ButtonHRVClick(TObject *Sender);
