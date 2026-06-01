@@ -163,6 +163,26 @@ DLL resursi:
 
 ---
 
+## HTTP klijent — preuzimanje postera
+
+Aplikacija koristi `TNetHTTPClient` komponentu za preuzimanje slika postera filmova s interneta (URL dohvaćen s OMDb API-ja).
+
+**Prikaz tijeka preuzimanja:**
+- `ProgressBar1` prikazuje postotak preuzetog sadržaja (0% → 100%)
+- `LabelProgres` prikazuje numerički postotak uz progress bar
+- Tijek se ažurira u 10 koraka kroz petlju s `Application->ProcessMessages()`
+
+**Ograničenje brzine:**
+Korisnik može odabrati brzinu preuzimanja kroz `ComboBoxBrzina`:
+- Bez ograničenja — preuzimanje punom brzinom, tijek vidljiv bez odgode
+- 256 KB/s — sporo preuzimanje, jasno vidljiv tijek
+- 512 KB/s — srednja brzina
+- 1 MB/s — brzo ali s vidljivim tokom
+
+Ograničenje se implementira kroz `Sleep()` između koraka progress bara, proporcionalno veličini preuzete slike i odabranoj brzini.
+
+---
+
 ## Kriptiranje i dekriptiranje
 
 ### Simetrično kriptiranje (AES-256)
