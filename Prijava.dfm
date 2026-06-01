@@ -57,39 +57,12 @@ object FormPrijava: TFormPrijava
       TabOrder = 2
     end
   end
-  object ButtonHRV: TButton
-    Left = 1016
-    Top = 16
-    Width = 99
-    Height = 33
-    Caption = 'Hrvatski'
-    TabOrder = 1
-    OnClick = ButtonHRVClick
-  end
-  object ButtonENG: TButton
-    Left = 1016
-    Top = 55
-    Width = 99
-    Height = 34
-    Caption = 'English'
-    TabOrder = 2
-    OnClick = ButtonENGClick
-  end
-  object ButtonApkINFO: TButton
-    Left = 1016
-    Top = 95
-    Width = 99
-    Height = 33
-    Caption = 'Informacije '
-    TabOrder = 3
-    OnClick = ButtonApkINFOClick
-  end
   object GroupBoxPrijavaLogo: TGroupBox
     Left = 200
     Top = 32
     Width = 529
     Height = 209
-    TabOrder = 4
+    TabOrder = 1
     object ImageLogo: TImage
       Left = 2
       Top = 17
@@ -102,6 +75,52 @@ object FormPrijava: TFormPrijava
       ExplicitWidth = 901
       ExplicitHeight = 178
     end
+  end
+  object GroupBoxSvojstva: TGroupBox
+    Left = 992
+    Top = 32
+    Width = 100
+    Height = 137
+    TabOrder = 2
+    object ButtonApkINFO: TButton
+      Left = 3
+      Top = 17
+      Width = 96
+      Height = 39
+      Caption = 'Informacije '
+      TabOrder = 0
+      OnClick = ButtonApkINFOClick
+    end
+    object ButtonENG: TButton
+      Left = 3
+      Top = 62
+      Width = 96
+      Height = 33
+      Caption = 'English'
+      TabOrder = 1
+      OnClick = ButtonENGClick
+    end
+    object ButtonHRV: TButton
+      Left = 2
+      Top = 102
+      Width = 96
+      Height = 33
+      Align = alBottom
+      Caption = 'Hrvatski'
+      TabOrder = 2
+      OnClick = ButtonHRVClick
+      ExplicitLeft = 1
+      ExplicitTop = 101
+    end
+  end
+  object ButtonZatvori: TButton
+    Left = 1098
+    Top = 8
+    Width = 33
+    Height = 25
+    Caption = 'X'
+    TabOrder = 3
+    OnClick = ButtonZatvoriClick
   end
   object FDConnectionIMiniDB: TFDConnection
     Params.Strings = (

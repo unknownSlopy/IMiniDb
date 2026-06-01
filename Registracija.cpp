@@ -147,6 +147,7 @@ void __fastcall TFormRegistracija::FormCreate(TObject *Sender)
 	ButtonHRV->StyleName = ini->ReadString("Stilovi", "stil2", "0");
 	ButtonENG->StyleName = ini->ReadString("Stilovi", "stil2", "0");
 	ButtonApkInfo->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+	ButtonZatvori->StyleName = ini->ReadString("Stilovi", "stil2", "0");
 
 	ini->WriteString("HR", "label1", Label1->Caption);
 	ini->WriteString("HR", "label2", Label2->Caption);
@@ -270,6 +271,12 @@ void __fastcall TFormRegistracija::ButtonApkInfoClick(TObject *Sender)
 {
 	//DLL Dialog
     PrikaziOAplikaciji();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormRegistracija::ButtonZatvoriClick(TObject *Sender)
+{
+    this->Close();
 }
 //---------------------------------------------------------------------------
 

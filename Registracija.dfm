@@ -108,7 +108,7 @@ object FormRegistracija: TFormRegistracija
     end
   end
   object ButtonKonf: TButton
-    Left = 1352
+    Left = 1288
     Top = 8
     Width = 134
     Height = 33
@@ -118,7 +118,7 @@ object FormRegistracija: TFormRegistracija
     OnClick = ButtonKonfClick
   end
   object ButtonHRV: TButton
-    Left = 1352
+    Left = 1288
     Top = 47
     Width = 134
     Height = 34
@@ -127,7 +127,7 @@ object FormRegistracija: TFormRegistracija
     OnClick = ButtonHRVClick
   end
   object ButtonENG: TButton
-    Left = 1352
+    Left = 1288
     Top = 87
     Width = 134
     Height = 34
@@ -136,13 +136,22 @@ object FormRegistracija: TFormRegistracija
     OnClick = ButtonENGClick
   end
   object ButtonApkInfo: TButton
-    Left = 1352
+    Left = 1288
     Top = 136
     Width = 134
     Height = 33
     Caption = 'Informacije Aplikacija'
     TabOrder = 4
     OnClick = ButtonApkInfoClick
+  end
+  object ButtonZatvori: TButton
+    Left = 1453
+    Top = 12
+    Width = 33
+    Height = 25
+    Caption = 'X'
+    TabOrder = 5
+    OnClick = ButtonZatvoriClick
   end
   object FDConnectionIMiniDB: TFDConnection
     Params.Strings = (

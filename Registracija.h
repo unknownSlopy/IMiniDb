@@ -59,12 +59,14 @@ __published:	// IDE-managed Components
 	TButton *ButtonApkInfo;
 	TCodec *Codec1;
 	TCryptographicLibrary *CryptographicLibrary1;
+	TButton *ButtonZatvori;
 	void __fastcall ButtonRegistrirajClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonKonfClick(TObject *Sender);
 	void __fastcall ButtonHRVClick(TObject *Sender);
 	void __fastcall ButtonENGClick(TObject *Sender);
 	void __fastcall ButtonApkInfoClick(TObject *Sender);
+	void __fastcall ButtonZatvoriClick(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

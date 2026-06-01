@@ -51,11 +51,14 @@ __published:	// IDE-managed Components
 	TButton *ButtonApkINFO;
 	TGroupBox *GroupBoxPrijavaLogo;
 	TCodec *Codec1;
+	TGroupBox *GroupBoxSvojstva;
+	TButton *ButtonZatvori;
 	void __fastcall ButtonPrijavaClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonHRVClick(TObject *Sender);
 	void __fastcall ButtonENGClick(TObject *Sender);
 	void __fastcall ButtonApkINFOClick(TObject *Sender);
+	void __fastcall ButtonZatvoriClick(TObject *Sender);
 private:	// User declarations
     bool FEmailoviKriptirani;
     String FLozinka;

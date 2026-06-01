@@ -189,8 +189,9 @@ void __fastcall TFormPrijava::FormCreate(TObject *Sender)
 
 	String path = TPath::Combine(TPath::GetDocumentsPath(), "postavke.ini");
     TIniFile* ini = new TIniFile(path);
-    FormPrijava->StyleName = ini->ReadString("Stilovi", "stil1", "Obsidian");
-    GroupBoxPrijava->StyleName = ini->ReadString("Stilovi", "stil2", "Obsidian");
+    this->StyleName = ini->ReadString("Stilovi", "stil1", "Obsidian");
+	GroupBoxPrijava->StyleName = ini->ReadString("Stilovi", "stil2", "Obsidian");
+    ButtonZatvori->StyleName = ini->ReadString("Stilovi", "stil2", "0");
     delete ini;
 
     // Učitaj logo iz DLL-a
@@ -233,6 +234,12 @@ void __fastcall TFormPrijava::ButtonApkINFOClick(TObject *Sender)
 {
     // dll dialog poziv
     PrikaziOAplikaciji();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormPrijava::ButtonZatvoriClick(TObject *Sender)
+{
+    this->Close();
 }
 //---------------------------------------------------------------------------
 

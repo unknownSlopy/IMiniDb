@@ -9,6 +9,8 @@
 
 #include "Jezik_INI.h"
 #include "Dobrodosli.h"
+#include "Registracija.h"
+#include "Prijava.h"
 #include "DLL/dynamic.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -82,6 +84,33 @@ void __fastcall TFormDobrodosli::FormCreate(TObject *Sender)
             ImageLogo->Picture->Bitmap->Handle = hBmp;
         }
         FreeLibrary(hDll);
+    }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormDobrodosli::ButtonRegistracijaFormClick(TObject *Sender)
+{
+	// registracija se otvara
+    TFormRegistracija *forma = new TFormRegistracija(Application);
+    try {
+		forma->ShowModal();
+
+    } __finally {
+        delete forma;
+	}
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormDobrodosli::ButtonPrijavaFormClick(TObject *Sender)
+{
+    // prijava se otvara
+	TFormPrijava *forma = new TFormPrijava(Application);
+    try {
+		forma->ShowModal();
+
+    } __finally {
+        delete forma;
     }
 }
 //---------------------------------------------------------------------------

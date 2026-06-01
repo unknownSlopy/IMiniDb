@@ -26,6 +26,7 @@ object FormDobrodosli: TFormDobrodosli
     Height = 33
     Caption = 'Registriraj se!'
     TabOrder = 0
+    OnClick = ButtonRegistracijaFormClick
   end
   object ButtonPrijavaForm: TButton
     Left = 280
@@ -34,6 +35,7 @@ object FormDobrodosli: TFormDobrodosli
     Height = 34
     Caption = 'Prijavi se!'
     TabOrder = 1
+    OnClick = ButtonPrijavaFormClick
   end
   object GroupBoxGore: TGroupBox
     Left = 0
@@ -42,6 +44,7 @@ object FormDobrodosli: TFormDobrodosli
     Height = 273
     Align = alTop
     TabOrder = 2
+    ExplicitWidth = 678
     object ImageLogo: TImage
       Left = 2
       Top = 17
@@ -59,8 +62,7 @@ object FormDobrodosli: TFormDobrodosli
       Caption = 'English'
       TabOrder = 0
       OnClick = ButtonENGClick
-      ExplicitLeft = 520
-      ExplicitTop = 47
+      ExplicitLeft = 526
     end
     object ButtonHRV: TButton
       Left = 603
@@ -71,8 +73,7 @@ object FormDobrodosli: TFormDobrodosli
       Caption = 'Hrvatski'
       TabOrder = 1
       OnClick = ButtonHRVClick
-      ExplicitLeft = 520
-      ExplicitTop = 16
+      ExplicitLeft = 601
     end
     object ButtonAPKInfo: TButton
       Left = 453
@@ -82,8 +83,7 @@ object FormDobrodosli: TFormDobrodosli
       Align = alRight
       Caption = 'Informacije'
       TabOrder = 2
-      ExplicitLeft = 520
-      ExplicitTop = 78
+      ExplicitLeft = 451
     end
   end
 end
