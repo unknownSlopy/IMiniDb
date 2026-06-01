@@ -65,9 +65,16 @@ void __fastcall TPosterDretva::QueueProgres()
     try { FForm->FBrojacPostera++; } __finally { FForm->FCS->Release(); }
 
     FForm->LabelUkupnoFilmova->Caption =
-        "Posteri: " + IntToStr(FForm->FBrojacPostera) + "/" + IntToStr(FUkupno);
+		"Posteri: " + IntToStr(FForm->FBrojacPostera) + "/" + IntToStr(FUkupno);
+
+	// Ažuriraj progress bar
+    int postotak = (FForm->FBrojacPostera * 100) / FUkupno;
+    FForm->ProgressBar1->Position = postotak;
+	FForm->LabelProgres->Caption = IntToStr(postotak) + "%";
 
     if (FForm->FBrojacPostera >= FUkupno) {
+        FForm->ProgressBar1->Position = 100;
+        FForm->LabelProgres->Caption = "100%";
         ShowMessage("Svi posteri skinuti!");
         FForm->OsvjeziTablicutomZapisu();
     }

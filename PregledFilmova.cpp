@@ -92,6 +92,10 @@ void __fastcall TFormSviFilmovi::OsvjeziBrojFilmova()
 //---------------------------------------------------------------------------
 void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
 {
+    ComboBoxBrzina->ItemIndex = 0; // Bez ograničenja
+	ProgressBar1->Position = 0;
+	LabelProgres->Caption = "0%";
+
     LabelOmiljeniFilmoviNaslov->Visible = false;
     LabelListaZaGledanje->Visible = false;
 
@@ -492,8 +496,6 @@ void __fastcall TFormSviFilmovi::ButtonRESTBazaClick(TObject* Sender)
 {
     // SLib
     TOmdbParser *parser = new TOmdbParser();
-    // DLL
-    TStringUtils *utils = new TStringUtils();
     //taSourceFilm->DataSet = FDQuerySelect;
     AnsiString pojam = Trim(editFilmRESTBaza->Text);
     if (pojam.IsEmpty()) {
@@ -588,8 +590,16 @@ void __fastcall TFormSviFilmovi::ButtonRESTBazaClick(TObject* Sender)
         AnsiString s_iVotes = GET("imdbVotes");
         AnsiString s_meta = GET("Metascore");
 
-        std::string kratki_opis = utils->Skrati(s_opis.c_str(), 150);
-		std::string lokalni_rating = utils->LokalniDecimal(s_iRate.c_str());
+		// std::string kratki_opis = utils->Skrati(s_opis.c_str(), 150);
+		// std::string lokalni_rating = utils->LokalniDecimal(s_iRate.c_str());
+
+		// Direktno u kodu
+		AnsiString kratki_opis = s_opis;
+		if (kratki_opis.Length() > 150)
+			kratki_opis = kratki_opis.SubString(1, 150) + "...";
+
+		AnsiString lokalni_rating = StringReplace(s_iRate, ".", ",",
+			TReplaceFlags() << rfReplaceAll);
 
         // parsiranja
         int godina = StrToIntDef(s_godina, 0);
@@ -694,7 +704,6 @@ void __fastcall TFormSviFilmovi::ButtonRESTBazaClick(TObject* Sender)
     ShowUpisano(upisano);
     OsvjeziBrojFilmova();
 
-    delete utils;
     delete parser;
 }
 
@@ -728,67 +737,90 @@ void __fastcall TFormSviFilmovi::OsvjeziTablicutomZapisu()
     try {
         FDTableFilm->Close();
         FDTableFilm->Open();
-        FDTableFilm->GotoBookmark(bm);
+		FDTableFilm->GotoBookmark(bm);
     } __finally
-    {
-        FDTableFilm->FreeBookmark(bm);
-        FDTableFilm->EnableControls();
+	{
+		FDTableFilm->FreeBookmark(bm);
+		FDTableFilm->EnableControls();
     }
 }
 
 // Preuzima poster s URL-a i sprema u bazu kao blob
 void __fastcall TFormSviFilmovi::SpremiPosterUBazu()
 {
-    String url = FDTableFilm->FieldByName("posterUrl")->AsString.Trim();
-    if (url.IsEmpty() || url == "N/A") {
-        String path = TPath::Combine(ExtractFilePath(Application->ExeName),
-            "..\\..\\no-poster-available.jpg");
+	String url = FDTableFilm->FieldByName("posterUrl")->AsString.Trim();
 
-        if (!FileExists(path)) {
-            ShowMessage("Nema slike na: " + path);
-            return;
-        }
+	if (url.IsEmpty() || url == "N/A") {
+		String path = TPath::Combine(ExtractFilePath(Application->ExeName),
+			"..\\..\\no-poster-available.jpg");
 
-        DBImage1->Picture->LoadFromFile(path);
-        return;
-    }
+		if (!FileExists(path)) {
+			ShowMessage("Nema slike na: " + path);
+			return;
+		}
 
-    String imdbID = FDTableFilm->FieldByName("imdbID")->AsString;
+		DBImage1->Picture->LoadFromFile(path);
+		return;
+	}
 
-    std::unique_ptr<TNetHTTPClient> http(new TNetHTTPClient(NULL));
-    std::unique_ptr<TMemoryStream> ms(new TMemoryStream());
+	String imdbID = FDTableFilm->FieldByName("imdbID")->AsString;
+
+    // Odabrana brzina u KB/s (0 = bez ograničenja)
+    int brzine[] = {0, 256, 512, 1024};
+	int odabranaBrzina = brzine[ComboBoxBrzina->ItemIndex];
+
+	ProgressBar1->Position = 0;
+	LabelProgres->Caption = "0%";
+	Application->ProcessMessages();
+
+	std::unique_ptr<TNetHTTPClient> http(new TNetHTTPClient(NULL));
+	std::unique_ptr<TMemoryStream> ms(new TMemoryStream());
 
     try {
-        http->UserAgent = "Mozilla/5.0";
-        http->HandleRedirects = true;
-        http->Accept = "image/*";
+		http->UserAgent = "Mozilla/5.0";
+		http->HandleRedirects = true;
+		http->Accept = "image/*";
 
-        _di_IHTTPResponse response = http->Get(url, ms.get());
+		ProgressBar1->Position = 0;
+		LabelProgres->Caption = "0%";
+		Application->ProcessMessages();
 
-        if (response->StatusCode != 200 || ms->Size < 1000) {
-            // ShowMessage("Greška pri dohvatu slike.");
-            return;
-        }
+		_di_IHTTPResponse response = http->Get(url, ms.get());
 
-        ms->Position = 0;
+		if (response->StatusCode != 200 || ms->Size < 1000)
+			return;
 
-        // UPDATE preko zasebnog querya - pouzdanije od FDTable->Edit/Post za blobove
-        TFDQuery* q = new TFDQuery(NULL);
-        try {
-            q->Connection = FDTableFilm->Connection;
-            q->SQL->Text =
-                "UPDATE Filmovi SET poster = :blob WHERE imdbID = :id";
-            q->ParamByName("blob")->DataType = ftBlob;
-            q->ParamByName("blob")->LoadFromStream(ms.get(), ftBlob);
-            q->ParamByName("id")->AsString = imdbID;
-            q->ExecSQL();
-        } __finally
-        {
-            delete q;
-        }
-    } catch (Exception &e) {
-        ShowMessage("Greška: " + e.Message);
-    }
+		// Simuliraj ograničenje brzine
+		if (odabranaBrzina > 0) {
+			int trajanje = (ms->Size / (odabranaBrzina * 1024)) * 1000;
+			int koraci = 10;
+			int korak = trajanje / koraci;
+			for (int i = 1; i <= koraci; i++) {
+				Sleep(korak);
+				ProgressBar1->Position = i * 10;
+				LabelProgres->Caption = IntToStr(i * 10) + "%";
+				Application->ProcessMessages();
+			}
+		} else {
+			ProgressBar1->Position = 100;
+			LabelProgres->Caption = "100%";
+		}
+
+		ms->Position = 0;
+		TFDQuery* q = new TFDQuery(NULL);
+		try {
+			q->Connection = FDTableFilm->Connection;
+			q->SQL->Text = "UPDATE Filmovi SET poster = :blob WHERE imdbID = :id";
+			q->ParamByName("blob")->DataType = ftBlob;
+			q->ParamByName("blob")->LoadFromStream(ms.get(), ftBlob);
+			q->ParamByName("id")->AsString = imdbID;
+			q->ExecSQL();
+		} __finally {
+			delete q;
+		}
+	} catch (Exception &e) {
+		ShowMessage("Greška: " + e.Message);
+	}
 }
 
 // Prikazuje poster za trenutni film u DBImage1
@@ -836,7 +868,9 @@ void __fastcall TFormSviFilmovi::DBGridFilmoviBazaCellClick(TColumn* Column)
 	if (!PosterPostojiUBazi(imdbID)) {
         SpremiPosterUBazu();
         OsvjeziTablicutomZapisu();
-    }
+	}
+
+    PrikaziPoster();
 }
 
 //---------------------------------------------------------------------------
@@ -929,8 +963,11 @@ void __fastcall TFormSviFilmovi::ToolButtonSviPosteriClick(TObject* Sender)
         return;
     }
 
+
     FBrojacPostera = 0;
-    int ukupno = lista->Count;
+	ProgressBar1->Position = 0;
+	LabelProgres->Caption = "0%";
+	int ukupno = lista->Count;
 
     // 2) Pokreni N paralelnih dretvi
     for (int i = 0; i < ukupno; i++) {

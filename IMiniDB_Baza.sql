@@ -12,10 +12,20 @@ CREATE TABLE korisnik (
     lozinka_hash VARCHAR(255) NOT NULL
 );
 
-
+DELETE FROM korisnik
+WHERE email LIKE "jslopar%"
 
 SELECT * FROM korisnik
 SELECT * FROM Filmovi
+SELECT * FROM recenzija
+
+ALTER TABLE recenzija 
+ADD CONSTRAINT fk_recenzija_korisnik 
+FOREIGN KEY (korisnik_id) REFERENCES korisnik(id);
+
+UPDATE Filmovi SET poster = NULL WHERE imdbID = 'tt0103064';
+
+ALTER TABLE recenzija MODIFY film_id INT DEFAULT NULL;
 WHERE poster IS NULL 
 ALTER TABLE Filmovi ADD COLUMN poster MEDIUMBLOB;
 UPDATE Filmovi SET poster = NULL;
@@ -97,7 +107,10 @@ CREATE TABLE recenzija (
 
 ALTER TABLE recenzija ADD COLUMN naslov VARCHAR(255) NOT NULL AFTER id;
 
+select * from korisnik
 SELECT * FROM recenzija
+inner join korisnik on korisnik.id = recenzija.korisnik_id
+
 
 -- 1. popuni postojeće filmove
 UPDATE recenzija r
@@ -138,4 +151,50 @@ CREATE TABLE watchlista (
 -- ============================
 -- OSCAR -> Za primjenu SOAP-a
 -- ============================
+
+CREATE TABLE oscar (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    godina INTEGER,
+    kategorija TEXT,
+    film TEXT,
+    pobjednik TEXT
+);
+
+select * from oscar
+
+INSERT INTO oscar (godina, kategorija, film, pobjednik) VALUES
+(2024, 'Best Picture',           'Oppenheimer',          'Christopher Nolan'),
+(2024, 'Best Actor',             'Oppenheimer',           'Cillian Murphy'),
+(2024, 'Best Actress',           'Poor Things',           'Emma Stone'),
+(2024, 'Best Director',          'Oppenheimer',           'Christopher Nolan'),
+(2024, 'Best Supporting Actor',  'American Fiction',      'Robert Downey Jr.'),
+(2024, 'Best Supporting Actress','Oppenheimer',           'Da Vine Joy Randolph'),
+
+(2023, 'Best Picture',           'Everything Everywhere All at Once', 'Daniel Kwan & Daniel Scheinert'),
+(2023, 'Best Actor',             'The Whale',             'Brendan Fraser'),
+(2023, 'Best Actress',           'Everything Everywhere All at Once', 'Michelle Yeoh'),
+(2023, 'Best Director',          'Everything Everywhere All at Once', 'Daniel Kwan & Daniel Scheinert'),
+(2023, 'Best Supporting Actor',  'The Banshees of Inisherin', 'Ke Huy Quan'),
+(2023, 'Best Supporting Actress','Everything Everywhere All at Once', 'Jamie Lee Curtis'),
+
+(2022, 'Best Picture',           'CODA',                  'Sian Heder'),
+(2022, 'Best Actor',             'The Father',            'Anthony Hopkins'),
+(2022, 'Best Actress',           'Nomadland',             'Frances McDormand'),
+(2022, 'Best Director',          'Nomadland',             'Chloe Zhao'),
+(2022, 'Best Supporting Actor',  'Judas and the Black Messiah', 'Troy Kotsur'),
+(2022, 'Best Supporting Actress','Argylle',               'Ariana DeBose'),
+
+(2021, 'Best Picture',           'Parasite',              'Bong Joon-ho'),
+(2021, 'Best Actor',             'Joker',                 'Joaquin Phoenix'),
+(2021, 'Best Actress',           'Judy',                  'Renee Zellweger'),
+(2021, 'Best Director',          'Parasite',              'Bong Joon-ho'),
+(2021, 'Best Supporting Actor',  'Once Upon a Time in Hollywood', 'Brad Pitt'),
+(2021, 'Best Supporting Actress','Jojo Rabbit',           'Laura Dern'),
+
+(2020, 'Best Picture',           'Green Book',            'Peter Farrelly'),
+(2020, 'Best Actor',             'Bohemian Rhapsody',     'Rami Malek'),
+(2020, 'Best Actress',           'The Favourite',         'Olivia Colman'),
+(2020, 'Best Director',          'Roma',                  'Alfonso Cuaron'),
+(2020, 'Best Supporting Actor',  'Green Book',            'Mahershala Ali'),
+(2020, 'Best Supporting Actress','If Beale Street Could Talk', 'Regina King');
 
