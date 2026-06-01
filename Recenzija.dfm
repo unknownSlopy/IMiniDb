@@ -809,39 +809,6 @@ object FormRecenzija: TFormRecenzija
     DataSetOptions = []
     Left = 1072
     Top = 776
-    FieldDefs = <
-      item
-        FieldName = 'Recenzirao'
-        FieldType = fftString
-        Size = 20
-      end
-      item
-        FieldName = 'id'
-      end
-      item
-        FieldName = 'naslov'
-        FieldType = fftString
-        Size = 255
-      end
-      item
-        FieldName = 'StudentIme'
-        FieldType = fftString
-        Size = 20
-      end
-      item
-        FieldName = 'tekst'
-        FieldType = fftString
-      end
-      item
-        FieldName = 'ocjena'
-      end
-      item
-        FieldName = 'datum'
-        FieldType = fftDateTime
-      end
-      item
-        FieldName = 'korisnik_id'
-      end>
   end
   object frxDBDatasetKorisnik: TfrxDBDataset
     UserName = 'frxDBDatasetKorisnik'
@@ -851,35 +818,6 @@ object FormRecenzija: TFormRecenzija
     DataSetOptions = []
     Left = 1232
     Top = 744
-    FieldDefs = <
-      item
-        FieldName = 'id'
-      end
-      item
-        FieldName = 'ime'
-        FieldType = fftString
-        Size = 100
-      end
-      item
-        FieldName = 'prezime'
-        FieldType = fftString
-        Size = 100
-      end
-      item
-        FieldName = 'korisnicko_ime'
-        FieldType = fftString
-        Size = 100
-      end
-      item
-        FieldName = 'email'
-        FieldType = fftString
-        Size = 150
-      end
-      item
-        FieldName = 'lozinka_hash'
-        FieldType = fftString
-        Size = 255
-      end>
   end
   object Codec1: TCodec
     AsymetricKeySizeInBits = 2048

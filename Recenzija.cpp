@@ -48,7 +48,7 @@ void __fastcall TFormRecenzija::FormCreate(TObject *Sender)
     String path = TPath::Combine(TPath::GetDocumentsPath(), "postavke.ini");
 
     TIniFile *ini = new TIniFile(path);
-    FormRecenzija->StyleName     = ini->ReadString("Stilovi", "stil1", "Obsidian");
+    this->StyleName     = ini->ReadString("Stilovi", "stil1", "Obsidian");
     StyleName                    = ini->ReadString("Stilovi", "stil1", "Obsidian");
 	GroupBoxRecenzija->StyleName = ini->ReadString("Stilovi", "stil2", "Obsidian");
 	delete ini;

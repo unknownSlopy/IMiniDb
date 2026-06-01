@@ -7,6 +7,7 @@
 #include "DataTypes.h"
 #include "Stilovi.h"
 #include "Jezik_INI.h"
+#include "PregledFilmova.h"
 //#include "StaticLib.h"
 #include "DLL/dynamic.h"
 
@@ -39,8 +40,6 @@ void __fastcall TFormRegistracija::ButtonRegistrirajClick(TObject *Sender)
 		ShowMessage("Molim popuni sva polja.");
 		return;
 	}
-
-
 
 	 try
 	{
@@ -129,6 +128,16 @@ void __fastcall TFormRegistracija::ButtonRegistrirajClick(TObject *Sender)
     }
 
 	//ShowMessage("Pozdrav, " + K_test.getKorIme() + "!");
+
+	// auto otvara formu za pregled filmova
+	// DODATI: prosljedivanje ID-ja prijavljenog korsinika
+	TFormSviFilmovi *forma = new TFormSviFilmovi(Application);
+	try {
+		forma->ShowModal();
+
+	} __finally {
+		delete forma;
+	}
 
 }
 //---------------------------------------------------------------------------

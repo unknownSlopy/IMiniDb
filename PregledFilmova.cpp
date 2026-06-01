@@ -18,6 +18,7 @@
 
 // Projektni headeri
 #include "PregledFilmova.h"
+#include "Recenzija.h"
 #include "DataTypes.h"
 #include "Jezik_INI.h"
 #include "omiljeniFilmovi.h"
@@ -26,6 +27,7 @@
 #include "PostaviJezikGrida.h"
 #include "Slib/SLib.h"
 #include "DLL/dynamic.h"
+
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -99,11 +101,10 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
     LabelOmiljeniFilmoviNaslov->Visible = false;
     LabelListaZaGledanje->Visible = false;
 
-    String path = TPath::Combine(
-        ExtractFilePath(Application->ExeName), "..\\..\\postavke.ini");
+    String path = TPath::Combine(ExtractFilePath(Application->ExeName), "..\\..\\postavke.ini");
     TIniFile* ini = new TIniFile(path);
 
-    FormSviFilmovi->StyleName = ini->ReadString("Stilovi", "stil1", "Obsidian");
+    this->StyleName = ini->ReadString("Stilovi", "stil1", "Obsidian");
 
     ini->WriteString(
         "HR", "ButtonDodajNoviOFilm", ButtonDodajNoviOFilm->Caption);
@@ -207,6 +208,13 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
 	GroupBoxOmiljeni->Font->Style = TFontStyles() << fsBold;
 	GroupBoxOmiljeni->Font->Color = (TColor)0x0000D7FF;
 
+    GroupBoxGore->Ctl3D = false;
+	GroupBoxDolje->Ctl3D = false;
+	GroupBoxOmiljeni->Ctl3D = false;
+	GroupBoxOmiljeniKontrole->Ctl3D = false;
+	GroupBoxWatchlista->Ctl3D = false;
+	GroupBoxDoljeKontrole->Ctl3D = false;
+	GroupBoxPoster->Ctl3D = false;
 
 	LabelPoster->Font->Size = 22;
 	LabelPoster->Font->Style = TFontStyles() << fsBold;
@@ -515,7 +523,8 @@ void __fastcall TFormSviFilmovi::ButtonDodajWatchlistuClick(TObject* Sender)
 
         TFileStream* fs = new TFileStream(jsonPath, fmCreate);
         TEncoding* enc = TEncoding::UTF8;
-        TBytes bytes = enc->GetBytes(jsonString);
+		//TBytes bytes = enc->GetBytes(jsonString);
+        System::Sysutils::TBytes bytes = enc->GetBytes(jsonString);
         fs->WriteBuffer(&bytes[0], bytes.Length);
         delete fs;
 
@@ -1129,4 +1138,18 @@ void __fastcall TFormSviFilmovi::ComboBoxFilmoviChange(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TFormSviFilmovi::ButtonRecenzijeClick(TObject *Sender)
+{
+	// otvara se forma Recenzije
+	TFormRecenzija *forma = new TFormRecenzija(Application);
+    try {
+		forma->ShowModal();
+
+    } __finally {
+        delete forma;
+	}
+
+}
+//---------------------------------------------------------------------------
 

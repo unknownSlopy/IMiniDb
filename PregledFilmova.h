@@ -137,6 +137,7 @@ __published:	// IDE-managed Components
     void __fastcall PostaviJezikGrida(String jezik);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall ComboBoxFilmoviChange(TObject *Sender);
+	void __fastcall ButtonRecenzijeClick(TObject *Sender);
 
 	private:	// User declarations
     bool FIDjeviKriptirani;

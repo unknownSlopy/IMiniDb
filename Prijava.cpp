@@ -10,6 +10,7 @@
 #include <System.IOUtils.hpp>
 #include <windows.h>
 #include "DLL/dynamic.h"
+#include "PregledFilmova.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "uTPLb_BaseNonVisualComponent"
@@ -178,7 +179,17 @@ void __fastcall TFormPrijava::ButtonPrijavaClick(TObject *Sender)
     }
     catch (Exception &e) {
         ShowMessage("Greška pri spajanju na bazu: " + e.Message);
-    }
+	}
+
+	// auto otvara formu za pregled filmova
+	// DODATI: prosljedivanje ID-ja prijavljenog korsinika
+	TFormSviFilmovi *forma = new TFormSviFilmovi(Application);
+	try {
+		forma->ShowModal();
+
+	} __finally {
+		delete forma;
+	}
 
 }
 //---------------------------------------------------------------------------
@@ -189,9 +200,14 @@ void __fastcall TFormPrijava::FormCreate(TObject *Sender)
 
 	String path = TPath::Combine(TPath::GetDocumentsPath(), "postavke.ini");
     TIniFile* ini = new TIniFile(path);
-    this->StyleName = ini->ReadString("Stilovi", "stil1", "Obsidian");
+	this->StyleName = ini->ReadString("Stilovi", "stil1", "Obsidian");
+
 	GroupBoxPrijava->StyleName = ini->ReadString("Stilovi", "stil2", "Obsidian");
-    ButtonZatvori->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+	ButtonZatvori->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+	ButtonHRV->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+	ButtonENG->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+	ButtonApkINFO->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+
     delete ini;
 
     // Učitaj logo iz DLL-a

@@ -43,23 +43,13 @@ object FormSviFilmovi: TFormSviFilmovi
     TabOrder = 1
     OnClick = ButtonENGClick
   end
-  object ButtonRecenzije: TButton
-    Left = 831
-    Top = 277
-    Width = 95
-    Height = 45
-    Caption = 'Recenzije'
-    TabOrder = 2
-    Visible = False
-  end
   object GroupBoxGore: TGroupBox
     Left = 0
     Top = 0
     Width = 1247
     Height = 457
     Align = alTop
-    TabOrder = 3
-    ExplicitWidth = 1245
+    TabOrder = 2
     object LabelListaZaGledanje: TLabel
       Left = 9
       Top = 20
@@ -172,6 +162,15 @@ object FormSviFilmovi: TFormSviFilmovi
           'MemoOpisNovogFilma')
         TabOrder = 4
       end
+      object ButtonRecenzije: TButton
+        Left = 7
+        Top = 204
+        Width = 95
+        Height = 45
+        Caption = 'Recenzije'
+        TabOrder = 5
+        OnClick = ButtonRecenzijeClick
+      end
     end
     object GroupBoxOmiljeniKontrole: TGroupBox
       Left = 816
@@ -241,9 +240,7 @@ object FormSviFilmovi: TFormSviFilmovi
     Width = 1247
     Height = 550
     Align = alBottom
-    TabOrder = 4
-    ExplicitTop = 447
-    ExplicitWidth = 1245
+    TabOrder = 3
     object DBGridFilmoviBaza: TDBGrid
       Left = 0
       Top = 197
