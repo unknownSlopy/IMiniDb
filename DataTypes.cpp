@@ -3,6 +3,9 @@
 #pragma hdrstop
 #include "DataTypes.h"
 
+const String Korisnik::PAPRI[] = {"P0", "P1", "P2", "P3", "P4"};
+static const int BROJ_PAPRA = 5;
+
 // ================================================================== KORISNIK ==================================================================
 void Korisnik::setIme(AnsiString _ime){
 	if (_ime.IsEmpty())
@@ -21,25 +24,46 @@ void Korisnik::setKorisnickoIme(AnsiString _korIme){
 		throw Exception("Korisničko ime ne smije biti prazno!");
 	korIme = _korIme;
 }
-void Korisnik::setEmail(AnsiString _email){
-	if (_email.IsEmpty())
-		throw Exception("E-mail ne smije biti prazan!");
-	email = _email;
+
+void Korisnik::setEmail(AnsiString _email)
+{
+    if (_email.IsEmpty())
+        throw Exception("E-mail ne smije biti prazan!");
+
+    // sadrži li @ i točku
+    if (_email.Pos("@") == 0 || _email.Pos(".") == 0)
+        throw Exception("E-mail nije ispravnog formata!");
+
+    // @ nije na početku ili kraju
+    if (_email.Pos("@") == 1 || _email.Pos("@") == _email.Length())
+        throw Exception("E-mail nije ispravnog formata!");
+
+    email = _email;
 }
+
+AnsiString Korisnik::hashirajLozinku(AnsiString lozinka)
+{
+    String sol = korIme;
+    return THashSHA2::GetHashString(lozinka + sol + trenutniPapar);
+}
+
 void Korisnik::setLozinka(AnsiString _lozinka)
 {
     if(_lozinka.IsEmpty())
         throw Exception("Lozinka ne smije biti prazna!");
+	trenutniPapar = PAPRI[rand() % BROJ_PAPRA];
+    lozinkaHash = hashirajLozinku(_lozinka);
+}
 
-    // Sol = korisničko ime (promjenjiva sol)
-	String sol = korIme;
-
-    // Papar
-    String papri[] = {"P0", "P1", "P2", "P3", "P4"};
-    String papar = papri[0];
-
-    // Hash = SHA-256(lozinka + sol + papar)
-    lozinkaHash = THashSHA2::GetHashString(_lozinka + sol + papar);
+bool Korisnik::prijava(AnsiString lozinka, AnsiString hashIzBaze)
+{
+    for (int i = 0; i < BROJ_PAPRA; i++)
+    {
+		trenutniPapar = PAPRI[i];
+        if (hashirajLozinku(lozinka) == hashIzBaze)
+            return true;
+    }
+    return false;
 }
 
 AnsiString Korisnik::getIme() const {
@@ -67,14 +91,7 @@ Korisnik::Korisnik(int id, AnsiString korIme, AnsiString email, AnsiString lozin
 	this->lozinkaHash  = hashirajLozinku(lozinka);
 }
 
-bool Korisnik::prijava(AnsiString lozinka){
-    return lozinkaHash == hashirajLozinku(lozinka);
-}
 
-AnsiString Korisnik::hashirajLozinku(AnsiString lozinka){
-	// kriptiranje ...
-    return lozinka;
-}
 
 
 
