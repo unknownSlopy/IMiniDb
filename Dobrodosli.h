@@ -20,11 +20,16 @@ __published:	// IDE-managed Components
 	TImage *ImageLogo;
 	TGroupBox *GroupBoxGore;
 	TButton *ButtonAPKInfo;
+	TButton *ButtonMenu;
+	TGroupBox *GroupBoxDolje;
+	TPanel *Panel1;
 	void __fastcall ButtonHRVClick(TObject *Sender);
 	void __fastcall ButtonENGClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonRegistracijaFormClick(TObject *Sender);
 	void __fastcall ButtonPrijavaFormClick(TObject *Sender);
+	void __fastcall ButtonAPKInfoClick(TObject *Sender);
+	void __fastcall ButtonMenuClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormDobrodosli(TComponent* Owner);

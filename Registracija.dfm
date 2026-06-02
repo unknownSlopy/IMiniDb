@@ -137,7 +137,7 @@ object FormRegistracija: TFormRegistracija
   end
   object ButtonApkInfo: TButton
     Left = 1288
-    Top = 136
+    Top = 127
     Width = 134
     Height = 33
     Caption = 'Informacije Aplikacija'

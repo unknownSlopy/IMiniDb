@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #include <vcl.h>
 #include <IniFiles.hpp>
@@ -56,7 +56,18 @@ void __fastcall TFormDobrodosli::FormCreate(TObject *Sender)
 	ButtonRegistracijaForm->StyleName = ini->ReadString("Stilovi", "stil2", "0");
 	ButtonPrijavaForm->StyleName = ini->ReadString("Stilovi", "stil2", "0");
 	ButtonHRV->StyleName = ini->ReadString("Stilovi", "stil2", "0");
-    ButtonENG->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+	ButtonENG->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+	ButtonAPKInfo->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+	ButtonMenu->StyleName = ini->ReadString("Stilovi", "stil2", "0");
+
+	Panel1->Parent = GroupBoxGore;
+	Panel1->Top = 0;
+	Panel1->Left = GroupBoxGore->Width - Panel1->Width;
+	Panel1->Anchors = TAnchors() << akTop << akRight;
+
+    ButtonHRV->Visible = false;
+    ButtonENG->Visible = false;
+    ButtonAPKInfo->Visible = false;
 
 	delete ini;
 
@@ -112,6 +123,29 @@ void __fastcall TFormDobrodosli::ButtonPrijavaFormClick(TObject *Sender)
     } __finally {
         delete forma;
     }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormDobrodosli::ButtonAPKInfoClick(TObject *Sender)
+{
+	//DLL Dialog
+    PrikaziOAplikaciji();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormDobrodosli::ButtonMenuClick(TObject *Sender)
+{
+	// prikazi
+    bool prikazani = ButtonHRV->Visible;
+
+    ButtonHRV->Visible = !prikazani;
+    ButtonENG->Visible = !prikazani;
+    ButtonAPKInfo->Visible = !prikazani;
+
+    if (prikazani)
+		ButtonMenu->Caption = "Izbornik";
+    else
+        ButtonMenu->Caption = "Izbornik";
 }
 //---------------------------------------------------------------------------
 

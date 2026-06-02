@@ -1,9 +1,9 @@
 object FormDobrodosli: TFormDobrodosli
   Left = 0
   Top = 0
-  Caption = 'Dobrodo'#353'li!'
+  Caption = 'Dobrodo'#353'li na IMiniDb'
   ClientHeight = 463
-  ClientWidth = 680
+  ClientWidth = 657
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,78 +12,115 @@ object FormDobrodosli: TFormDobrodosli
   Font.Style = []
   OnCreate = FormCreate
   TextHeight = 15
-  object Label1: TLabel
-    Left = 294
-    Top = 408
-    Width = 48
-    Height = 15
-    Caption = 'v1.0 2026'
-  end
-  object ButtonRegistracijaForm: TButton
-    Left = 280
-    Top = 304
-    Width = 97
-    Height = 33
-    Caption = 'Registriraj se!'
-    TabOrder = 0
-    OnClick = ButtonRegistracijaFormClick
-  end
-  object ButtonPrijavaForm: TButton
-    Left = 280
-    Top = 343
-    Width = 97
-    Height = 34
-    Caption = 'Prijavi se!'
-    TabOrder = 1
-    OnClick = ButtonPrijavaFormClick
-  end
   object GroupBoxGore: TGroupBox
     Left = 0
     Top = 0
-    Width = 680
+    Width = 657
     Height = 273
     Align = alTop
-    TabOrder = 2
+    TabOrder = 0
     ExplicitWidth = 678
     object ImageLogo: TImage
       Left = 2
       Top = 17
-      Width = 676
+      Width = 653
       Height = 299
       Align = alTop
       ExplicitTop = 0
+      ExplicitWidth = 676
     end
-    object ButtonENG: TButton
-      Left = 528
-      Top = 316
-      Width = 75
-      Height = 25
-      Align = alRight
-      Caption = 'English'
+    object Panel1: TPanel
+      Left = 488
+      Top = 105
+      Width = 129
+      Height = 104
+      BevelOuter = bvNone
       TabOrder = 0
-      OnClick = ButtonENGClick
-      ExplicitLeft = 526
+      object ButtonAPKInfo: TButton
+        Left = 0
+        Top = 25
+        Width = 129
+        Height = 27
+        Align = alTop
+        Caption = 'Informacije'
+        TabOrder = 0
+        OnClick = ButtonAPKInfoClick
+        ExplicitLeft = 1
+        ExplicitTop = 32
+        ExplicitWidth = 127
+      end
+      object ButtonENG: TButton
+        Left = 0
+        Top = 77
+        Width = 129
+        Height = 25
+        Align = alTop
+        Caption = 'English'
+        TabOrder = 1
+        OnClick = ButtonENGClick
+        ExplicitLeft = 1
+        ExplicitTop = 16
+        ExplicitWidth = 183
+      end
+      object ButtonHRV: TButton
+        Left = 0
+        Top = 52
+        Width = 129
+        Height = 25
+        Align = alTop
+        Caption = 'Hrvatski'
+        TabOrder = 2
+        OnClick = ButtonHRVClick
+        ExplicitLeft = 1
+        ExplicitTop = 16
+        ExplicitWidth = 183
+      end
+      object ButtonMenu: TButton
+        Left = 0
+        Top = 0
+        Width = 129
+        Height = 25
+        Align = alTop
+        Caption = 'Izbornik'
+        TabOrder = 3
+        OnClick = ButtonMenuClick
+        ExplicitLeft = 1
+        ExplicitTop = -4
+        ExplicitWidth = 183
+      end
     end
-    object ButtonHRV: TButton
-      Left = 603
-      Top = 316
-      Width = 75
-      Height = 25
-      Align = alRight
-      Caption = 'Hrvatski'
+  end
+  object GroupBoxDolje: TGroupBox
+    Left = 0
+    Top = 279
+    Width = 657
+    Height = 184
+    Align = alBottom
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 302
+      Top = 154
+      Width = 48
+      Height = 15
+      Caption = 'v1.0 2026'
+    end
+    object ButtonPrijavaForm: TButton
+      Left = 280
+      Top = 71
+      Width = 97
+      Height = 34
+      Caption = 'Prijavi se!'
+      TabOrder = 0
+      OnClick = ButtonPrijavaFormClick
+    end
+    object ButtonRegistracijaForm: TButton
+      Left = 280
+      Top = 32
+      Width = 97
+      Height = 33
+      Caption = 'Registriraj se!'
       TabOrder = 1
-      OnClick = ButtonHRVClick
-      ExplicitLeft = 601
-    end
-    object ButtonAPKInfo: TButton
-      Left = 453
-      Top = 316
-      Width = 75
-      Height = 27
-      Align = alRight
-      Caption = 'Informacije'
-      TabOrder = 2
-      ExplicitLeft = 451
+      OnClick = ButtonRegistracijaFormClick
     end
   end
 end
