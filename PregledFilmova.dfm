@@ -50,7 +50,6 @@ object FormSviFilmovi: TFormSviFilmovi
     Height = 457
     Align = alTop
     TabOrder = 2
-    ExplicitWidth = 1245
     object LabelListaZaGledanje: TLabel
       Left = 9
       Top = 20
@@ -64,24 +63,6 @@ object FormSviFilmovi: TFormSviFilmovi
       Width = 87
       Height = 15
       Caption = 'Omiljeni FIlmovi'
-    end
-    object LabelPrijavljeniKorisnik: TLabel
-      Left = 2
-      Top = 17
-      Width = 1243
-      Height = 23
-      Align = alTop
-      Alignment = taRightJustify
-      Caption = 'LabelPrijavljeniKorisnik'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -17
-      Font.Name = 'Segoe UI'
-      Font.Style = [fsBold]
-      ParentFont = False
-      ExplicitLeft = 1041
-      ExplicitTop = 20
-      ExplicitWidth = 187
     end
     object listViewOFilmovi: TListView
       Left = 57
@@ -198,6 +179,23 @@ object FormSviFilmovi: TFormSviFilmovi
       Height = 217
       Caption = 'Omiljeni Filmovi'
       TabOrder = 2
+      object LabelPrijavljeniKorisnik: TLabel
+        Left = 2
+        Top = 17
+        Width = 349
+        Height = 23
+        Align = alTop
+        Alignment = taRightJustify
+        Caption = 'LabelPrijavljeniKorisnik'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 1060
+        ExplicitWidth = 187
+      end
       object ButtonDodajNoviOFilm: TButton
         Left = 136
         Top = 25
@@ -260,8 +258,6 @@ object FormSviFilmovi: TFormSviFilmovi
     Height = 550
     Align = alBottom
     TabOrder = 3
-    ExplicitTop = 447
-    ExplicitWidth = 1245
     object DBGridFilmoviBaza: TDBGrid
       Left = 0
       Top = 197

@@ -75,7 +75,7 @@ void __fastcall TFormRegistracija::ButtonRegistrirajClick(TObject *Sender)
 	}
 
 
-     TFDQuery *Query = new TFDQuery(NULL);
+	TFDQuery *Query = new TFDQuery(NULL);
     try
     {
 		Query->Connection = FDConnectionIMiniDB;
@@ -129,12 +129,26 @@ void __fastcall TFormRegistracija::ButtonRegistrirajClick(TObject *Sender)
 
 	//ShowMessage("Pozdrav, " + K_test.getKorIme() + "!");
 
-	// auto otvara formu za pregled filmova
-	// DODATI: prosljedivanje ID-ja prijavljenog korsinika
+	// Dohvati ID novoregistriranog korisnika
+	int noviKorisnikID = 0;
+	TFDQuery *QueryID = new TFDQuery(NULL);
+	try {
+		QueryID->Connection = FDConnectionIMiniDB;
+		QueryID->SQL->Text = "SELECT id FROM korisnik WHERE korisnicko_ime = :kim";
+		QueryID->ParamByName("kim")->AsString = K_test.getKorIme();
+		QueryID->Open();
+		if (!QueryID->IsEmpty())
+			noviKorisnikID = QueryID->FieldByName("id")->AsInteger;
+	} __finally {
+		delete QueryID;
+	}
+
+	// Otvori FormSviFilmovi i proslijedi ID
 	TFormSviFilmovi *forma = new TFormSviFilmovi(Application);
 	try {
+		forma->TrenutniKorisnikID = noviKorisnikID;
+		forma->LabelPrijavljeniKorisnik->Caption = "Pozdrav, " + K_test.getKorIme() + "!";
 		forma->ShowModal();
-
 	} __finally {
 		delete forma;
 	}

@@ -261,6 +261,14 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
 	GroupBoxDolje->Width  = ClientWidth;
 	GroupBoxDolje->Height = ClientHeight / 2;
 
+    // Label iznad tipki
+	LabelPrijavljeniKorisnik->Parent = GroupBoxOmiljeniKontrole;
+	LabelPrijavljeniKorisnik->Align = alNone;
+	LabelPrijavljeniKorisnik->Top = 5;
+	LabelPrijavljeniKorisnik->Left = 5;
+	LabelPrijavljeniKorisnik->Width = GroupBoxOmiljeniKontrole->Width - 10;
+	LabelPrijavljeniKorisnik->Height = 20;
+
 	// GroupBoxDoljeKontrole - iznad DBGrida (lijeva strana)
 	GroupBoxDoljeKontrole->Left   = 5;
 	GroupBoxDoljeKontrole->Top    = 20;
@@ -311,17 +319,17 @@ void __fastcall TFormSviFilmovi::FormCreate(TObject* Sender)
 	int gH = 40;
 
 	ButtonOmiljeniFilmovi->Left   = 5;
-	ButtonOmiljeniFilmovi->Top    = 20;
+	ButtonOmiljeniFilmovi->Top    = 40;  // bilo 20, +10 zbog labela
 	ButtonOmiljeniFilmovi->Width  = gW;
 	ButtonOmiljeniFilmovi->Height = gH;
 
 	ButtonDodajNoviOFilm->Left   = gW + 10;
-	ButtonDodajNoviOFilm->Top    = 20;
+	ButtonDodajNoviOFilm->Top    = 40;  // bilo 20, +10 zbog labela
 	ButtonDodajNoviOFilm->Width  = gW;
 	ButtonDodajNoviOFilm->Height = gH;
 
 	ButtonUkloni->Left   = 5;
-	ButtonUkloni->Top    = 70;
+	ButtonUkloni->Top    = 90;  // bilo 70, +10 zbog labela
 	ButtonUkloni->Width  = gW;
 	ButtonUkloni->Height = gH;
 
