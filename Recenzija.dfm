@@ -109,6 +109,23 @@ object FormRecenzija: TFormRecenzija
       Height = 15
       Caption = '10'
     end
+    object LabelPrijavljeniKorisnik: TLabel
+      Left = 2
+      Top = 17
+      Width = 1037
+      Height = 23
+      Align = alTop
+      Alignment = taRightJustify
+      Caption = 'LabelPrijavljeniKorisnik'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitLeft = 852
+      ExplicitWidth = 187
+    end
     object ButtonSpremiRecenziju: TButton
       Left = 157
       Top = 528

@@ -1143,7 +1143,9 @@ void __fastcall TFormSviFilmovi::ButtonRecenzijeClick(TObject *Sender)
 {
 	// otvara se forma Recenzije
 	TFormRecenzija *forma = new TFormRecenzija(Application);
-    try {
+	try {
+		forma->TRENUTNI_KORISNIK_ID = TrenutniKorisnikID;
+		forma->LabelPrijavljeniKorisnik->Caption = "Recenzije: " + LabelPrijavljeniKorisnik->Caption;
 		forma->ShowModal();
 
     } __finally {

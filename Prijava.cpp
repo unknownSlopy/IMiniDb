@@ -138,59 +138,51 @@ void __fastcall TFormPrijava::DekriptirajEmailove()
 
 void __fastcall TFormPrijava::ButtonPrijavaClick(TObject *Sender)
 {
- 	EditLozinkaPrijava->PasswordChar = '*';
-	Korisnik K_prijava;
+    EditLozinkaPrijava->PasswordChar = '*';
+    AnsiString korisnickoIme = EditKorImePrijava->Text;
+    AnsiString lozinka = EditLozinkaPrijava->Text;
 
-	AnsiString korisnickoIme = EditKorImePrijava->Text;
-	AnsiString lozinka = EditLozinkaPrijava->Text;
-
-	if (korisnickoIme.IsEmpty() || lozinka.IsEmpty()) {
+    if (korisnickoIme.IsEmpty() || lozinka.IsEmpty()) {
         ShowMessage("Unesite korisničko ime i lozinku.");
         return;
     }
 
-     try {
-        // Dohvati hash iz baze prema kor imenu
+    try {
         FDQueryPrijava->Close();
         FDQueryPrijava->SQL->Clear();
-        FDQueryPrijava->SQL->Add("SELECT lozinka_hash FROM korisnik "
+        FDQueryPrijava->SQL->Add("SELECT id, lozinka_hash FROM korisnik "
                                  "WHERE korisnicko_ime = :korIme");
         FDQueryPrijava->ParamByName("korIme")->AsString = korisnickoIme;
         FDQueryPrijava->Open();
 
         if (FDQueryPrijava->RecordCount == 1) {
             AnsiString hashIzBaze = FDQueryPrijava->FieldByName("lozinka_hash")->AsString;
+            int korisnikID = FDQueryPrijava->FieldByName("id")->AsInteger;
+            FDQueryPrijava->Close();
 
             Korisnik K_prijava;
             K_prijava.setKorisnickoIme(korisnickoIme);
 
-			if (K_prijava.prijava(lozinka, hashIzBaze)) {
-				//FLozinka = lozinka; // lozinka postaje AES ključ
-				//KriptirajEmailove();
-                ShowMessage("Uspješna prijava!\nPozdrav, " + korisnickoIme + "!");
+            if (K_prijava.prijava(lozinka, hashIzBaze)) {
+                TFormSviFilmovi *forma = new TFormSviFilmovi(Application);
+                try {
+					forma->TrenutniKorisnikID = korisnikID;
+                    forma->LabelPrijavljeniKorisnik->Caption = "Pozdrav, " + korisnickoIme + " !" + korisnikID;
+                    forma->ShowModal();
+                } __finally {
+                    delete forma;
+                }
             } else {
                 ShowMessage("Neispravno korisničko ime ili lozinka.");
             }
         } else {
+            FDQueryPrijava->Close();
             ShowMessage("Neispravno korisničko ime ili lozinka.");
         }
-
-        FDQueryPrijava->Close();
     }
     catch (Exception &e) {
         ShowMessage("Greška pri spajanju na bazu: " + e.Message);
-	}
-
-	// auto otvara formu za pregled filmova
-	// DODATI: prosljedivanje ID-ja prijavljenog korsinika
-	TFormSviFilmovi *forma = new TFormSviFilmovi(Application);
-	try {
-		forma->ShowModal();
-
-	} __finally {
-		delete forma;
-	}
-
+    }
 }
 //---------------------------------------------------------------------------
 

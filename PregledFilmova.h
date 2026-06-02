@@ -111,6 +111,7 @@ __published:	// IDE-managed Components
 	TGroupBox *GroupBoxGore;
 	TGroupBox *GroupBoxDolje;
 	TGroupBox *GroupBoxDoljeKontrole;
+	TLabel *LabelPrijavljeniKorisnik;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall ButtonOmiljeniFilmoviClick(TObject *Sender);
 	void __fastcall ButtonHRVClick(TObject *Sender);
@@ -151,6 +152,7 @@ __published:	// IDE-managed Components
 	__fastcall TFormSviFilmovi(TComponent* Owner);
     TCriticalSection *FCS;   // inicijaliziraj u FormCreate, delete u FormDestroy
 	int FBrojacPostera;
+	int TrenutniKorisnikID;
 
 };
 

@@ -100,6 +100,7 @@ __published:	// IDE-managed Components
 	TCryptographicLibrary *CryptographicLibrary1;
 	TCodec *Codec2;
 	TCryptographicLibrary *CryptographicLibrary2;
+	TLabel *LabelPrijavljeniKorisnik;
 	void __fastcall ButtonSpremiRecenzijuClick(TObject *Sender);
 	void __fastcall ButtonOdustaniClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
@@ -124,6 +125,7 @@ private:	// User declarations
     void __fastcall DekriptirajFile(const String& path);
 public:		// User declarations
 	__fastcall TFormRecenzija(TComponent* Owner);
+	int TRENUTNI_KORISNIK_ID;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormRecenzija *FormRecenzija;

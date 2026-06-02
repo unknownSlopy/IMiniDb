@@ -31,7 +31,6 @@
 #pragma resource "*.dfm"
 TFormRecenzija *FormRecenzija;
 
-static const int TRENUTNI_KORISNIK_ID = 8; // admin
 //---------------------------------------------------------------------------
 __fastcall TFormRecenzija::TFormRecenzija(TComponent* Owner)
     : TForm(Owner), editIndex(-1)
@@ -513,4 +512,5 @@ void __fastcall TFormRecenzija::Button_SLibClick(TObject *Sender)
     ShowMessage(Radi());
 }*/
 //---------------------------------------------------------------------------
+
 
