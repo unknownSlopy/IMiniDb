@@ -162150,5 +162150,1721 @@
       }
     ],
     "won": false
+  },
+  
+  {
+    "category": "Best Picture",
+    "year": "2024",
+    "nominees": ["Anora"],
+    "movies": [{"title": "Anora", "tmdb_id": 1090590, "imdb_id": "tt28607951"}],
+    "won": true
+  },
+  {
+    "category": "Best Picture",
+    "year": "2024",
+    "nominees": ["The Brutalist"],
+    "movies": [{"title": "The Brutalist", "tmdb_id": 1182256, "imdb_id": "tt8998806"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2024",
+    "nominees": ["A Complete Unknown"],
+    "movies": [{"title": "A Complete Unknown", "tmdb_id": 944217, "imdb_id": "tt11563598"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2024",
+    "nominees": ["Conclave"],
+    "movies": [{"title": "Conclave", "tmdb_id": 1172866, "imdb_id": "tt20215234"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2024",
+    "nominees": ["Dune: Part Two"],
+    "movies": [{"title": "Dune: Part Two", "tmdb_id": 693134, "imdb_id": "tt15239678"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2024",
+    "nominees": ["Emilia Pérez"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2024",
+    "nominees": ["I'm Still Here"],
+    "movies": [{"title": "I'm Still Here", "tmdb_id": 1056258, "imdb_id": "tt23189701"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2024",
+    "nominees": ["Nickel Boys"],
+    "movies": [{"title": "Nickel Boys", "tmdb_id": 1192668, "imdb_id": "tt14369664"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2024",
+    "nominees": ["The Substance"],
+    "movies": [{"title": "The Substance", "tmdb_id": 1010788, "imdb_id": "tt17526714"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2024",
+    "nominees": ["Wicked"],
+    "movies": [{"title": "Wicked", "tmdb_id": 402431, "imdb_id": "tt1262426"}],
+    "won": false
+  },
+  {
+    "category": "Best Actor",
+    "year": "2024",
+    "nominees": ["Adrien Brody"],
+    "movies": [{"title": "The Brutalist", "tmdb_id": 1182256, "imdb_id": "tt8998806"}],
+    "won": true
+  },
+  {
+    "category": "Best Actor",
+    "year": "2024",
+    "nominees": ["Timothée Chalamet"],
+    "movies": [{"title": "A Complete Unknown", "tmdb_id": 944217, "imdb_id": "tt11563598"}],
+    "won": false
+  },
+  {
+    "category": "Best Actor",
+    "year": "2024",
+    "nominees": ["Colman Domingo"],
+    "movies": [{"title": "Sing Sing", "tmdb_id": 1226578, "imdb_id": "tt26510326"}],
+    "won": false
+  },
+  {
+    "category": "Best Actor",
+    "year": "2024",
+    "nominees": ["Ralph Fiennes"],
+    "movies": [{"title": "Conclave", "tmdb_id": 1172866, "imdb_id": "tt20215234"}],
+    "won": false
+  },
+  {
+    "category": "Best Actor",
+    "year": "2024",
+    "nominees": ["Sebastian Stan"],
+    "movies": [{"title": "The Apprentice", "tmdb_id": 1230026, "imdb_id": "tt7735912"}],
+    "won": false
+  },
+  {
+    "category": "Best Actress",
+    "year": "2024",
+    "nominees": ["Mikey Madison"],
+    "movies": [{"title": "Anora", "tmdb_id": 1090590, "imdb_id": "tt28607951"}],
+    "won": true
+  },
+  {
+    "category": "Best Actress",
+    "year": "2024",
+    "nominees": ["Cynthia Erivo"],
+    "movies": [{"title": "Wicked", "tmdb_id": 402431, "imdb_id": "tt1262426"}],
+    "won": false
+  },
+  {
+    "category": "Best Actress",
+    "year": "2024",
+    "nominees": ["Karla Sofía Gascón"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": false
+  },
+  {
+    "category": "Best Actress",
+    "year": "2024",
+    "nominees": ["Demi Moore"],
+    "movies": [{"title": "The Substance", "tmdb_id": 1010788, "imdb_id": "tt17526714"}],
+    "won": false
+  },
+  {
+    "category": "Best Actress",
+    "year": "2024",
+    "nominees": ["Fernanda Torres"],
+    "movies": [{"title": "I'm Still Here", "tmdb_id": 1056258, "imdb_id": "tt23189701"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actor",
+    "year": "2024",
+    "nominees": ["Kieran Culkin"],
+    "movies": [{"title": "A Real Pain", "tmdb_id": 1235879, "imdb_id": "tt22940764"}],
+    "won": true
+  },
+  {
+    "category": "Best Supporting Actor",
+    "year": "2024",
+    "nominees": ["Yura Borisov"],
+    "movies": [{"title": "Anora", "tmdb_id": 1090590, "imdb_id": "tt28607951"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actor",
+    "year": "2024",
+    "nominees": ["Edward Norton"],
+    "movies": [{"title": "A Complete Unknown", "tmdb_id": 944217, "imdb_id": "tt11563598"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actor",
+    "year": "2024",
+    "nominees": ["Guy Pearce"],
+    "movies": [{"title": "The Brutalist", "tmdb_id": 1182256, "imdb_id": "tt8998806"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actor",
+    "year": "2024",
+    "nominees": ["Jeremy Strong"],
+    "movies": [{"title": "The Apprentice", "tmdb_id": 1230026, "imdb_id": "tt7735912"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actress",
+    "year": "2024",
+    "nominees": ["Zoe Saldaña"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": true
+  },
+  {
+    "category": "Best Supporting Actress",
+    "year": "2024",
+    "nominees": ["Monica Barbaro"],
+    "movies": [{"title": "A Complete Unknown", "tmdb_id": 944217, "imdb_id": "tt11563598"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actress",
+    "year": "2024",
+    "nominees": ["Ariana Grande"],
+    "movies": [{"title": "Wicked", "tmdb_id": 402431, "imdb_id": "tt1262426"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actress",
+    "year": "2024",
+    "nominees": ["Felicity Jones"],
+    "movies": [{"title": "The Brutalist", "tmdb_id": 1182256, "imdb_id": "tt8998806"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actress",
+    "year": "2024",
+    "nominees": ["Isabella Rossellini"],
+    "movies": [{"title": "Conclave", "tmdb_id": 1172866, "imdb_id": "tt20215234"}],
+    "won": false
+  },
+  {
+    "category": "Best Director",
+    "year": "2024",
+    "nominees": ["Sean Baker"],
+    "movies": [{"title": "Anora", "tmdb_id": 1090590, "imdb_id": "tt28607951"}],
+    "won": true
+  },
+  {
+    "category": "Best Director",
+    "year": "2024",
+    "nominees": ["Brady Corbet"],
+    "movies": [{"title": "The Brutalist", "tmdb_id": 1182256, "imdb_id": "tt8998806"}],
+    "won": false
+  },
+  {
+    "category": "Best Director",
+    "year": "2024",
+    "nominees": ["James Mangold"],
+    "movies": [{"title": "A Complete Unknown", "tmdb_id": 944217, "imdb_id": "tt11563598"}],
+    "won": false
+  },
+  {
+    "category": "Best Director",
+    "year": "2024",
+    "nominees": ["Jacques Audiard"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": false
+  },
+  {
+    "category": "Best Director",
+    "year": "2024",
+    "nominees": ["Coralie Fargeat"],
+    "movies": [{"title": "The Substance", "tmdb_id": 1010788, "imdb_id": "tt17526714"}],
+    "won": false
+  },
+  {
+    "category": "Best Adapted Screenplay",
+    "year": "2024",
+    "nominees": ["Peter Straughan"],
+    "movies": [{"title": "Conclave", "tmdb_id": 1172866, "imdb_id": "tt20215234"}],
+    "won": true
+  },
+  {
+    "category": "Best Adapted Screenplay",
+    "year": "2024",
+    "nominees": ["James Mangold", "Jay Cocks"],
+    "movies": [{"title": "A Complete Unknown", "tmdb_id": 944217, "imdb_id": "tt11563598"}],
+    "won": false
+  },
+  {
+    "category": "Best Adapted Screenplay",
+    "year": "2024",
+    "nominees": ["Jacques Audiard", "Thomas Bidegain", "Léa Mysius"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": false
+  },
+  {
+    "category": "Best Adapted Screenplay",
+    "year": "2024",
+    "nominees": ["RaMell Ross", "Joslyn Barnes"],
+    "movies": [{"title": "Nickel Boys", "tmdb_id": 1192668, "imdb_id": "tt14369664"}],
+    "won": false
+  },
+  {
+    "category": "Best Adapted Screenplay",
+    "year": "2024",
+    "nominees": ["Clint Bentley", "Greg Kwedar"],
+    "movies": [{"title": "Sing Sing", "tmdb_id": 1226578, "imdb_id": "tt26510326"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Screenplay",
+    "year": "2024",
+    "nominees": ["Sean Baker"],
+    "movies": [{"title": "Anora", "tmdb_id": 1090590, "imdb_id": "tt28607951"}],
+    "won": true
+  },
+  {
+    "category": "Best Original Screenplay",
+    "year": "2024",
+    "nominees": ["Brady Corbet", "Mona Fastvold"],
+    "movies": [{"title": "The Brutalist", "tmdb_id": 1182256, "imdb_id": "tt8998806"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Screenplay",
+    "year": "2024",
+    "nominees": ["Jesse Eisenberg"],
+    "movies": [{"title": "A Real Pain", "tmdb_id": 1235879, "imdb_id": "tt22940764"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Screenplay",
+    "year": "2024",
+    "nominees": ["Moritz Binder", "Tim Fehlbaum", "Alex David"],
+    "movies": [{"title": "September 5", "tmdb_id": 1359183, "imdb_id": "tt26608420"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Screenplay",
+    "year": "2024",
+    "nominees": ["Coralie Fargeat"],
+    "movies": [{"title": "The Substance", "tmdb_id": 1010788, "imdb_id": "tt17526714"}],
+    "won": false
+  },
+  {
+    "category": "Best Score",
+    "year": "2024",
+    "nominees": ["Daniel Blumberg"],
+    "movies": [{"title": "The Brutalist", "tmdb_id": 1182256, "imdb_id": "tt8998806"}],
+    "won": true
+  },
+  {
+    "category": "Best Score",
+    "year": "2024",
+    "nominees": ["Volker Bertelmann"],
+    "movies": [{"title": "Conclave", "tmdb_id": 1172866, "imdb_id": "tt20215234"}],
+    "won": false
+  },
+  {
+    "category": "Best Score",
+    "year": "2024",
+    "nominees": ["Clément Ducol", "Camille"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": false
+  },
+  {
+    "category": "Best Score",
+    "year": "2024",
+    "nominees": ["John Powell", "Stephen Schwartz"],
+    "movies": [{"title": "Wicked", "tmdb_id": 402431, "imdb_id": "tt1262426"}],
+    "won": false
+  },
+  {
+    "category": "Best Score",
+    "year": "2024",
+    "nominees": ["Kris Bowers"],
+    "movies": [{"title": "The Wild Robot", "tmdb_id": 1184918, "imdb_id": "tt29623480"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Song",
+    "year": "2024",
+    "nominees": ["El Mal"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": true
+  },
+  {
+    "category": "Best Original Song",
+    "year": "2024",
+    "nominees": ["The Journey"],
+    "movies": [{"title": "The Six Triple Eight", "tmdb_id": 1236549, "imdb_id": "tt27107046"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Song",
+    "year": "2024",
+    "nominees": ["Like A Bird"],
+    "movies": [{"title": "Sing Sing", "tmdb_id": 1226578, "imdb_id": "tt26510326"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Song",
+    "year": "2024",
+    "nominees": ["Mi Camino"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Song",
+    "year": "2024",
+    "nominees": ["Never Too Late"],
+    "movies": [{"title": "Elton John: Never Too Late", "tmdb_id": 1302180, "imdb_id": "tt29737791"}],
+    "won": false
+  },
+  {
+    "category": "Best International Feature Film",
+    "year": "2024",
+    "nominees": ["I'm Still Here"],
+    "movies": [{"title": "I'm Still Here", "tmdb_id": 1056258, "imdb_id": "tt23189701"}],
+    "won": true
+  },
+  {
+    "category": "Best International Feature Film",
+    "year": "2024",
+    "nominees": ["The Girl with the Needle"],
+    "movies": [{"title": "The Girl with the Needle", "tmdb_id": 1282151, "imdb_id": "tt31205766"}],
+    "won": false
+  },
+  {
+    "category": "Best International Feature Film",
+    "year": "2024",
+    "nominees": ["Emilia Pérez"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": false
+  },
+  {
+    "category": "Best International Feature Film",
+    "year": "2024",
+    "nominees": ["The Seed of the Sacred Fig"],
+    "movies": [{"title": "The Seed of the Sacred Fig", "tmdb_id": 1359134, "imdb_id": "tt29357687"}],
+    "won": false
+  },
+  {
+    "category": "Best International Feature Film",
+    "year": "2024",
+    "nominees": ["Flow"],
+    "movies": [{"title": "Flow", "tmdb_id": 1359228, "imdb_id": "tt10482406"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Feature",
+    "year": "2024",
+    "nominees": ["No Other Land"],
+    "movies": [{"title": "No Other Land", "tmdb_id": 1280840, "imdb_id": "tt27970537"}],
+    "won": true
+  },
+  {
+    "category": "Best Documentary Feature",
+    "year": "2024",
+    "nominees": ["Black Box Diaries"],
+    "movies": [{"title": "Black Box Diaries", "tmdb_id": 1331604, "imdb_id": "tt31026374"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Feature",
+    "year": "2024",
+    "nominees": ["Porcelain War"],
+    "movies": [{"title": "Porcelain War", "tmdb_id": 1311788, "imdb_id": "tt29867894"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Feature",
+    "year": "2024",
+    "nominees": ["Soundtrack to a Coup d'Etat"],
+    "movies": [{"title": "Soundtrack to a Coup d'Etat", "tmdb_id": 1322567, "imdb_id": "tt21060690"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Feature",
+    "year": "2024",
+    "nominees": ["Sugarcane"],
+    "movies": [{"title": "Sugarcane", "tmdb_id": 1348901, "imdb_id": "tt28398898"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Short",
+    "year": "2024",
+    "nominees": ["The Only Girl in the Orchestra"],
+    "movies": [{"title": "The Only Girl in the Orchestra", "tmdb_id": 1371234, "imdb_id": "tt33068376"}],
+    "won": true
+  },
+  {
+    "category": "Best Documentary Short",
+    "year": "2024",
+    "nominees": ["Death by Numbers"],
+    "movies": [{"title": "Death by Numbers", "tmdb_id": 1379012, "imdb_id": "tt32487654"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Short",
+    "year": "2024",
+    "nominees": ["I Am Ready, Warden"],
+    "movies": [{"title": "I Am Ready, Warden", "tmdb_id": 1379013, "imdb_id": "tt32145678"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Short",
+    "year": "2024",
+    "nominees": ["Incident"],
+    "movies": [{"title": "Incident", "tmdb_id": 1379014, "imdb_id": "tt31987654"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Short",
+    "year": "2024",
+    "nominees": ["Instruments of a Beating Heart"],
+    "movies": [{"title": "Instruments of a Beating Heart", "tmdb_id": 1379015, "imdb_id": "tt32012345"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Feature",
+    "year": "2024",
+    "nominees": ["Flow"],
+    "movies": [{"title": "Flow", "tmdb_id": 1359228, "imdb_id": "tt10482406"}],
+    "won": true
+  },
+  {
+    "category": "Best Animated Feature",
+    "year": "2024",
+    "nominees": ["Inside Out 2"],
+    "movies": [{"title": "Inside Out 2", "tmdb_id": 1022789, "imdb_id": "tt22022452"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Feature",
+    "year": "2024",
+    "nominees": ["Memoir of a Snail"],
+    "movies": [{"title": "Memoir of a Snail", "tmdb_id": 1087834, "imdb_id": "tt14385568"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Feature",
+    "year": "2024",
+    "nominees": ["Wallace & Gromit: Vengeance Most Fowl"],
+    "movies": [{"title": "Wallace & Gromit: Vengeance Most Fowl", "tmdb_id": 1241674, "imdb_id": "tt31369552"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Feature",
+    "year": "2024",
+    "nominees": ["The Wild Robot"],
+    "movies": [{"title": "The Wild Robot", "tmdb_id": 1184918, "imdb_id": "tt29623480"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Short",
+    "year": "2024",
+    "nominees": ["In the Shadow of the Cypress"],
+    "movies": [{"title": "In the Shadow of the Cypress", "tmdb_id": 1389012, "imdb_id": "tt32456789"}],
+    "won": true
+  },
+  {
+    "category": "Best Animated Short",
+    "year": "2024",
+    "nominees": ["Beautiful Men"],
+    "movies": [{"title": "Beautiful Men", "tmdb_id": 1389013, "imdb_id": "tt29876543"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Short",
+    "year": "2024",
+    "nominees": ["Magic Candies"],
+    "movies": [{"title": "Magic Candies", "tmdb_id": 1389014, "imdb_id": "tt31234567"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Short",
+    "year": "2024",
+    "nominees": ["Wander to Wonder"],
+    "movies": [{"title": "Wander to Wonder", "tmdb_id": 1389015, "imdb_id": "tt30987654"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Short",
+    "year": "2024",
+    "nominees": ["Yuck!"],
+    "movies": [{"title": "Yuck!", "tmdb_id": 1389016, "imdb_id": "tt31098765"}],
+    "won": false
+  },
+  {
+    "category": "Best Live Action Short (Comedy or One Reel or Regular)",
+    "year": "2024",
+    "nominees": ["I'm Not a Robot"],
+    "movies": [{"title": "I'm Not a Robot", "tmdb_id": 1393456, "imdb_id": "tt32783252"}],
+    "won": true
+  },
+  {
+    "category": "Best Live Action Short (Comedy or One Reel or Regular)",
+    "year": "2024",
+    "nominees": ["A Lien"],
+    "movies": [{"title": "A Lien", "tmdb_id": 1393457, "imdb_id": "tt32901234"}],
+    "won": false
+  },
+  {
+    "category": "Best Live Action Short (Comedy or One Reel or Regular)",
+    "year": "2024",
+    "nominees": ["Anuja"],
+    "movies": [{"title": "Anuja", "tmdb_id": 1393458, "imdb_id": "tt32012398"}],
+    "won": false
+  },
+  {
+    "category": "Best Live Action Short (Comedy or One Reel or Regular)",
+    "year": "2024",
+    "nominees": ["The Last Ranger"],
+    "movies": [{"title": "The Last Ranger", "tmdb_id": 1393459, "imdb_id": "tt31234890"}],
+    "won": false
+  },
+  {
+    "category": "Best Live Action Short (Comedy or One Reel or Regular)",
+    "year": "2024",
+    "nominees": ["The Man Who Could Not Remain Silent"],
+    "movies": [{"title": "The Man Who Could Not Remain Silent", "tmdb_id": 1393460, "imdb_id": "tt32456012"}],
+    "won": false
+  },
+  {
+    "category": "Best Production Design (Color)",
+    "year": "2024",
+    "nominees": ["Nathan Crowley", "Lee Sandales"],
+    "movies": [{"title": "Wicked", "tmdb_id": 402431, "imdb_id": "tt1262426"}],
+    "won": true
+  },
+  {
+    "category": "Best Production Design (Color)",
+    "year": "2024",
+    "nominees": ["Judy Becker", "Patricia Cuccia"],
+    "movies": [{"title": "The Brutalist", "tmdb_id": 1182256, "imdb_id": "tt8998806"}],
+    "won": false
+  },
+  {
+    "category": "Best Production Design (Color)",
+    "year": "2024",
+    "nominees": ["Suzie Davies", "Cynthia Sleiter"],
+    "movies": [{"title": "Conclave", "tmdb_id": 1172866, "imdb_id": "tt20215234"}],
+    "won": false
+  },
+  {
+    "category": "Best Production Design (Color)",
+    "year": "2024",
+    "nominees": ["Patrice Vermette", "Shane Vieau"],
+    "movies": [{"title": "Dune: Part Two", "tmdb_id": 693134, "imdb_id": "tt15239678"}],
+    "won": false
+  },
+  {
+    "category": "Best Production Design (Color)",
+    "year": "2024",
+    "nominees": ["Craig Lathrop", "Beatrice Brentnerová"],
+    "movies": [{"title": "Nosferatu", "tmdb_id": 559969, "imdb_id": "tt5040012"}],
+    "won": false
+  },
+  {
+    "category": "Best Cinematography (Color)",
+    "year": "2024",
+    "nominees": ["Lol Crawley"],
+    "movies": [{"title": "The Brutalist", "tmdb_id": 1182256, "imdb_id": "tt8998806"}],
+    "won": true
+  },
+  {
+    "category": "Best Cinematography (Color)",
+    "year": "2024",
+    "nominees": ["Greig Fraser"],
+    "movies": [{"title": "Dune: Part Two", "tmdb_id": 693134, "imdb_id": "tt15239678"}],
+    "won": false
+  },
+  {
+    "category": "Best Cinematography (Color)",
+    "year": "2024",
+    "nominees": ["Paul Guilhaume"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": false
+  },
+  {
+    "category": "Best Cinematography (Color)",
+    "year": "2024",
+    "nominees": ["Ed Lachman"],
+    "movies": [{"title": "Maria", "tmdb_id": 1071115, "imdb_id": "tt14838066"}],
+    "won": false
+  },
+  {
+    "category": "Best Cinematography (Color)",
+    "year": "2024",
+    "nominees": ["Jarin Blaschke"],
+    "movies": [{"title": "Nosferatu", "tmdb_id": 559969, "imdb_id": "tt5040012"}],
+    "won": false
+  },
+  {
+    "category": "Best Film Editing",
+    "year": "2024",
+    "nominees": ["Sean Baker"],
+    "movies": [{"title": "Anora", "tmdb_id": 1090590, "imdb_id": "tt28607951"}],
+    "won": true
+  },
+  {
+    "category": "Best Film Editing",
+    "year": "2024",
+    "nominees": ["David Jancso"],
+    "movies": [{"title": "The Brutalist", "tmdb_id": 1182256, "imdb_id": "tt8998806"}],
+    "won": false
+  },
+  {
+    "category": "Best Film Editing",
+    "year": "2024",
+    "nominees": ["Nick Emerson"],
+    "movies": [{"title": "Conclave", "tmdb_id": 1172866, "imdb_id": "tt20215234"}],
+    "won": false
+  },
+  {
+    "category": "Best Film Editing",
+    "year": "2024",
+    "nominees": ["Juliette Welfling"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": false
+  },
+  {
+    "category": "Best Film Editing",
+    "year": "2024",
+    "nominees": ["Myron Kerstein"],
+    "movies": [{"title": "Wicked", "tmdb_id": 402431, "imdb_id": "tt1262426"}],
+    "won": false
+  },
+  {
+    "category": "Best Visual/Special Effects",
+    "year": "2024",
+    "nominees": ["Paul Lambert", "Stephen James", "Rhys Salcombe", "Gerd Nefzer"],
+    "movies": [{"title": "Dune: Part Two", "tmdb_id": 693134, "imdb_id": "tt15239678"}],
+    "won": true
+  },
+  {
+    "category": "Best Visual/Special Effects",
+    "year": "2024",
+    "nominees": ["Eric Barba", "Nelson Sepulveda-Fauser", "Daniel Macarin", "Shane Mahan"],
+    "movies": [{"title": "Alien: Romulus", "tmdb_id": 945961, "imdb_id": "tt18412256"}],
+    "won": false
+  },
+  {
+    "category": "Best Visual/Special Effects",
+    "year": "2024",
+    "nominees": ["Luke Millar", "David Clayton", "Keith Herft", "Peter Stubbs"],
+    "movies": [{"title": "Better Man", "tmdb_id": 426063, "imdb_id": "tt7528809"}],
+    "won": false
+  },
+  {
+    "category": "Best Visual/Special Effects",
+    "year": "2024",
+    "nominees": ["Erik Winquist", "Stephen Unterfranz", "Paul Story", "Rodney Burke"],
+    "movies": [{"title": "Kingdom of the Planet of the Apes", "tmdb_id": 653346, "imdb_id": "tt11389872"}],
+    "won": false
+  },
+  {
+    "category": "Best Visual/Special Effects",
+    "year": "2024",
+    "nominees": ["Pablo Helman", "Jonathan Fawkner", "David Shirk", "Paul Corbould"],
+    "movies": [{"title": "Wicked", "tmdb_id": 402431, "imdb_id": "tt1262426"}],
+    "won": false
+  },
+  {
+    "category": "Best Sound Mixing",
+    "year": "2024",
+    "nominees": ["Gareth John", "Richard King", "Ron Bartlett", "Doug Hemphill"],
+    "movies": [{"title": "Dune: Part Two", "tmdb_id": 693134, "imdb_id": "tt15239678"}],
+    "won": true
+  },
+  {
+    "category": "Best Sound Mixing",
+    "year": "2024",
+    "nominees": ["Tod A. Maitland", "Donald Sylvester", "Ted Caplan", "Paul Massey", "David Giammarco"],
+    "movies": [{"title": "A Complete Unknown", "tmdb_id": 944217, "imdb_id": "tt11563598"}],
+    "won": false
+  },
+  {
+    "category": "Best Sound Mixing",
+    "year": "2024",
+    "nominees": ["Erwan Kerzanet", "Aymeric Devoldère", "Maxence Dussère", "Cyril Holtz", "Niels Barletta"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": false
+  },
+  {
+    "category": "Best Sound Mixing",
+    "year": "2024",
+    "nominees": ["Simon Hayes", "Nancy Nugent Title", "Jack Dolman", "Andy Nelson", "John Marquis"],
+    "movies": [{"title": "Wicked", "tmdb_id": 402431, "imdb_id": "tt1262426"}],
+    "won": false
+  },
+  {
+    "category": "Best Sound Mixing",
+    "year": "2024",
+    "nominees": ["Randy Thom", "Brian Chumney", "Gary A. Rizzo", "Leff Lefferts"],
+    "movies": [{"title": "The Wild Robot", "tmdb_id": 1184918, "imdb_id": "tt29623480"}],
+    "won": false
+  },
+  {
+    "category": "Best Makeup and Hairstyling",
+    "year": "2024",
+    "nominees": ["Pierre-Olivier Persin", "Stéphanie Guillon", "Marilyne Scarselli"],
+    "movies": [{"title": "The Substance", "tmdb_id": 1010788, "imdb_id": "tt17526714"}],
+    "won": true
+  },
+  {
+    "category": "Best Makeup and Hairstyling",
+    "year": "2024",
+    "nominees": ["Mike Marino", "David Presto", "Crystal Jurado"],
+    "movies": [{"title": "A Different Man", "tmdb_id": 1103678, "imdb_id": "tt21878718"}],
+    "won": false
+  },
+  {
+    "category": "Best Makeup and Hairstyling",
+    "year": "2024",
+    "nominees": ["Julia Floch Carbonel", "Emmanuel Janvier", "Jean-Christophe Spadaccini"],
+    "movies": [{"title": "Emilia Pérez", "tmdb_id": 974635, "imdb_id": "tt20221406"}],
+    "won": false
+  },
+  {
+    "category": "Best Makeup and Hairstyling",
+    "year": "2024",
+    "nominees": ["David White", "Traci Loader", "Suzanne Stokes-Munton"],
+    "movies": [{"title": "Nosferatu", "tmdb_id": 559969, "imdb_id": "tt5040012"}],
+    "won": false
+  },
+  {
+    "category": "Best Makeup and Hairstyling",
+    "year": "2024",
+    "nominees": ["Frances Hannon", "Laura Blount", "Sarah Nuth"],
+    "movies": [{"title": "Wicked", "tmdb_id": 402431, "imdb_id": "tt1262426"}],
+    "won": false
+  },
+  {
+    "category": "Best Costume Design (Color)",
+    "year": "2024",
+    "nominees": ["Paul Tazewell"],
+    "movies": [{"title": "Wicked", "tmdb_id": 402431, "imdb_id": "tt1262426"}],
+    "won": true
+  },
+  {
+    "category": "Best Costume Design (Color)",
+    "year": "2024",
+    "nominees": ["Arianne Phillips"],
+    "movies": [{"title": "A Complete Unknown", "tmdb_id": 944217, "imdb_id": "tt11563598"}],
+    "won": false
+  },
+  {
+    "category": "Best Costume Design (Color)",
+    "year": "2024",
+    "nominees": ["Lisy Christl"],
+    "movies": [{"title": "Conclave", "tmdb_id": 1172866, "imdb_id": "tt20215234"}],
+    "won": false
+  },
+  {
+    "category": "Best Costume Design (Color)",
+    "year": "2024",
+    "nominees": ["Janty Yates", "Dave Crossman"],
+    "movies": [{"title": "Gladiator II", "tmdb_id": 558449, "imdb_id": "tt9218128"}],
+    "won": false
+  },
+  {
+    "category": "Best Costume Design (Color)",
+    "year": "2024",
+    "nominees": ["Linda Muir"],
+    "movies": [{"title": "Nosferatu", "tmdb_id": 559969, "imdb_id": "tt5040012"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2025",
+    "nominees": ["One Battle After Another"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": true
+  },
+  {
+    "category": "Best Picture",
+    "year": "2025",
+    "nominees": ["Bugonia"],
+    "movies": [{"title": "Bugonia", "tmdb_id": 1298456, "imdb_id": "tt32123456"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2025",
+    "nominees": ["F1"],
+    "movies": [{"title": "F1", "tmdb_id": 1280207, "imdb_id": "tt11079588"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2025",
+    "nominees": ["Frankenstein"],
+    "movies": [{"title": "Frankenstein", "tmdb_id": 929590, "imdb_id": "tt11098001"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2025",
+    "nominees": ["Hamnet"],
+    "movies": [{"title": "Hamnet", "tmdb_id": 1385284, "imdb_id": "tt34506898"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2025",
+    "nominees": ["Marty Supreme"],
+    "movies": [{"title": "Marty Supreme", "tmdb_id": 1340289, "imdb_id": "tt33456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2025",
+    "nominees": ["The Secret Agent"],
+    "movies": [{"title": "The Secret Agent", "tmdb_id": 1340201, "imdb_id": "tt33345678"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2025",
+    "nominees": ["Sentimental Value"],
+    "movies": [{"title": "Sentimental Value", "tmdb_id": 1387253, "imdb_id": "tt33789012"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2025",
+    "nominees": ["Sinners"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
+  },
+  {
+    "category": "Best Picture",
+    "year": "2025",
+    "nominees": ["Train Dreams"],
+    "movies": [{"title": "Train Dreams", "tmdb_id": 1401234, "imdb_id": "tt33901234"}],
+    "won": false
+  },
+  {
+    "category": "Best Actor",
+    "year": "2025",
+    "nominees": ["Michael B. Jordan"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": true
+  },
+  {
+    "category": "Best Actor",
+    "year": "2025",
+    "nominees": ["Timothée Chalamet"],
+    "movies": [{"title": "Marty Supreme", "tmdb_id": 1340289, "imdb_id": "tt33456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Actor",
+    "year": "2025",
+    "nominees": ["Leonardo DiCaprio"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": false
+  },
+  {
+    "category": "Best Actor",
+    "year": "2025",
+    "nominees": ["Ethan Hawke"],
+    "movies": [{"title": "Blue Moon", "tmdb_id": 1387456, "imdb_id": "tt33678901"}],
+    "won": false
+  },
+  {
+    "category": "Best Actor",
+    "year": "2025",
+    "nominees": ["Wagner Moura"],
+    "movies": [{"title": "The Secret Agent", "tmdb_id": 1340201, "imdb_id": "tt33345678"}],
+    "won": false
+  },
+  {
+    "category": "Best Actress",
+    "year": "2025",
+    "nominees": ["Jessie Buckley"],
+    "movies": [{"title": "Hamnet", "tmdb_id": 1385284, "imdb_id": "tt34506898"}],
+    "won": true
+  },
+  {
+    "category": "Best Actress",
+    "year": "2025",
+    "nominees": ["Rose Byrne"],
+    "movies": [{"title": "If I Had Legs I'd Kick You", "tmdb_id": 1398765, "imdb_id": "tt34012345"}],
+    "won": false
+  },
+  {
+    "category": "Best Actress",
+    "year": "2025",
+    "nominees": ["Kate Hudson"],
+    "movies": [{"title": "Song Sung Blue", "tmdb_id": 1345678, "imdb_id": "tt33567890"}],
+    "won": false
+  },
+  {
+    "category": "Best Actress",
+    "year": "2025",
+    "nominees": ["Renate Reinsve"],
+    "movies": [{"title": "Sentimental Value", "tmdb_id": 1387253, "imdb_id": "tt33789012"}],
+    "won": false
+  },
+  {
+    "category": "Best Actress",
+    "year": "2025",
+    "nominees": ["Emma Stone"],
+    "movies": [{"title": "Bugonia", "tmdb_id": 1298456, "imdb_id": "tt32123456"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actor",
+    "year": "2025",
+    "nominees": ["Sean Penn"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": true
+  },
+  {
+    "category": "Best Supporting Actor",
+    "year": "2025",
+    "nominees": ["Benicio Del Toro"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actor",
+    "year": "2025",
+    "nominees": ["Jacob Elordi"],
+    "movies": [{"title": "Frankenstein", "tmdb_id": 929590, "imdb_id": "tt11098001"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actor",
+    "year": "2025",
+    "nominees": ["Delroy Lindo"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actor",
+    "year": "2025",
+    "nominees": ["Stellan Skarsgård"],
+    "movies": [{"title": "Sentimental Value", "tmdb_id": 1387253, "imdb_id": "tt33789012"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actress",
+    "year": "2025",
+    "nominees": ["Amy Madigan"],
+    "movies": [{"title": "Weapons", "tmdb_id": 1401567, "imdb_id": "tt34123456"}],
+    "won": true
+  },
+  {
+    "category": "Best Supporting Actress",
+    "year": "2025",
+    "nominees": ["Elle Fanning"],
+    "movies": [{"title": "Sentimental Value", "tmdb_id": 1387253, "imdb_id": "tt33789012"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actress",
+    "year": "2025",
+    "nominees": ["Inga Ibsdotter Lilleaas"],
+    "movies": [{"title": "Sentimental Value", "tmdb_id": 1387253, "imdb_id": "tt33789012"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actress",
+    "year": "2025",
+    "nominees": ["Wunmi Mosaku"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
+  },
+  {
+    "category": "Best Supporting Actress",
+    "year": "2025",
+    "nominees": ["Teyana Taylor"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": false
+  },
+  {
+    "category": "Best Director",
+    "year": "2025",
+    "nominees": ["Paul Thomas Anderson"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": true
+  },
+  {
+    "category": "Best Director",
+    "year": "2025",
+    "nominees": ["Chloé Zhao"],
+    "movies": [{"title": "Hamnet", "tmdb_id": 1385284, "imdb_id": "tt34506898"}],
+    "won": false
+  },
+  {
+    "category": "Best Director",
+    "year": "2025",
+    "nominees": ["Josh Safdie"],
+    "movies": [{"title": "Marty Supreme", "tmdb_id": 1340289, "imdb_id": "tt33456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Director",
+    "year": "2025",
+    "nominees": ["Joachim Trier"],
+    "movies": [{"title": "Sentimental Value", "tmdb_id": 1387253, "imdb_id": "tt33789012"}],
+    "won": false
+  },
+  {
+    "category": "Best Director",
+    "year": "2025",
+    "nominees": ["Ryan Coogler"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
+  },
+  {
+    "category": "Best Adapted Screenplay",
+    "year": "2025",
+    "nominees": ["Paul Thomas Anderson"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": true
+  },
+  {
+    "category": "Best Adapted Screenplay",
+    "year": "2025",
+    "nominees": ["Will Tracy"],
+    "movies": [{"title": "Bugonia", "tmdb_id": 1298456, "imdb_id": "tt32123456"}],
+    "won": false
+  },
+  {
+    "category": "Best Adapted Screenplay",
+    "year": "2025",
+    "nominees": ["Guillermo del Toro"],
+    "movies": [{"title": "Frankenstein", "tmdb_id": 929590, "imdb_id": "tt11098001"}],
+    "won": false
+  },
+  {
+    "category": "Best Adapted Screenplay",
+    "year": "2025",
+    "nominees": ["Chloé Zhao", "Maggie O'Farrell"],
+    "movies": [{"title": "Hamnet", "tmdb_id": 1385284, "imdb_id": "tt34506898"}],
+    "won": false
+  },
+  {
+    "category": "Best Adapted Screenplay",
+    "year": "2025",
+    "nominees": ["Clint Bentley", "Greg Kwedar"],
+    "movies": [{"title": "Train Dreams", "tmdb_id": 1401234, "imdb_id": "tt33901234"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Screenplay",
+    "year": "2025",
+    "nominees": ["Ryan Coogler"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": true
+  },
+  {
+    "category": "Best Original Screenplay",
+    "year": "2025",
+    "nominees": ["Robert Kaplow"],
+    "movies": [{"title": "Blue Moon", "tmdb_id": 1387456, "imdb_id": "tt33678901"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Screenplay",
+    "year": "2025",
+    "nominees": ["Jafar Panahi", "Nader Saïvar", "Shadmehr Rastin", "Mehdi Mahmoudian"],
+    "movies": [{"title": "It Was Just an Accident", "tmdb_id": 1409876, "imdb_id": "tt34234567"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Screenplay",
+    "year": "2025",
+    "nominees": ["Ronald Bronstein", "Josh Safdie"],
+    "movies": [{"title": "Marty Supreme", "tmdb_id": 1340289, "imdb_id": "tt33456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Screenplay",
+    "year": "2025",
+    "nominees": ["Eskil Vogt", "Joachim Trier"],
+    "movies": [{"title": "Sentimental Value", "tmdb_id": 1387253, "imdb_id": "tt33789012"}],
+    "won": false
+  },
+  {
+    "category": "Best Score",
+    "year": "2025",
+    "nominees": ["Ludwig Goransson"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": true
+  },
+  {
+    "category": "Best Score",
+    "year": "2025",
+    "nominees": ["Jerskin Fendrix"],
+    "movies": [{"title": "Bugonia", "tmdb_id": 1298456, "imdb_id": "tt32123456"}],
+    "won": false
+  },
+  {
+    "category": "Best Score",
+    "year": "2025",
+    "nominees": ["Alexandre Desplat"],
+    "movies": [{"title": "Frankenstein", "tmdb_id": 929590, "imdb_id": "tt11098001"}],
+    "won": false
+  },
+  {
+    "category": "Best Score",
+    "year": "2025",
+    "nominees": ["Max Richter"],
+    "movies": [{"title": "Hamnet", "tmdb_id": 1385284, "imdb_id": "tt34506898"}],
+    "won": false
+  },
+  {
+    "category": "Best Score",
+    "year": "2025",
+    "nominees": ["Jonny Greenwood"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Song",
+    "year": "2025",
+    "nominees": ["Golden"],
+    "movies": [{"title": "KPop Demon Hunters", "tmdb_id": 1456789, "imdb_id": "tt34789012"}],
+    "won": true
+  },
+  {
+    "category": "Best Original Song",
+    "year": "2025",
+    "nominees": ["Dear Me"],
+    "movies": [{"title": "Diane Warren: Relentless", "tmdb_id": 1461234, "imdb_id": "tt34890123"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Song",
+    "year": "2025",
+    "nominees": ["I Lied To You"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Song",
+    "year": "2025",
+    "nominees": ["Sweet Dreams Of Joy"],
+    "movies": [{"title": "Viva Verdi!", "tmdb_id": 1462345, "imdb_id": "tt34901234"}],
+    "won": false
+  },
+  {
+    "category": "Best Original Song",
+    "year": "2025",
+    "nominees": ["Train Dreams"],
+    "movies": [{"title": "Train Dreams", "tmdb_id": 1401234, "imdb_id": "tt33901234"}],
+    "won": false
+  },
+  {
+    "category": "Best International Feature Film",
+    "year": "2025",
+    "nominees": ["Sentimental Value"],
+    "movies": [{"title": "Sentimental Value", "tmdb_id": 1387253, "imdb_id": "tt33789012"}],
+    "won": true
+  },
+  {
+    "category": "Best International Feature Film",
+    "year": "2025",
+    "nominees": ["The Secret Agent"],
+    "movies": [{"title": "The Secret Agent", "tmdb_id": 1340201, "imdb_id": "tt33345678"}],
+    "won": false
+  },
+  {
+    "category": "Best International Feature Film",
+    "year": "2025",
+    "nominees": ["It Was Just an Accident"],
+    "movies": [{"title": "It Was Just an Accident", "tmdb_id": 1409876, "imdb_id": "tt34234567"}],
+    "won": false
+  },
+  {
+    "category": "Best International Feature Film",
+    "year": "2025",
+    "nominees": ["Sirāt"],
+    "movies": [{"title": "Sirāt", "tmdb_id": 1412567, "imdb_id": "tt34345678"}],
+    "won": false
+  },
+  {
+    "category": "Best International Feature Film",
+    "year": "2025",
+    "nominees": ["The Voice of Hind Rajab"],
+    "movies": [{"title": "The Voice of Hind Rajab", "tmdb_id": 1415678, "imdb_id": "tt34456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Feature",
+    "year": "2025",
+    "nominees": ["Mr. Nobody Against Putin"],
+    "movies": [{"title": "Mr. Nobody Against Putin", "tmdb_id": 1418901, "imdb_id": "tt34567890"}],
+    "won": true
+  },
+  {
+    "category": "Best Documentary Feature",
+    "year": "2025",
+    "nominees": ["The Alabama Solution"],
+    "movies": [{"title": "The Alabama Solution", "tmdb_id": 1419012, "imdb_id": "tt34678901"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Feature",
+    "year": "2025",
+    "nominees": ["Come See Me in the Good Light"],
+    "movies": [{"title": "Come See Me in the Good Light", "tmdb_id": 1419123, "imdb_id": "tt34789012"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Feature",
+    "year": "2025",
+    "nominees": ["Cutting Through Rocks"],
+    "movies": [{"title": "Cutting Through Rocks", "tmdb_id": 1419234, "imdb_id": "tt34890123"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Feature",
+    "year": "2025",
+    "nominees": ["The Perfect Neighbor"],
+    "movies": [{"title": "The Perfect Neighbor", "tmdb_id": 1419345, "imdb_id": "tt34901234"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Short",
+    "year": "2025",
+    "nominees": ["All the Empty Rooms"],
+    "movies": [{"title": "All the Empty Rooms", "tmdb_id": 1421234, "imdb_id": "tt35012345"}],
+    "won": true
+  },
+  {
+    "category": "Best Documentary Short",
+    "year": "2025",
+    "nominees": ["Armed Only with a Camera: The Life and Death of Brent Renaud"],
+    "movies": [{"title": "Armed Only with a Camera: The Life and Death of Brent Renaud", "tmdb_id": 1421345, "imdb_id": "tt35123456"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Short",
+    "year": "2025",
+    "nominees": ["Children No More: Were and Are Gone"],
+    "movies": [{"title": "Children No More: Were and Are Gone", "tmdb_id": 1421456, "imdb_id": "tt35234567"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Short",
+    "year": "2025",
+    "nominees": ["The Devil Is Busy"],
+    "movies": [{"title": "The Devil Is Busy", "tmdb_id": 1421567, "imdb_id": "tt35345678"}],
+    "won": false
+  },
+  {
+    "category": "Best Documentary Short",
+    "year": "2025",
+    "nominees": ["Perfectly a Strangeness"],
+    "movies": [{"title": "Perfectly a Strangeness", "tmdb_id": 1421678, "imdb_id": "tt35456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Feature",
+    "year": "2025",
+    "nominees": ["KPop Demon Hunters"],
+    "movies": [{"title": "KPop Demon Hunters", "tmdb_id": 1456789, "imdb_id": "tt34789012"}],
+    "won": true
+  },
+  {
+    "category": "Best Animated Feature",
+    "year": "2025",
+    "nominees": ["Arco"],
+    "movies": [{"title": "Arco", "tmdb_id": 1423456, "imdb_id": "tt35567890"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Feature",
+    "year": "2025",
+    "nominees": ["Elio"],
+    "movies": [{"title": "Elio", "tmdb_id": 1423567, "imdb_id": "tt35678901"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Feature",
+    "year": "2025",
+    "nominees": ["Little Amélie or the Character of Rain"],
+    "movies": [{"title": "Little Amélie or the Character of Rain", "tmdb_id": 1423678, "imdb_id": "tt35789012"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Feature",
+    "year": "2025",
+    "nominees": ["Zootopia 2"],
+    "movies": [{"title": "Zootopia 2", "tmdb_id": 1419234, "imdb_id": "tt35890123"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Short",
+    "year": "2025",
+    "nominees": ["The Girl Who Cried Pearls"],
+    "movies": [{"title": "The Girl Who Cried Pearls", "tmdb_id": 1425678, "imdb_id": "tt36012345"}],
+    "won": true
+  },
+  {
+    "category": "Best Animated Short",
+    "year": "2025",
+    "nominees": ["Butterfly"],
+    "movies": [{"title": "Butterfly", "tmdb_id": 1425789, "imdb_id": "tt36123456"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Short",
+    "year": "2025",
+    "nominees": ["Forevergreen"],
+    "movies": [{"title": "Forevergreen", "tmdb_id": 1425890, "imdb_id": "tt36234567"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Short",
+    "year": "2025",
+    "nominees": ["Retirement Plan"],
+    "movies": [{"title": "Retirement Plan", "tmdb_id": 1425901, "imdb_id": "tt36345678"}],
+    "won": false
+  },
+  {
+    "category": "Best Animated Short",
+    "year": "2025",
+    "nominees": ["The Three Sisters"],
+    "movies": [{"title": "The Three Sisters", "tmdb_id": 1426012, "imdb_id": "tt36456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Live Action Short (Comedy or One Reel or Regular)",
+    "year": "2025",
+    "nominees": ["The Singers"],
+    "movies": [{"title": "The Singers", "tmdb_id": 1428901, "imdb_id": "tt36789012"}],
+    "won": true
+  },
+  {
+    "category": "Best Live Action Short (Comedy or One Reel or Regular)",
+    "year": "2025",
+    "nominees": ["Two People Exchanging Saliva"],
+    "movies": [{"title": "Two People Exchanging Saliva", "tmdb_id": 1429012, "imdb_id": "tt36890123"}],
+    "won": true
+  },
+  {
+    "category": "Best Live Action Short (Comedy or One Reel or Regular)",
+    "year": "2025",
+    "nominees": ["Butcher's Stain"],
+    "movies": [{"title": "Butcher's Stain", "tmdb_id": 1429123, "imdb_id": "tt36901234"}],
+    "won": false
+  },
+  {
+    "category": "Best Live Action Short (Comedy or One Reel or Regular)",
+    "year": "2025",
+    "nominees": ["A Friend of Dorothy"],
+    "movies": [{"title": "A Friend of Dorothy", "tmdb_id": 1429234, "imdb_id": "tt37012345"}],
+    "won": false
+  },
+  {
+    "category": "Best Live Action Short (Comedy or One Reel or Regular)",
+    "year": "2025",
+    "nominees": ["Jane Austen's Period Drama"],
+    "movies": [{"title": "Jane Austen's Period Drama", "tmdb_id": 1429345, "imdb_id": "tt37123456"}],
+    "won": false
+  },
+  {
+    "category": "Best Production Design (Color)",
+    "year": "2025",
+    "nominees": ["Tamara Deverell", "Shane Vieau"],
+    "movies": [{"title": "Frankenstein", "tmdb_id": 929590, "imdb_id": "tt11098001"}],
+    "won": true
+  },
+  {
+    "category": "Best Production Design (Color)",
+    "year": "2025",
+    "nominees": ["Fiona Crombie", "Alice Felton"],
+    "movies": [{"title": "Hamnet", "tmdb_id": 1385284, "imdb_id": "tt34506898"}],
+    "won": false
+  },
+  {
+    "category": "Best Production Design (Color)",
+    "year": "2025",
+    "nominees": ["Jack Fisk", "Adam Willis"],
+    "movies": [{"title": "Marty Supreme", "tmdb_id": 1340289, "imdb_id": "tt33456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Production Design (Color)",
+    "year": "2025",
+    "nominees": ["Florencia Martin", "Anthony Carlino"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": false
+  },
+  {
+    "category": "Best Production Design (Color)",
+    "year": "2025",
+    "nominees": ["Hannah Beachler", "Monique Champagne"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
+  },
+  {
+    "category": "Best Cinematography (Color)",
+    "year": "2025",
+    "nominees": ["Autumn Durald Arkapaw"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": true
+  },
+  {
+    "category": "Best Cinematography (Color)",
+    "year": "2025",
+    "nominees": ["Dan Laustsen"],
+    "movies": [{"title": "Frankenstein", "tmdb_id": 929590, "imdb_id": "tt11098001"}],
+    "won": false
+  },
+  {
+    "category": "Best Cinematography (Color)",
+    "year": "2025",
+    "nominees": ["Darius Khondji"],
+    "movies": [{"title": "Marty Supreme", "tmdb_id": 1340289, "imdb_id": "tt33456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Cinematography (Color)",
+    "year": "2025",
+    "nominees": ["Michael Bauman"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": false
+  },
+  {
+    "category": "Best Cinematography (Color)",
+    "year": "2025",
+    "nominees": ["Adolpho Veloso"],
+    "movies": [{"title": "Train Dreams", "tmdb_id": 1401234, "imdb_id": "tt33901234"}],
+    "won": false
+  },
+  {
+    "category": "Best Film Editing",
+    "year": "2025",
+    "nominees": ["Andy Jurgensen"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": true
+  },
+  {
+    "category": "Best Film Editing",
+    "year": "2025",
+    "nominees": ["Stephen Mirrione"],
+    "movies": [{"title": "F1", "tmdb_id": 1280207, "imdb_id": "tt11079588"}],
+    "won": false
+  },
+  {
+    "category": "Best Film Editing",
+    "year": "2025",
+    "nominees": ["Ronald Bronstein", "Josh Safdie"],
+    "movies": [{"title": "Marty Supreme", "tmdb_id": 1340289, "imdb_id": "tt33456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Film Editing",
+    "year": "2025",
+    "nominees": ["Olivier Bugge Coutté"],
+    "movies": [{"title": "Sentimental Value", "tmdb_id": 1387253, "imdb_id": "tt33789012"}],
+    "won": false
+  },
+  {
+    "category": "Best Film Editing",
+    "year": "2025",
+    "nominees": ["Michael P. Shawver"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
+  },
+  {
+    "category": "Best Visual/Special Effects",
+    "year": "2025",
+    "nominees": ["Joe Letteri", "Richard Baneham", "Eric Saindon", "Daniel Barrett"],
+    "movies": [{"title": "Avatar: Fire and Ash", "tmdb_id": 457332, "imdb_id": "tt5765186"}],
+    "won": true
+  },
+  {
+    "category": "Best Visual/Special Effects",
+    "year": "2025",
+    "nominees": ["Ryan Tudhope", "Nicolas Chevallier", "Robert Harrington", "Keith Dawson"],
+    "movies": [{"title": "F1", "tmdb_id": 1280207, "imdb_id": "tt11079588"}],
+    "won": false
+  },
+  {
+    "category": "Best Visual/Special Effects",
+    "year": "2025",
+    "nominees": ["David Vickery", "Stephen Aplin", "Charmaine Chan", "Neil Corbould"],
+    "movies": [{"title": "Jurassic World Rebirth", "tmdb_id": 1439456, "imdb_id": "tt37234567"}],
+    "won": false
+  },
+  {
+    "category": "Best Visual/Special Effects",
+    "year": "2025",
+    "nominees": ["Charlie Noble", "David Zaretti", "Russell Bowen", "Brandon K. McLaughlin"],
+    "movies": [{"title": "The Lost Bus", "tmdb_id": 1441234, "imdb_id": "tt37345678"}],
+    "won": false
+  },
+  {
+    "category": "Best Visual/Special Effects",
+    "year": "2025",
+    "nominees": ["Michael Ralla", "Espen Nordahl", "Guido Wolter", "Donnie Dean"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
+  },
+  {
+    "category": "Best Sound Mixing",
+    "year": "2025",
+    "nominees": ["Gareth John", "Al Nelson", "Gwendolyn Yates Whittle", "Gary A. Rizzo", "Juan Peralta"],
+    "movies": [{"title": "F1", "tmdb_id": 1280207, "imdb_id": "tt11079588"}],
+    "won": true
+  },
+  {
+    "category": "Best Sound Mixing",
+    "year": "2025",
+    "nominees": ["Greg Chapman", "Nathan Robitaille", "Nelson Ferreira", "Christian Cooke", "Brad Zoern"],
+    "movies": [{"title": "Frankenstein", "tmdb_id": 929590, "imdb_id": "tt11098001"}],
+    "won": false
+  },
+  {
+    "category": "Best Sound Mixing",
+    "year": "2025",
+    "nominees": ["José Antonio García", "Christopher Scarabosio", "Tony Villaflor"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": false
+  },
+  {
+    "category": "Best Sound Mixing",
+    "year": "2025",
+    "nominees": ["Chris Welcker", "Benjamin A. Burtt", "Felipe Pacheco", "Brandon Proctor", "Steve Boeddeker"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
+  },
+  {
+    "category": "Best Sound Mixing",
+    "year": "2025",
+    "nominees": ["Amanda Villavieja", "Laia Casanovas", "Yasmina Praderas"],
+    "movies": [{"title": "Sirāt", "tmdb_id": 1412567, "imdb_id": "tt34345678"}],
+    "won": false
+  },
+  {
+    "category": "Best Makeup and Hairstyling",
+    "year": "2025",
+    "nominees": ["Mike Hill", "Jordan Samuel", "Cliona Furey"],
+    "movies": [{"title": "Frankenstein", "tmdb_id": 929590, "imdb_id": "tt11098001"}],
+    "won": true
+  },
+  {
+    "category": "Best Makeup and Hairstyling",
+    "year": "2025",
+    "nominees": ["Kyoko Toyokawa", "Naomi Hibino", "Tadashi Nishimatsu"],
+    "movies": [{"title": "Kokuho", "tmdb_id": 1443456, "imdb_id": "tt37456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Makeup and Hairstyling",
+    "year": "2025",
+    "nominees": ["Ken Diaz", "Mike Fontaine", "Shunika Terry"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
+  },
+  {
+    "category": "Best Makeup and Hairstyling",
+    "year": "2025",
+    "nominees": ["Kazu Hiro", "Glen Griffin", "Bjoern Rehbein"],
+    "movies": [{"title": "The Smashing Machine", "tmdb_id": 1445678, "imdb_id": "tt37567890"}],
+    "won": false
+  },
+  {
+    "category": "Best Makeup and Hairstyling",
+    "year": "2025",
+    "nominees": ["Thomas Foldberg", "Anne Cathrine Sauerberg"],
+    "movies": [{"title": "The Ugly Stepsister", "tmdb_id": 1447890, "imdb_id": "tt37678901"}],
+    "won": false
+  },
+  {
+    "category": "Best Costume Design (Color)",
+    "year": "2025",
+    "nominees": ["Kate Hawley"],
+    "movies": [{"title": "Frankenstein", "tmdb_id": 929590, "imdb_id": "tt11098001"}],
+    "won": true
+  },
+  {
+    "category": "Best Costume Design (Color)",
+    "year": "2025",
+    "nominees": ["Deborah L. Scott"],
+    "movies": [{"title": "Avatar: Fire and Ash", "tmdb_id": 457332, "imdb_id": "tt5765186"}],
+    "won": false
+  },
+  {
+    "category": "Best Costume Design (Color)",
+    "year": "2025",
+    "nominees": ["Malgosia Turzanska"],
+    "movies": [{"title": "Hamnet", "tmdb_id": 1385284, "imdb_id": "tt34506898"}],
+    "won": false
+  },
+  {
+    "category": "Best Costume Design (Color)",
+    "year": "2025",
+    "nominees": ["Miyako Bellizzi"],
+    "movies": [{"title": "Marty Supreme", "tmdb_id": 1340289, "imdb_id": "tt33456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Costume Design (Color)",
+    "year": "2025",
+    "nominees": ["Ruth E. Carter"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
+  },
+  {
+    "category": "Best Casting",
+    "year": "2025",
+    "nominees": ["Cassandra Kulukundis"],
+    "movies": [{"title": "One Battle After Another", "tmdb_id": 1458823, "imdb_id": "tt33621548"}],
+    "won": true
+  },
+  {
+    "category": "Best Casting",
+    "year": "2025",
+    "nominees": ["Nina Gold"],
+    "movies": [{"title": "Hamnet", "tmdb_id": 1385284, "imdb_id": "tt34506898"}],
+    "won": false
+  },
+  {
+    "category": "Best Casting",
+    "year": "2025",
+    "nominees": ["Jennifer Venditti"],
+    "movies": [{"title": "Marty Supreme", "tmdb_id": 1340289, "imdb_id": "tt33456789"}],
+    "won": false
+  },
+  {
+    "category": "Best Casting",
+    "year": "2025",
+    "nominees": ["Gabriel Domingues"],
+    "movies": [{"title": "The Secret Agent", "tmdb_id": 1340201, "imdb_id": "tt33345678"}],
+    "won": false
+  },
+  {
+    "category": "Best Casting",
+    "year": "2025",
+    "nominees": ["Francine Maisler"],
+    "movies": [{"title": "Sinners", "tmdb_id": 1163858, "imdb_id": "tt21692408"}],
+    "won": false
   }
 ]
