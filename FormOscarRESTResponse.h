@@ -13,7 +13,7 @@ class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
 	TStringGrid *StringGridREST;
-    void __fastcall StringGridRESTOnDrawCell(TObject *Sender, int ACol, int ARow,
+	void __fastcall StringGridRESTDrawCell(TObject *Sender, System::LongInt ACol, System::LongInt ARow,
           TRect &Rect, TGridDrawState State);
 private:	// User declarations
 public:		// User declarations

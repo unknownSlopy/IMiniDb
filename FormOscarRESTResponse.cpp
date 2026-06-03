@@ -62,24 +62,23 @@ void TForm1::PrikaziRezultat(String jsonContent)
         }
 	}
 
-    delete arr;
+	delete arr;
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::StringGridRESTOnDrawCell(TObject *Sender, int ACol, int ARow,
-      TRect &Rect, TGridDrawState State)
+void __fastcall TForm1::StringGridRESTDrawCell(TObject *Sender, System::LongInt ACol,
+          System::LongInt ARow, TRect &Rect, TGridDrawState State)
 {
-    if (ARow == 0) return; // preskoči zaglavlje
+	if (ARow == 0) return;
 
     if (StringGridREST->Cells[4][ARow] == "true")
-    {
-        StringGridREST->Canvas->Brush->Color = (TColor)RGB(212, 175, 55); // zlatna boja
-    }
+        StringGridREST->Canvas->Brush->Color = (TColor)RGB(212, 175, 55);
     else
-    {
         StringGridREST->Canvas->Brush->Color = clWhite;
-    }
 
     StringGridREST->Canvas->FillRect(Rect);
+    StringGridREST->Canvas->Font->Color = clBlack;
     StringGridREST->Canvas->TextOut(Rect.Left + 2, Rect.Top + 2,
-        StringGridREST->Cells[ACol][ARow]);
+		StringGridREST->Cells[ACol][ARow]);
 }
+//---------------------------------------------------------------------------
+

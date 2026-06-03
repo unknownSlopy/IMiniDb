@@ -17,9 +17,7 @@ object Form1: TForm1
     Width = 624
     Height = 441
     Align = alClient
-    DefaultDrawing = False
     TabOrder = 0
-    ExplicitLeft = 144
-    ExplicitTop = 232
+    OnDrawCell = StringGridRESTDrawCell
   end
 end
