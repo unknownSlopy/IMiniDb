@@ -21,6 +21,7 @@ Aplikacija je namijenjena ljubiteljima filma i recenzentima. Omogućuje pretraž
 - **TRESTClient / TRESTRequest / TRESTResponse** — REST komunikacija
 - **TurboPower LockBox** — kriptografija (simetrično šifriranje)
 - **FireDAC (FDConnection, FDQuery, FDTable)** — pristup bazi podataka
+- **WebBroker ISAPI DLL (Apache)** — lokalni REST web servis za Oscar nominacije
 
 ---
 
@@ -68,6 +69,7 @@ Za detaljan pregled svih funkcionalnosti pogledaj [FUNKCIONALNOSTI.md](FUNKCIONA
 - Asimetrično kriptiranje ocjene recenzije (RSA)
 - Preuzimanje postera s prikazom tijeka i postotka (progress bar)
 - Ograničenje brzine preuzimanja (Bez ograničenja, 256 KB/s, 512 KB/s, 1 MB/s)
+- Oscar nominacije i pobjednici putem lokalnog REST web servisa (Apache ISAPI DLL)
 
 ---
 
