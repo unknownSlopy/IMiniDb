@@ -10,6 +10,16 @@ object WebModule1: TWebModule1
       Name = 'suma'
       PathInfo = '/suma'
       OnAction = WebModule1sumaAction
+    end
+    item
+      MethodType = mtGet
+      Name = 'GetNominationsByYearAction'
+      PathInfo = '/oscars/nominations'
+    end
+    item
+      MethodType = mtGet
+      Name = 'GetWinnersByYearAction'
+      PathInfo = '/oscars/winners'
     end>
   Height = 288
   Width = 519
