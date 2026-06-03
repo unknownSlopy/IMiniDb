@@ -57,7 +57,11 @@ void __fastcall TFormRecenzija::FormCreate(TObject *Sender)
     DohvatiRecenzijeIzBazeUJSON();
     UcitajRecenzijeUCombo();
     cmbFilm->ItemIndex = 0;
-    editIndex = -1;
+	editIndex = -1;
+
+	//ButtonOscar->Color = (TColor)RGB(212, 175, 55);
+    ComboBoxNominacijaPobjeda->Color = RGB(212, 175, 55);
+    EditGodina->Color = RGB(212, 175, 55);
 }
 
 //---------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
@@ -65,3 +65,21 @@ void TForm1::PrikaziRezultat(String jsonContent)
     delete arr;
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::StringGridRESTOnDrawCell(TObject *Sender, int ACol, int ARow,
+      TRect &Rect, TGridDrawState State)
+{
+    if (ARow == 0) return; // preskoči zaglavlje
+
+    if (StringGridREST->Cells[4][ARow] == "true")
+    {
+        StringGridREST->Canvas->Brush->Color = (TColor)RGB(212, 175, 55); // zlatna boja
+    }
+    else
+    {
+        StringGridREST->Canvas->Brush->Color = clWhite;
+    }
+
+    StringGridREST->Canvas->FillRect(Rect);
+    StringGridREST->Canvas->TextOut(Rect.Left + 2, Rect.Top + 2,
+        StringGridREST->Cells[ACol][ARow]);
+}

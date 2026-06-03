@@ -44,6 +44,8 @@
 #include "uTPLb_Codec.hpp"
 #include <System.SysUtils.hpp>
 #include "uTPLb_CryptographicLibrary.hpp"
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Imaging.jpeg.hpp>
 
 //---------------------------------------------------------------------------
 class TFormRecenzija : public TForm
@@ -103,6 +105,8 @@ __published:	// IDE-managed Components
 	TLabel *LabelPrijavljeniKorisnik;
 	TComboBox *ComboBoxNominacijaPobjeda;
 	TEdit *EditGodina;
+	TGroupBox *GroupBoxOscari;
+	TImage *Image1;
 	void __fastcall ButtonSpremiRecenzijuClick(TObject *Sender);
 	void __fastcall ButtonOdustaniClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
