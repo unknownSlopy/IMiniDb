@@ -103,14 +103,18 @@ Izvještaj kreiran pomoću **FastReport** komponente prikazuje korisnike zajedno
 
 ---
 
-## Oscar podaci (lokalni SOAP web servis)
+## Oscar podaci — REST web servis (Apache ISAPI DLL)
 
-Zasebna aplikacija **Oscari_soap** implementira SOAP web servis s dvije metode:
+Zasebna aplikacija **Oskari** implementirana je kao **ISAPI DLL** (`Oskari.dll`) i deployirana na lokalni **Apache web poslužitelj** (XAMPP) na portu 80.
 
-- `GetWinnerByYear(int godina)` — vraća naziv filma koji je osvojio Oscar za Best Picture te godine
-- `GetOscarCountByFilm(AnsiString naziv)` — vraća ukupan broj Oscara koje je film osvojio
+Podaci o Oscar nominacijama pohranjeni su u JSON datoteci (`oscar-nominations.json`) koja pokriva cijelu povijest dodjele nagrade od **1927. do 2025. godine** (~245 unosa).
 
-Klijentska aplikacija spaja se kroz WSDL importerom generirane datoteke (`IOscars.h`, `IOscars.cpp`) i `GetIOscars()` helper funkciju (`THTTPRIO` komponenta).
+Servis nudi dva resursa:
+
+- `GET /oscars/nominations?year={godina}` — dohvaća sve nominacije za zadanu godinu; vraća JSON array objekata s kategorijom, nominiranim osobama, nazivom filma i informacijom o pobjedi
+- `GET /oscars/winners?year={godina}` — dohvaća samo pobjednike za zadanu godinu; filtrira unose gdje je `won = true`
+
+Klijentska aplikacija koristi **TRESTClient**, **TRESTRequest** i **TRESTResponse** komponente za spajanje na servis. Korisnik odabire resurs putem `ComboBox`-a (Nominations / Winners), unosi godinu u `Edit` polje i klikom na gumb dohvaća podatke. Rezultati se prikazuju u **StringGrid**-u na zasebnom prozoru s kolonama: Kategorija, Godina, Nominiran, Film i Pobjednik.
 
 ---
 
