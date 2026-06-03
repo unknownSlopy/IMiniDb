@@ -19,7 +19,7 @@ object FormDobrodosli: TFormDobrodosli
     Height = 273
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 678
+    ExplicitWidth = 655
     object ImageLogo: TImage
       Left = 2
       Top = 17
@@ -45,9 +45,6 @@ object FormDobrodosli: TFormDobrodosli
         Caption = 'Informacije'
         TabOrder = 0
         OnClick = ButtonAPKInfoClick
-        ExplicitLeft = 1
-        ExplicitTop = 32
-        ExplicitWidth = 127
       end
       object ButtonENG: TButton
         Left = 0
@@ -58,9 +55,6 @@ object FormDobrodosli: TFormDobrodosli
         Caption = 'English'
         TabOrder = 1
         OnClick = ButtonENGClick
-        ExplicitLeft = 1
-        ExplicitTop = 16
-        ExplicitWidth = 183
       end
       object ButtonHRV: TButton
         Left = 0
@@ -71,9 +65,6 @@ object FormDobrodosli: TFormDobrodosli
         Caption = 'Hrvatski'
         TabOrder = 2
         OnClick = ButtonHRVClick
-        ExplicitLeft = 1
-        ExplicitTop = 16
-        ExplicitWidth = 183
       end
       object ButtonMenu: TButton
         Left = 0
@@ -84,9 +75,6 @@ object FormDobrodosli: TFormDobrodosli
         Caption = 'Izbornik'
         TabOrder = 3
         OnClick = ButtonMenuClick
-        ExplicitLeft = 1
-        ExplicitTop = -4
-        ExplicitWidth = 183
       end
     end
   end
@@ -97,6 +85,8 @@ object FormDobrodosli: TFormDobrodosli
     Height = 184
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 271
+    ExplicitWidth = 655
     object Label1: TLabel
       Left = 302
       Top = 154

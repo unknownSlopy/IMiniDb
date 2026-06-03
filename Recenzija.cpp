@@ -59,9 +59,24 @@ void __fastcall TFormRecenzija::FormCreate(TObject *Sender)
     cmbFilm->ItemIndex = 0;
 	editIndex = -1;
 
+    // Fiksna veličina
+	this->BorderStyle = bsSingle;
+
+
 	//ButtonOscar->Color = (TColor)RGB(212, 175, 55);
     ComboBoxNominacijaPobjeda->Color = RGB(212, 175, 55);
-    EditGodina->Color = RGB(212, 175, 55);
+	EditGodina->Color = RGB(212, 175, 55);
+
+	// Pozadina forme
+    this->Color = (TColor)RGB(30, 30, 30);
+
+    // Buttoni — zlatna boja
+    ButtonOscar->Font->Color = (TColor)RGB(212, 175, 55);
+
+    // Oscar komponente
+    ComboBoxNominacijaPobjeda->Color = (TColor)RGB(212, 175, 55);
+	EditGodina->Color = (TColor)RGB(212, 175, 55);
+
 }
 
 //---------------------------------------------------------------------------
@@ -546,6 +561,8 @@ void __fastcall TFormRecenzija::Button_SLibClick(TObject *Sender)
     ShowMessage(Radi());
 }*/
 //---------------------------------------------------------------------------
+
+
 
 
 

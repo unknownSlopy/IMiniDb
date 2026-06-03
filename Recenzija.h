@@ -107,6 +107,9 @@ __published:	// IDE-managed Components
 	TEdit *EditGodina;
 	TGroupBox *GroupBoxOscari;
 	TImage *Image1;
+	TGroupBox *GroupBoxKorisnik;
+	TGroupBox *GroupBoxPregledRecenzija;
+	TGroupBox *GroupBoxOstalo;
 	void __fastcall ButtonSpremiRecenzijuClick(TObject *Sender);
 	void __fastcall ButtonOdustaniClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
