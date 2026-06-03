@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2026.06.03 11:28:05.347,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.cpp</Transaction>
+    <Transaction>2026.06.03 11:28:06.609,=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2026.06.03 11:28:57.514,C:\Users\Jan\Desktop\4sem\NTP\REST_xampp_json\WebModuleUnit1.h=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.h</Transaction>
+    <Transaction>2026.06.03 11:28:57.514,C:\Users\Jan\Desktop\4sem\NTP\REST_xampp_json\WebModuleUnit1.cpp=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.cpp</Transaction>
+    <Transaction>2026.06.03 11:28:57.514,C:\Users\Jan\Desktop\4sem\NTP\REST_xampp_json\WebModuleUnit1.dfm=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.dfm</Transaction>
+    <Transaction>2026.06.03 11:28:57.675,C:\Users\Jan\Desktop\4sem\NTP\REST_xampp_json\OskariPCH1.h=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2026.06.03 11:28:57.885,C:\Users\Jan\Desktop\4sem\NTP\REST_xampp_json\Oskari.cbproj=C:\Users\Jan\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2026.06.03 11:29:06.827,C:\Users\Jan\Desktop\4sem\NTP\REST_xampp_json\WebModuleUnitOskari.cpp=C:\Users\Jan\Desktop\4sem\NTP\REST_xampp_json\WebModuleUnit1.cpp</Transaction>
+    <Transaction>2026.06.03 11:29:06.827,C:\Users\Jan\Desktop\4sem\NTP\REST_xampp_json\WebModuleUnitOskari.dfm=C:\Users\Jan\Desktop\4sem\NTP\REST_xampp_json\WebModuleUnit1.dfm</Transaction>
+    <Transaction>2026.06.03 11:29:06.827,C:\Users\Jan\Desktop\4sem\NTP\REST_xampp_json\WebModuleUnitOskari.h=C:\Users\Jan\Desktop\4sem\NTP\REST_xampp_json\WebModuleUnit1.h</Transaction>
+  </Transactions>
+</BorlandProject>
