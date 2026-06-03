@@ -101,6 +101,8 @@ __published:	// IDE-managed Components
 	TCodec *Codec2;
 	TCryptographicLibrary *CryptographicLibrary2;
 	TLabel *LabelPrijavljeniKorisnik;
+	TComboBox *ComboBoxNominacijaPobjeda;
+	TEdit *EditGodina;
 	void __fastcall ButtonSpremiRecenzijuClick(TObject *Sender);
 	void __fastcall ButtonOdustaniClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);

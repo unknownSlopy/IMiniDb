@@ -196,6 +196,12 @@
             <BuildOrder>18</BuildOrder>
             <IgnorePath>true</IgnorePath>
         </LibFiles>
+        <CppCompile Include="FormOscarRESTResponse.cpp">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>FormOscarRESTResponse.h</DependentOn>
+            <BuildOrder>19</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Funk.cpp">
             <DependentOn>Funk.h</DependentOn>
             <BuildOrder>12</BuildOrder>
@@ -265,6 +271,7 @@
             <DependentOn>Stilovi.h</DependentOn>
             <BuildOrder>8</BuildOrder>
         </CppCompile>
+        <FormResources Include="FormOscarRESTResponse.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

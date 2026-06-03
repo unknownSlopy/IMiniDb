@@ -218,6 +218,25 @@ object FormRecenzija: TFormRecenzija
     TabOrder = 3
     OnClick = ButtonOscarClick
   end
+  object ComboBoxNominacijaPobjeda: TComboBox
+    Left = 1184
+    Top = 96
+    Width = 145
+    Height = 23
+    TabOrder = 4
+    Text = 'ComboBoxNominacijaPobjeda'
+    Items.Strings = (
+      'Nominations'
+      'Winners')
+  end
+  object EditGodina: TEdit
+    Left = 1184
+    Top = 128
+    Width = 121
+    Height = 23
+    TabOrder = 5
+    Text = 'Godina'
+  end
   object FDConnectionIMiniDB: TFDConnection
     Params.Strings = (
       'Database=iminidb'

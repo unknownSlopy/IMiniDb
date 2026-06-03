@@ -13,6 +13,8 @@
 #include <Vcl.Styles.hpp>
 #include <Vcl.Themes.hpp>
 
+USEFORM("FormOscarRESTResponse.cpp", Form1);
+//---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
 
@@ -25,6 +27,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		//Application->CreateForm(__classid(TFormSviFilmovi), &FormSviFilmovi);
 		//Application->CreateForm(__classid(TFormRegistracija), &FormRegistracija);
 		Application->CreateForm(__classid(TFormDobrodosli), &FormDobrodosli);
+		Application->CreateForm(__classid(TForm1), &Form1);
 		Application->Run();
 	}
 	catch (Exception &exception)

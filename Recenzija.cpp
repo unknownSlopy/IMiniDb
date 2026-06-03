@@ -9,9 +9,11 @@
 #include <System.IOUtils.hpp>
 #include <System.JSON.hpp>
 #include <System.NetEncoding.hpp>
+#include <REST.Client.hpp>
+#include <REST.Types.hpp>
 
 #include "IOscars.h"
-#include <Soap.SOAPHTTPClient.hpp>
+#include "FormOscarRESTResponse.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "frCoreClasses"
@@ -483,22 +485,50 @@ void __fastcall TFormRecenzija::ButtonPDFClick(TObject *Sender)
 
 void __fastcall TFormRecenzija::ButtonOscarClick(TObject *Sender)
 {
-	// soap response
-	try
+	// REST response
+    String godina = EditGodina->Text;
+    if (godina.IsEmpty())
     {
-        // Koristi generirani helper - on sam postavi HTTPRIO ispravno
-        _di_IOscars svc = NS_IOscars::GetIOscars(
-			false,
-			"http://localhost:4125/wsdl/IOscars"
-		);
+        ShowMessage("Unesite godinu!");
+        return;
+    }
 
-        UnicodeString rezultat = svc->GetWinnerByYear(2024);
-        ShowMessage(rezultat);
+    // Odredi resurs ovisno o ComboBoxu
+    String resurs;
+    if (ComboBoxNominacijaPobjeda->ItemIndex == 0)
+        resurs = "nominations";
+    else
+        resurs = "winners";
+
+    // REST poziv
+    TRESTClient *client = new TRESTClient("http://localhost");
+    TRESTRequest *request = new TRESTRequest(NULL);
+    TRESTResponse *response = new TRESTResponse(NULL);
+
+    request->Client = client;
+    request->Response = response;
+    request->Resource = "cgi-bin/Oskari.dll/oscars/" + resurs;
+    request->AddParameter("year", godina, TRESTRequestParameterKind::pkQUERY);
+    request->Method = TRESTRequestMethod::rmGET;
+
+    try
+    {
+        request->Execute();
+        // Otvori drugi prozor s rezultatom
+        // FormOscar->PrikaziRezultat(response->Content);
+        // FormOscar->Show();
+		//ShowMessage(response->Content); // privremeno za test
+        Form1->PrikaziRezultat(response->Content);
+		Form1->Show();
     }
     catch (Exception &e)
     {
         ShowMessage("Greška: " + e.Message);
     }
+
+    delete response;
+    delete request;
+    delete client;
 }
 //---------------------------------------------------------------------------
 
@@ -512,5 +542,6 @@ void __fastcall TFormRecenzija::Button_SLibClick(TObject *Sender)
     ShowMessage(Radi());
 }*/
 //---------------------------------------------------------------------------
+
 
 
