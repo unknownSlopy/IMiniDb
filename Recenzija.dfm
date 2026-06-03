@@ -2,8 +2,8 @@ object FormRecenzija: TFormRecenzija
   Left = 0
   Top = 0
   Caption = 'FormRecenzija'
-  ClientHeight = 1082
-  ClientWidth = 1429
+  ClientHeight = 581
+  ClientWidth = 1355
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,12 +15,12 @@ object FormRecenzija: TFormRecenzija
   object GroupBoxRecenzija: TGroupBox
     Left = 0
     Top = 81
-    Width = 1429
+    Width = 1355
     Height = 496
     Align = alTop
     Caption = 'NOVA RECENZIJA'
     TabOrder = 0
-    ExplicitWidth = 1035
+    ExplicitWidth = 1429
     object Label1: TLabel
       Left = 50
       Top = 71
@@ -182,81 +182,49 @@ object FormRecenzija: TFormRecenzija
       TabOrder = 7
       OnChange = cmbFilmChange
     end
-  end
-  object GroupBoxKorisnik: TGroupBox
-    Left = 0
-    Top = 0
-    Width = 1429
-    Height = 81
-    Align = alTop
-    Caption = #55356#57260' IMiniDb '#8212' Recenzije'
-    TabOrder = 1
-    ExplicitWidth = 1339
-    object LabelPrijavljeniKorisnik: TLabel
-      Left = 2
-      Top = 17
-      Width = 1425
-      Height = 23
-      Align = alTop
-      Caption = 'LabelPrijavljeniKorisnik'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -17
-      Font.Name = 'Segoe UI'
-      Font.Style = [fsBold]
-      ParentFont = False
-      ExplicitLeft = 3
-      ExplicitWidth = 1335
-    end
-  end
-  object GroupBoxPregledRecenzija: TGroupBox
-    Left = 0
-    Top = 577
-    Width = 1429
-    Height = 304
-    Align = alTop
-    Caption = 'PREGLED RECENZIJA'
-    TabOrder = 2
-    ExplicitTop = 913
-    ExplicitWidth = 1316
-    object DBGridLookUpRecenzije: TDBGrid
+    object GroupBoxPregledRecenzija: TGroupBox
       AlignWithMargins = True
-      Left = 5
+      Left = 680
       Top = 20
-      Width = 1419
-      Height = 279
-      Align = alClient
-      DataSource = DataSourceRecenzije
-      TabOrder = 0
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -12
-      TitleFont.Name = 'Segoe UI'
-      TitleFont.Style = []
+      Width = 670
+      Height = 471
+      Align = alRight
+      Caption = 'PREGLED RECENZIJA'
+      TabOrder = 8
+      ExplicitLeft = 1200
+      object DBGridLookUpRecenzije: TDBGrid
+        AlignWithMargins = True
+        Left = 5
+        Top = 20
+        Width = 660
+        Height = 132
+        Align = alClient
+        DataSource = DataSourceRecenzije
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -12
+        TitleFont.Name = 'Segoe UI'
+        TitleFont.Style = []
+      end
     end
-  end
-  object GroupBoxOstalo: TGroupBox
-    Left = 0
-    Top = 881
-    Width = 1429
-    Height = 200
-    Align = alTop
-    TabOrder = 3
-    ExplicitTop = 1217
-    ExplicitWidth = 1316
     object GroupBoxOscari: TGroupBox
-      Left = 231
-      Top = 6
+      Left = 492
+      Top = 17
       Width = 185
-      Height = 181
+      Height = 477
+      Align = alRight
       Caption = 'Oscari'
-      TabOrder = 0
+      TabOrder = 9
+      ExplicitLeft = 231
+      ExplicitTop = 6
+      ExplicitHeight = 181
       object Image1: TImage
         AlignWithMargins = True
         Left = 5
         Top = 20
         Width = 175
-        Height = 156
+        Height = 181
         Align = alTop
         Picture.Data = {
           0A544A504547496D616765A8740100FFD8FFE000104A46494600010100000100
@@ -3242,12 +3210,10 @@ object FormRecenzija: TFormRecenzija
           9BCF0DA87A318CCCF895F8918C11C540854EC7FB47F08BFCC291CEAD225ACE48
           BF894E6EE0F8959D7642FB98A76C57ED35FF00FB03FFD9}
         Stretch = True
-        ExplicitLeft = -14
-        ExplicitTop = 22
       end
       object ButtonOscar: TButton
         Left = 32
-        Top = 106
+        Top = 290
         Width = 129
         Height = 49
         Caption = 'OSCAR'
@@ -3262,7 +3228,7 @@ object FormRecenzija: TFormRecenzija
       end
       object ComboBoxNominacijaPobjeda: TComboBox
         Left = 24
-        Top = 34
+        Top = 232
         Width = 145
         Height = 23
         Color = clGold
@@ -3274,13 +3240,38 @@ object FormRecenzija: TFormRecenzija
       end
       object EditGodina: TEdit
         Left = 32
-        Top = 63
-        Width = 121
+        Top = 261
+        Width = 137
         Height = 23
         Color = clGold
         TabOrder = 2
         Text = 'Godina'
       end
+    end
+  end
+  object GroupBoxKorisnik: TGroupBox
+    Left = 0
+    Top = 0
+    Width = 1355
+    Height = 81
+    Align = alTop
+    Caption = #55356#57260' IMiniDb '#8212' Recenzije'
+    TabOrder = 1
+    ExplicitWidth = 1429
+    object LabelPrijavljeniKorisnik: TLabel
+      Left = 2
+      Top = 17
+      Width = 1351
+      Height = 23
+      Align = alTop
+      Caption = 'LabelPrijavljeniKorisnik'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitWidth = 187
     end
   end
   object FDConnectionIMiniDB: TFDConnection
