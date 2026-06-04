@@ -21,92 +21,92 @@ object FormRecenzija: TFormRecenzija
     Caption = 'NOVA RECENZIJA'
     TabOrder = 0
     object Label1: TLabel
-      Left = 50
-      Top = 71
+      Left = 34
+      Top = 103
       Width = 88
       Height = 15
       Caption = 'Datum recenzije:'
     end
     object Label2: TLabel
-      Left = 50
-      Top = 37
+      Left = 34
+      Top = 69
       Width = 26
       Height = 15
       Caption = 'Film:'
     end
     object Label4: TLabel
-      Left = 50
-      Top = 104
+      Left = 34
+      Top = 136
       Width = 40
       Height = 15
       Caption = 'Ocjena:'
     end
     object LabelOcjena: TLabel
-      Left = 114
-      Top = 139
+      Left = 98
+      Top = 171
       Width = 6
       Height = 15
       Caption = '1'
     end
     object LabelOcjena2: TLabel
-      Left = 146
-      Top = 139
+      Left = 130
+      Top = 171
       Width = 6
       Height = 15
       Caption = '2'
     end
     object LabelOcjena3: TLabel
-      Left = 177
-      Top = 139
+      Left = 161
+      Top = 171
       Width = 6
       Height = 15
       Caption = '3'
     end
     object LabelOcjena4: TLabel
-      Left = 210
-      Top = 139
+      Left = 194
+      Top = 171
       Width = 6
       Height = 15
       Caption = '4'
     end
     object LabelOcjena5: TLabel
-      Left = 242
-      Top = 139
+      Left = 226
+      Top = 171
       Width = 6
       Height = 15
       Caption = '5'
     end
     object LabelOcjena6: TLabel
-      Left = 274
-      Top = 139
+      Left = 258
+      Top = 171
       Width = 6
       Height = 15
       Caption = '6'
     end
     object LabelOcjena7: TLabel
-      Left = 306
-      Top = 139
+      Left = 290
+      Top = 171
       Width = 6
       Height = 15
       Caption = '7'
     end
     object LabelOcjena8: TLabel
-      Left = 338
-      Top = 139
+      Left = 322
+      Top = 171
       Width = 6
       Height = 15
       Caption = '8'
     end
     object LabelOcjena9: TLabel
-      Left = 370
-      Top = 139
+      Left = 354
+      Top = 171
       Width = 6
       Height = 15
       Caption = '9'
     end
     object LabelOcjena10: TLabel
-      Left = 394
-      Top = 139
+      Left = 378
+      Top = 171
       Width = 12
       Height = 15
       Caption = '10'
@@ -139,8 +139,8 @@ object FormRecenzija: TFormRecenzija
       TabOrder = 2
     end
     object dtpDatum: TDateTimePicker
-      Left = 210
-      Top = 63
+      Left = 151
+      Top = 95
       Width = 145
       Height = 23
       Date = 46109.000000000000000000
@@ -148,16 +148,15 @@ object FormRecenzija: TFormRecenzija
       TabOrder = 3
     end
     object edtFilm: TEdit
-      Left = 674
-      Top = 136
-      Width = 186
+      Left = 130
+      Top = 66
+      Width = 175
       Height = 23
       TabOrder = 4
-      Visible = False
     end
     object TrackBarOcjena: TTrackBar
-      Left = 106
-      Top = 104
+      Left = 90
+      Top = 136
       Width = 310
       Height = 45
       Min = 1
@@ -174,8 +173,8 @@ object FormRecenzija: TFormRecenzija
       OnClick = ButtonPDFClick
     end
     object cmbFilm: TComboBox
-      Left = 210
-      Top = 34
+      Left = 114
+      Top = 20
       Width = 145
       Height = 23
       TabOrder = 7
