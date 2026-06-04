@@ -245,30 +245,9 @@ void __fastcall TFormRecenzija::SinkronizirajJSONuBazu()
     for (int i = 0; i < arr->Count; i++) {
 		TJSONObject *obj = static_cast<TJSONObject*>(arr->Items[i]);
 
-        String idRaw = obj->GetValue("id")->Value();
-		int id = 0;
-		if (idRaw.SubString(1, 4) == "RSA:") {
-			String base64 = idRaw.SubString(5, idRaw.Length() - 4);
-			DynamicArray<Byte> encBytes = TNetEncoding::Base64->DecodeStringToBytes(base64);
-			TMemoryStream *msIn = new TMemoryStream();
-			TMemoryStream *msOut = new TMemoryStream();
-			msIn->WriteBuffer(&encBytes[0], encBytes.Length);
-			msIn->Position = 0;
-			Codec1->DecryptStream(msIn, msOut);
-			msOut->Position = 0;
-			DynamicArray<Byte> decBytes;
-			decBytes.Length = msOut->Size;
-			msOut->ReadBuffer(&decBytes[0], msOut->Size);
-			msOut->ReadBuffer(&decBytes[0], msOut->Size);
-			String idDec = TEncoding::UTF8->GetString(decBytes, 0, decBytes.Length);
-			id = StrToIntDef(idDec, 0);
-			delete msIn;
-			delete msOut;
-		} else {
-			id = StrToIntDef(idRaw, 0);
-		}
 
-        //int    id     = StrToIntDef(obj->GetValue("id")->Value(), 0);
+
+        int    id     = StrToIntDef(obj->GetValue("id")->Value(), 0);
 		String naslov = obj->GetValue("naslov") ? obj->GetValue("naslov")->Value() : String("");
 		String tekst  = obj->GetValue("tekst")  ? obj->GetValue("tekst")->Value()  : String("");
 		int    ocjena = StrToIntDef(
@@ -407,24 +386,7 @@ void __fastcall TFormRecenzija::ButtonSpremiRecenzijuClick(TObject *Sender)
         int noviId = MaxIdIzBaze();
 
         TJSONObject *rec = new TJSONObject();
-		//rec->AddPair("id",     new TJSONNumber(noviId));
-
-		String idStr = IntToStr(noviId);
-		DynamicArray<Byte> inputBytes = TEncoding::UTF8->GetBytes(idStr);
-		TMemoryStream *msIn = new TMemoryStream();
-		TMemoryStream *msOut = new TMemoryStream();
-		msIn->WriteBuffer(&inputBytes[0], inputBytes.Length);
-		msIn->Position = 0;
-		Codec1->EncryptStream(msIn, msOut);
-		msOut->Position = 0;
-		TStringStream *ssOut = new TStringStream();
-		TNetEncoding::Base64->Encode(msOut, ssOut);
-		String idKriptiran = "RSA:" + ssOut->DataString;
-		delete ssOut;
-		delete msIn;
-		delete msOut;
-
-		rec->AddPair("id", idKriptiran);
+		rec->AddPair("id",     new TJSONNumber(noviId));
         rec->AddPair("naslov", edtFilm->Text.Trim());
         rec->AddPair("tekst",  memTekst->Lines->Text.Trim());
         rec->AddPair("ocjena", new TJSONNumber(TrackBarOcjena->Position));
