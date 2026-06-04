@@ -20,7 +20,6 @@ object FormRecenzija: TFormRecenzija
     Align = alTop
     Caption = 'NOVA RECENZIJA'
     TabOrder = 0
-    ExplicitWidth = 1429
     object Label1: TLabel
       Left = 50
       Top = 71
@@ -191,13 +190,12 @@ object FormRecenzija: TFormRecenzija
       Align = alRight
       Caption = 'PREGLED RECENZIJA'
       TabOrder = 8
-      ExplicitLeft = 1200
       object DBGridLookUpRecenzije: TDBGrid
         AlignWithMargins = True
         Left = 5
         Top = 20
         Width = 660
-        Height = 132
+        Height = 446
         Align = alClient
         DataSource = DataSourceRecenzije
         TabOrder = 0
@@ -216,9 +214,6 @@ object FormRecenzija: TFormRecenzija
       Align = alRight
       Caption = 'Oscari'
       TabOrder = 9
-      ExplicitLeft = 231
-      ExplicitTop = 6
-      ExplicitHeight = 181
       object Image1: TImage
         AlignWithMargins = True
         Left = 5
@@ -3212,9 +3207,9 @@ object FormRecenzija: TFormRecenzija
         Stretch = True
       end
       object ButtonOscar: TButton
-        Left = 32
+        Left = 3
         Top = 290
-        Width = 129
+        Width = 185
         Height = 49
         Caption = 'OSCAR'
         Font.Charset = DEFAULT_CHARSET
@@ -3227,9 +3222,9 @@ object FormRecenzija: TFormRecenzija
         OnClick = ButtonOscarClick
       end
       object ComboBoxNominacijaPobjeda: TComboBox
-        Left = 24
+        Left = 2
         Top = 232
-        Width = 145
+        Width = 185
         Height = 23
         Color = clGold
         TabOrder = 1
@@ -3239,9 +3234,9 @@ object FormRecenzija: TFormRecenzija
           'Winners')
       end
       object EditGodina: TEdit
-        Left = 32
+        Left = 3
         Top = 261
-        Width = 137
+        Width = 185
         Height = 23
         Color = clGold
         TabOrder = 2
@@ -3257,7 +3252,6 @@ object FormRecenzija: TFormRecenzija
     Align = alTop
     Caption = #55356#57260' IMiniDb '#8212' Recenzije'
     TabOrder = 1
-    ExplicitWidth = 1429
     object LabelPrijavljeniKorisnik: TLabel
       Left = 2
       Top = 17

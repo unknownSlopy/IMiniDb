@@ -58,7 +58,10 @@ void TForm1::PrikaziRezultat(String jsonContent)
                     StringGridREST->Cells[3][i+1] = movie->GetValue("title")->Value();
             }
 
-            StringGridREST->Cells[4][i+1] = item->GetValue("won")->Value();
+			//samo true / false
+			//StringGridREST->Cells[4][i+1] = item->GetValue("won")->Value();
+            String won = item->GetValue("won")->Value();
+			StringGridREST->Cells[4][i+1] = (won == "true") ? "Da" : "Ne";
         }
 	}
 
@@ -70,12 +73,20 @@ void __fastcall TForm1::StringGridRESTDrawCell(TObject *Sender, System::LongInt 
 {
 	if (ARow == 0) return;
 
-    if (StringGridREST->Cells[4][ARow] == "true")
+    if (StringGridREST->Cells[4][ARow] == "Da")
         StringGridREST->Canvas->Brush->Color = (TColor)RGB(212, 175, 55);
     else
         StringGridREST->Canvas->Brush->Color = clWhite;
 
-    StringGridREST->Canvas->FillRect(Rect);
+	StringGridREST->Canvas->FillRect(Rect);
+
+	StringGridREST->Canvas->Pen->Color = clGray;
+    StringGridREST->Canvas->Pen->Width = 1;
+    StringGridREST->Canvas->MoveTo(Rect.Right - 1, Rect.Top);
+    StringGridREST->Canvas->LineTo(Rect.Right - 1, Rect.Bottom);
+    StringGridREST->Canvas->MoveTo(Rect.Left, Rect.Bottom - 1);
+    StringGridREST->Canvas->LineTo(Rect.Right, Rect.Bottom - 1);
+
     StringGridREST->Canvas->Font->Color = clBlack;
     StringGridREST->Canvas->TextOut(Rect.Left + 2, Rect.Top + 2,
 		StringGridREST->Cells[ACol][ARow]);

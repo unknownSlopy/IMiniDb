@@ -77,6 +77,19 @@ void __fastcall TFormRecenzija::FormCreate(TObject *Sender)
     ComboBoxNominacijaPobjeda->Color = (TColor)RGB(212, 175, 55);
 	EditGodina->Color = (TColor)RGB(212, 175, 55);
 
+    // Bold naslovi GroupBoxova
+	GroupBoxRecenzija->Font->Style = TFontStyles() << fsBold;
+	GroupBoxRecenzija->Font->Size = 10;
+
+	GroupBoxOscari->Font->Style = TFontStyles() << fsBold;
+	GroupBoxOscari->Font->Size = 10;
+
+	GroupBoxKorisnik->Font->Style = TFontStyles() << fsBold;
+	GroupBoxKorisnik->Font->Size = 10;
+
+	GroupBoxPregledRecenzija->Font->Style = TFontStyles() << fsBold;
+	GroupBoxPregledRecenzija->Font->Size = 10;
+
 }
 
 //---------------------------------------------------------------------------
